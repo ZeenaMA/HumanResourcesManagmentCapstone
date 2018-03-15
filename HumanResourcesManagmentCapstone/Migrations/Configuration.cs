@@ -7,7 +7,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HumanResourcesManagmentCapstone.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
@@ -18,11 +18,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
         protected override void Seed(ApplicationDbContext context)
         {
             //TODO Define roles to add to your app, keep the Admin role first
-            string[] roles = { "Admin", "CEO" };
+            string[] roles = { "Admin", "CEO", "Employee" };
 
             //TODO Change admin user login information
             string adminEmail = "admin@dah.edu";
-            string adminUserName = "admin@dah.edu";
+            string adminUserName = "admin";
             string adminPassword = "admin123";
 
 

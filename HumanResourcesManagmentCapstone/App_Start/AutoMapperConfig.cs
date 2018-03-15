@@ -1,4 +1,5 @@
 ﻿using HumanResourcesManagmentCapstone.Models;
+using HumanResourcesManagmentCapstone.ViewModel;
 
 namespace HumanResourcesManagmentCapstone.App_Start
 {
@@ -12,7 +13,7 @@ namespace HumanResourcesManagmentCapstone.App_Start
         {
             AutoMapper.Mapper.Initialize(cfg =>
             {
-                //cfg.CreateMap<Employee, EmployeeViewModel>().ReverseMap();
+                cfg.CreateMap<Employee, EmployeeViewModel>().ReverseMap();
                 //cfg.CreateMap<Faculty, FacultyViewModel>().ReverseMap();
             });
         }

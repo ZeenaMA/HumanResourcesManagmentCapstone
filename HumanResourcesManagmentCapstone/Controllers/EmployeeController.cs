@@ -63,16 +63,17 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             foreach (var item in users)
             {
-                if (!(item is Employee))
+                model.Add(new EmployeeViewModel
                 {
-                    model.Add(new EmployeeViewModel
-                    {
-                        Id = item.Id,
-                        Email = item.Email,
-                        FirstName = item.FirstName,
-                        LastName = item.LastName,
-                    });
-                }
+                    Id = item.Id,
+                    UserName = item.UserName,
+                    FirstName = item.FirstName,
+                    MiddleName = item.MiddleName,
+                    LastName = item.LastName,
+                    NationalIqamaID = item.NationalIqamaID,
+                    Nationality = item.Nationality,
+                    DateOfBirth = item.DateOfBirth,
+                });
             }
 
             return View(model);
@@ -117,9 +118,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
         public ActionResult Create()
         {
             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
-            return View();
-
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+
             return View();
         }
 
@@ -132,43 +132,62 @@ namespace HumanResourcesManagmentCapstone.Controllers
             {
                 Employee employee = new Employee
                 {
-                    UserName = model.Email,
+                    UserName = model.UserName,
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     EmployeeType = model.EmployeeType,
+                    HiredDate = model.HiredDate,
+                    NationalIqamaID = model.NationalIqamaID,
+                    BankAccountNumber = model.BankAccountNumber,
+                    Nationality = model.Nationality,
+                    DateOfBirth = model.DateOfBirth,
                 };
 
                 var result = UserManager.Create(employee, model.Password);
-
+                //start
                 if (result.Succeeded)
                 {
-                    var roleResult = UserManager.AddToRoles(employee.Id, "Employee");
+                    if (roles != null)
+                    {
+                        // Add user to selected roles
+                        var roleResult = UserManager.AddToRoles(employee.Id, roles);
 
-                    if (roleResult.Succeeded)
-                    {
-                        return RedirectToAction("Index");
+                        if (roleResult.Succeeded)
+                        {
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            // Create a check list object
+                            ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
+                            ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+
+                            // Display error messages in the view @Html.ValidationSummary()
+                            ModelState.AddModelError(string.Empty, roleResult.Errors.First());
+
+                            // Return a view if you want to see error message saved in ModelState
+                            return View();
+                        }
                     }
-                    else
-                    {
-                        ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
-                        // Display error messages in the view @Html.ValidationSummary()
-                        ModelState.AddModelError(string.Empty, roleResult.Errors.First());
-                        return View();
-                    }
+
+                    return RedirectToAction("Index");
+                    //end
                 }
                 else
                 {
                     ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+                    ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
+
                     // Display error messages in the view @Html.ValidationSummary()
                     ModelState.AddModelError(string.Empty, result.Errors.First());
                     return View();
                 }
             }
 
+            ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
             return View();
-
         }
 
         // GET: Employee/Edit/5

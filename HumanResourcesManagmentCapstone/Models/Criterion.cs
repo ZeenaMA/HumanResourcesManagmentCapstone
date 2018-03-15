@@ -16,7 +16,6 @@ namespace HumanResourcesManagmentCapstone.Models
     [Table("Criterion")]
     public partial class Criterion
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Criterion()
         {
             Evaluations = new HashSet<Evaluation>();
@@ -31,7 +30,6 @@ namespace HumanResourcesManagmentCapstone.Models
         [Column(TypeName = "numeric")]
         public decimal CriteriaScore { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Evaluation> Evaluations { get; set; }
     }
 }

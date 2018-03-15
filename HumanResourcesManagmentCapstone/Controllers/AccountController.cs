@@ -151,7 +151,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                    var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
@@ -203,8 +203,9 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 if (ModelState.IsValid)
                 {
                     var user = await UserManager.FindByNameAsync(model.Email);
-                    if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
-                    {
+                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id))
+                    || (await UserManager.GetEmailAsync(user.Id)) != model.Email)
+                {
                         // Don't reveal that the user does not exist or is not confirmed
                         return View("ForgotPasswordConfirmation");
                     }

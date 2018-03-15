@@ -43,8 +43,9 @@ namespace HumanResourcesManagmentCapstone.Models
         public int EmployeeId { get; set; }
 
         public virtual Employee Employee { get; set; }
- 
-   }
+
+    }
+
     // Enum for CertificationType.
     public enum TypeOfCertification
     {
@@ -64,4 +65,4 @@ namespace HumanResourcesManagmentCapstone.Models
         Yes,
         No
     }
-    }
+}
