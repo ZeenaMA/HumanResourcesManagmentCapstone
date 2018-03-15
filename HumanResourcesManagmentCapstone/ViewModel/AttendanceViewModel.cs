@@ -7,7 +7,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 {
     public class AttendanceViewModel
     {
-        public int AttendanceId { get; set; }
+        public int Id { get; set; }
 
         public DateTime StartDate { get; set; }
 

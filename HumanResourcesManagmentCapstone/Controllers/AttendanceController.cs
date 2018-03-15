@@ -11,10 +11,11 @@ using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
     {
-        /// <summary>
-        ///
-        /// </summary>
-        public class AttendanceController : Controller
+    /// <summary>
+    /// This controller manages employee attendance
+    /// This controller uses Attendance and AttendanceViewModel classes
+    /// </summary>
+    public class AttendanceController : Controller
         {
             private ApplicationSignInManager _signInManager;
             private ApplicationUserManager _userManager;
@@ -60,10 +61,25 @@ namespace HumanResourcesManagmentCapstone.Controllers
         {
             return View();
         }
+
+        // POST: Default/DatePicker/5
+        [HttpPost]
+        public ActionResult DatePicker(int id, FormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         // GET: Employee
         public ActionResult Index()
             {
-                var users = db.Employees.ToList();
+            var users = db.Employees.ToList();
                 var model = new List<EmployeeViewModel>();
 
                 foreach (var item in users)
@@ -84,7 +100,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
 
             // GET: Employee/Details/5
-            // Example of displaying custom error view (Views/Shared/Error.cshtml) when id is null
             // The is parameter changed from int to int? to accept nulls
             public ActionResult Details(int? id)
             {

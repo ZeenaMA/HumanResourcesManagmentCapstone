@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HumanResourcesManagmentCapstone.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,49 +7,54 @@ using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    public class DefaultController : Controller
+    public class CommunicationSkillController : Controller
     {
-        // GET: Default
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        // GET: CommunicationSkill
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Default/Details/5
+        // GET: CommunicationSkill/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Default/Create
+        // GET: CommunicationSkill/Create
         public ActionResult Create()
         {
+            ViewBag.EmployeeId = new SelectList(db.Employees, "SkillLevel");
             return View();
         }
-
-        // POST: Default/Create
+             
+        // POST: CommunicationSkill/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+        public ActionResult Create(CommunicationSkill model)
+{ 
+       if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                // Create the course from the model
+                var communicationSkill = new CommunicationSkill
+                {
+               SkillLevel = model.SkillLevel,
+               SkillType = model.SkillType,
+                };
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+            return RedirectToAction("Index");
         }
 
-        // GET: Default/Edit/5
+        // GET: CommunicationSkill/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Default/Edit/5
+        // POST: CommunicationSkill/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -64,13 +70,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
         }
 
-        // GET: Default/Delete/5
+        // GET: CommunicationSkill/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Default/Delete/5
+        // POST: CommunicationSkill/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
