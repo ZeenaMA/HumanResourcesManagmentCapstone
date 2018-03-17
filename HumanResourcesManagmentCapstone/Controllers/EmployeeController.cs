@@ -111,6 +111,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             else
             {
                 return View("Error");
+                
             }
         }
         // GET: Employee/Create
@@ -204,6 +205,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     return View("Error");
                 }
 
+                // Use automapper instead of copying properties one by one
                 EmployeeViewModel model = Mapper.Map<EmployeeViewModel>(employee);
 
                 var userRoles = UserManager.GetRoles(userId);
@@ -325,5 +327,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             return View();
         }
+
     }
 }

@@ -8,170 +8,187 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
 
 namespace HumanResourcesManagmentCapstone.Controllers
-    {
-    /// <summary>
-    /// This controller manages employee attendance
-    /// This controller uses Attendance and AttendanceViewModel classes
-    /// </summary>
+{
     public class AttendanceController : Controller
+    {
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        public AttendanceController()
         {
-            private ApplicationSignInManager _signInManager;
-            private ApplicationUserManager _userManager;
-            private ApplicationDbContext db = new ApplicationDbContext();
+        }
 
-            public AttendanceController()
+        public AttendanceController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
             {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-
-            public AttendanceController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+            private set
             {
-                UserManager = userManager;
-                SignInManager = signInManager;
+                _signInManager = value;
             }
+        }
 
-            public ApplicationSignInManager SignInManager
+        public ApplicationUserManager UserManager
+        {
+            get
             {
-                get
-                {
-                    return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-                }
-                private set
-                {
-                    _signInManager = value;
-                }
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
-
-            public ApplicationUserManager UserManager
+            private set
             {
-                get
-                {
-                    return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                }
-                private set
-                {
-                    _userManager = value;
-                }
+                _userManager = value;
             }
-
+        }
 
         // GET: Attendance
-        public ActionResult DatePicker()
-        {
-            return View();
-        }
-
-        // POST: Default/DatePicker/5
-        [HttpPost]
-        public ActionResult DatePicker(int id, FormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Employee
         public ActionResult Index()
-            {
+        {
             var users = db.Employees.ToList();
-                var model = new List<EmployeeViewModel>();
+            var model = new List<EmployeeViewModel>();
 
-                foreach (var item in users)
-                {
-                    if (!(item is Employee))
-                    {
-                        model.Add(new EmployeeViewModel
-                        {
-                            Id = item.Id,
-                            Email = item.Email,
-                            FirstName = item.FirstName,
-                            LastName = item.LastName,
-                        });
-                    }
-                }
-
-                return View(model);
-            }
-
-            // GET: Employee/Details/5
-            // The is parameter changed from int to int? to accept nulls
-            public ActionResult Details(int? id)
+            foreach (var item in users)
             {
-                if (id != null)
+                model.Add(new EmployeeViewModel
                 {
-                    // Convert id to int instead of int?
-                    int userId = id ?? default(int);
-
-                    // find the user in the database
-                    var user = UserManager.FindById(userId);
-
-                    // Check if the user exists and it is an emplyee not a simple application user
-                    if (user != null && user is Employee)
-                    {
-                        var employee = (Employee)user;
-
-                        EmployeeViewModel model = Mapper.Map<EmployeeViewModel>(employee);
-
-                        model.Roles = string.Join(" ", UserManager.GetRoles(userId).ToArray());
-
-                        return View(model);
-                    }
-                    else
-                    {
-                        return View("Error");
-                    }
-                }
-                else
-                {
-                    return View("Error");
-                }
+                    Id = item.Id,
+                    UserName = item.UserName,
+                    FirstName = item.FirstName,
+                    MiddleName = item.MiddleName,
+                    LastName = item.LastName,
+                    NationalIqamaID = item.NationalIqamaID,
+                    Nationality = item.Nationality,
+                    DateOfBirth = item.DateOfBirth,
+                });
             }
 
+            return View(model);
+        }
 
-        // GET: Default/Edit/5
-        public ActionResult Edit(int id)
+
+        //GET: Attendance/Create
+        public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Default/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate,TargetWorkingHours,EmployeeWorkingHours,PresentDays,AbsentDays,FeedBack")] AttendanceViewModel attendanceViewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                db.AttendanceViewModels.Add(attendanceViewModel);
+                db.SaveChanges();
+                return RedirectToAction("AttendanceList");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(attendanceViewModel);
         }
 
-        // GET: Default/Delete/5
-        public ActionResult Delete(int id)
+        //GET: Attendance/AttendanceList
+        public ActionResult AttendanceList()
         {
-            return View();
-        }
+            //return View(db.Attendances.ToList());
+            return View(db.AttendanceViewModels.ToList());
 
-        // POST: Default/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
+        //public ActionResult List(int id)
+        //{
+        //    var users = db.AttendanceViewModels.Where(d => d.EmployeeId == id).ToList();
+        //    var model = new List<AttendanceViewModel>();
+        //    foreach (var user in users)
+        //    {
+        //        model.Add(new AttendanceViewModel
+        //        {
+        //            Id = user.Id,
+
+        //        });
+        //    }
+
+        //    return PartialView(model);
+        //}
+        // GET: Attendance/Create
+        //public ActionResult Create()
+        //{
+
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(AttendanceViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Attendance attendance = Mapper.Map<AttendanceViewModel, Attendance>(model);
+
+        //        db.Attendances.Add(attendance);
+        //        db.SaveChanges();
+        //        return RedirectToAction("I");
+        //    }
+
+        //    return View(model);
+        //}
+
+        ////POST: Attendance/Create
+        //[HttpPost]
+        //public ActionResult Create(AttendanceViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Attendance attendance = new Attendance
+        //        {
+        //            StartDate = model.StartDate,
+        //            EndDate = model.EndDate,
+        //            TargetWorkingHours = model.TargetWorkingHours,
+        //            EmployeeWorkingHours = model.EmployeeWorkingHours,
+        //            PresentDays = model.PresentDays,
+        //            AbsentDays = model.AbsentDays,
+        //            FeedBack = model.FeedBack,
+        //        };
+        //        return RedirectToAction("I");
+
+        //    }
+
+        //    return View(model);
+        //}
+
+        //public ActionResult I()
+        //{
+        //    var users = db.Attendances.ToList();
+        //    var model = new List<AttendanceViewModel>();
+
+        //    foreach (var item in users)
+        //    {
+        //        model.Add(new AttendanceViewModel
+        //            StartDate = model.StartDate,
+        //            EndDate = model.EndDate,
+        //            TargetWorkingHours = model.TargetWorkingHours,
+        //            EmployeeWorkingHours = model.EmployeeWorkingHours,
+        //            PresentDays = model.PresentDays,
+        //            AbsentDays = model.AbsentDays,
+        //            FeedBack = model.FeedBack,
+        //        });
+        //}
+
+        //    return View(model);
+        //}
+
     }
 }
+
+
+
+  

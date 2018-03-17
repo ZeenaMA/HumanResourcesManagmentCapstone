@@ -17,8 +17,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-            //TODO Define roles to add to your app, keep the Admin role first
-            string[] roles = { "Admin", "CEO", "Employee" };
+            string[] roles = { "Admin", "CEO"};
 
             //TODO Change admin user login information
             string adminEmail = "admin@dah.edu";

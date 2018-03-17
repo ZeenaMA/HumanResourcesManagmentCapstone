@@ -57,14 +57,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EmployeeType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmployeeType, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
@@ -81,11 +73,54 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Roles, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.HiredDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Roles, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Roles, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.HiredDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HiredDate, "", new { @class = "text-danger" })
             </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NationalIqamaID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NationalIqamaID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NationalIqamaID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BankAccountNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BankAccountNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BankAccountNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nationality, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Roles", new { @class = "control-label col-md-2" })
+            <span class=" col-md-10">
+                @foreach (var item in (IEnumerable<SelectListItem>)ViewBag.RolesSelectList)
+                {
+                    <input type="checkbox" name="roles" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
+                    @Html.Label(item.Value, new { @class = "control-label" })
+                }
+            </span>
         </div>
 
         <div class="form-group">

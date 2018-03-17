@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
 
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                   @* <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     <li>@Html.ActionLink("Employee", "Index", "Employee")</li>
                     <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
                 </ul>

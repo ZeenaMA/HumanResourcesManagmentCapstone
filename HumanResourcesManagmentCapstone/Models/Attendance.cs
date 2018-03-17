@@ -43,7 +43,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public virtual Employee Employee { get; set; }
 
-        public virtual Employee Employee1 { get; set; }
+        public virtual Employee EmployeeAttendace { get; set; }
 
         public virtual ICollection<Employee> Employees { get; set; }
 

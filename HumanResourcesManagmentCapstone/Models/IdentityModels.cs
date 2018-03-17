@@ -83,7 +83,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Attendances1)
-                .WithRequired(e => e.Employee1)
+                .WithRequired(e => e.EmployeeAttendace)
                 .HasForeignKey(e => e.EmployeeId)
                 .WillCascadeOnDelete(false);
 
@@ -111,7 +111,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Evaluations1)
-                .WithRequired(e => e.Employee1)
+                .WithRequired(e => e.EmployeeEvaluation)
                 .HasForeignKey(e => e.EvaluatorId)
                 .WillCascadeOnDelete(false);
 
@@ -166,6 +166,7 @@ namespace HumanResourcesManagmentCapstone.Models
                 .HasPrecision(7, 2);
         }
 
+        public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel> AttendanceViewModels { get; set; }
     }
 
     public class CustomUserRole : IdentityUserRole<int> { }

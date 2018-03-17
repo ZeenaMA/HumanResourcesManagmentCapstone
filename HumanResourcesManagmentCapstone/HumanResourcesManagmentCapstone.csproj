@@ -299,6 +299,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.0.js" />
     <Content Include="Scripts\jquery-ui-1.12.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -346,15 +348,13 @@
     <Content Include="Views\Employee\Delete.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Salary\Create.cshtml" />
-    <Content Include="Views\Attendance\DatePicker.cshtml" />
-    <Content Include="Views\Attendance\Index.cshtml" />
-    <Content Include="Views\Attendance\Details.cshtml" />
-    <Content Include="Views\Attendance\Create.cshtml" />
-    <Content Include="Views\Attendance\Edit.cshtml" />
     <Content Include="Views\Certification\Create.cshtml" />
     <Content Include="Views\CommunicationSkill\Create.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Attendance\Index.cshtml" />
+    <Content Include="Views\Attendance\Create.cshtml" />
+    <Content Include="Views\Attendance\AttendanceList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
