@@ -55,7 +55,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
         }
 
-        // GET: Employee
+        //GET: Employee
         public ActionResult Index()
         {
             var users = db.Employees.ToList();
@@ -191,7 +191,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View();
         }
 
-        // GET: Employee/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id != null)
@@ -247,10 +246,17 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 }
 
                 // Update the properties of the employee
+                employee.UserName = model.UserName;
                 employee.Email = model.Email;
                 employee.FirstName = model.FirstName;
                 employee.LastName = model.LastName;
                 employee.UserName = model.Email;
+                employee.EmployeeType = model.EmployeeType;
+                employee.HiredDate = model.HiredDate;
+                employee.NationalIqamaID = model.NationalIqamaID;
+                employee.BankAccountNumber = model.BankAccountNumber;
+                employee.Nationality = model.Nationality;
+                employee.DateOfBirth = model.DateOfBirth;
 
                 var userResult = UserManager.Update(employee);
 

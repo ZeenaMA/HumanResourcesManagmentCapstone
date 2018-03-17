@@ -104,6 +104,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(db.AttendanceViewModels.ToList());
 
         }
+
+       
         //public ActionResult List(int id)
         //{
         //    var users = db.AttendanceViewModels.Where(d => d.EmployeeId == id).ToList();
