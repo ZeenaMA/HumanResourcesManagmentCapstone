@@ -70,5 +70,13 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 
         // Used to diaplay the list of roles
         public string Roles { get; set; }
+
+        //This ????
+        public EmployeeViewModel()
+        {
+            Attendances = new List<Attendance>();
+        }
+        public List<Attendance> Attendances { get; set; }
+
     }
 }

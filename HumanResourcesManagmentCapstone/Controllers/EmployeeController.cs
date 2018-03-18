@@ -191,6 +191,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View();
         }
 
+        // GET: Employee/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id != null)

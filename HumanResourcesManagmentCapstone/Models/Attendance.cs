@@ -10,6 +10,7 @@ namespace HumanResourcesManagmentCapstone.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+
     /// <summary>
     /// Attendance class is a construct with custom types, it contains the employee attendance.
     /// </summary>
@@ -45,7 +46,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public virtual Employee EmployeeAttendace { get; set; }
 
-        public virtual ICollection<Employee> Employees { get; set; }
+        //public virtual ICollection<Employee> Employees { get; set; }
 
     }
 }

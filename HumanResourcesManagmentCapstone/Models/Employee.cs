@@ -20,12 +20,12 @@ namespace HumanResourcesManagmentCapstone.Models
         {
             Achievements = new HashSet<Achievement>();
             Attendances = new HashSet<Attendance>();
-            Attendances1 = new HashSet<Attendance>();
+            EmployeeAttendaces = new HashSet<Attendance>();
             Certifications = new HashSet<Certification>();
             CommunicationSkills = new HashSet<CommunicationSkill>();
             Constituents = new HashSet<Constituent>();
             Evaluations = new HashSet<Evaluation>();
-            Evaluations1 = new HashSet<Evaluation>();
+            EmployeeEvaluation = new HashSet<Evaluation>();
             Experiences = new HashSet<Experience>();
             Networks = new HashSet<Network>();
             Performances = new HashSet<Performance>();
@@ -78,7 +78,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public virtual ICollection<Attendance> Attendances { get; set; }
 
-        public virtual ICollection<Attendance> Attendances1 { get; set; }
+        public virtual ICollection<Attendance> EmployeeAttendaces { get; set; }
 
         public virtual ICollection<Certification> Certifications { get; set; }
 
@@ -88,7 +88,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public virtual ICollection<Evaluation> Evaluations { get; set; }
 
-        public virtual ICollection<Evaluation> Evaluations1 { get; set; }
+        public virtual ICollection<Evaluation> EmployeeEvaluation { get; set; }
 
         public virtual ICollection<Experience> Experiences { get; set; }
 

@@ -17,15 +17,24 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 
         public DateTime EndDate { get; set; }
 
+        [Display(Name = "Target Working Hours")]
         public decimal TargetWorkingHours { get; set; }
 
+        [Display(Name = "Employee Working Hours")]
         public decimal EmployeeWorkingHours { get; set; }
 
+        [Display(Name = "Present Days")]
         public int PresentDays { get; set; }
 
+        [Display(Name = "Absent Days")]
         public int AbsentDays { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string FeedBack { get; set; }
+
+        // Employee Attendance.
+        public int AdministratorId { get; set; }
+        public string Employee { get; set; }
+
     }
 }

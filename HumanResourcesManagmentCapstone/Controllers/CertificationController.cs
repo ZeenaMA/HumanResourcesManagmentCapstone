@@ -27,6 +27,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Certification/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.CertificationId = new SelectList(db.Certifications, "CertificationType");

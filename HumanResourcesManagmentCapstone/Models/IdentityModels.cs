@@ -82,7 +82,7 @@ namespace HumanResourcesManagmentCapstone.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Attendances1)
+                .HasMany(e => e.EmployeeAttendaces)
                 .WithRequired(e => e.EmployeeAttendace)
                 .HasForeignKey(e => e.EmployeeId)
                 .WillCascadeOnDelete(false);
@@ -110,7 +110,7 @@ namespace HumanResourcesManagmentCapstone.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Evaluations1)
+                .HasMany(e => e.EmployeeEvaluation)
                 .WithRequired(e => e.EmployeeEvaluation)
                 .HasForeignKey(e => e.EvaluatorId)
                 .WillCascadeOnDelete(false);

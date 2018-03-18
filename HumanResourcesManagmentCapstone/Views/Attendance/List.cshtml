@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel>
 
 @{
-    ViewBag.Title = "AttendanceList";
+    ViewBag.Title = "List";
 }
 
-<h2>AttendanceList</h2>
+<h2>List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -33,7 +33,7 @@
             @Html.DisplayNameFor(model => model.FeedBack)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdministratorId)
+            @Html.DisplayNameFor(model => model.EmployeeId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Employee)
@@ -65,7 +65,7 @@
             @Html.DisplayFor(modelItem => item.FeedBack)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AdministratorId)
+            @Html.DisplayFor(modelItem => item.EmployeeId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Employee)

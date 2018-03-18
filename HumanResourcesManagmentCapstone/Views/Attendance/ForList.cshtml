@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel>
-
-@{
-    ViewBag.Title = "AttendanceList";
+@if (Model.Count() <= 0)
+{
+    <p>Not Found.</p>
 }
+else
+{
 
-<h2>AttendanceList</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>ForList</h2>
 <table class="table">
     <tr>
         <th>
@@ -33,7 +31,7 @@
             @Html.DisplayNameFor(model => model.FeedBack)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdministratorId)
+            @Html.DisplayNameFor(model => model.EmployeeId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Employee)
@@ -41,7 +39,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)
@@ -65,17 +64,13 @@
             @Html.DisplayFor(modelItem => item.FeedBack)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AdministratorId)
+            @Html.DisplayFor(modelItem => item.EmployeeId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Employee)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
 
 </table>
+}
