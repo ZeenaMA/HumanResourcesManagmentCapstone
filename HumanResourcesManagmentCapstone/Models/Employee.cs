@@ -10,6 +10,7 @@ namespace HumanResourcesManagmentCapstone.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+
     /// <summary>
     /// Employee class is a construct that is the supertype of all the system users. 
     /// </summary>

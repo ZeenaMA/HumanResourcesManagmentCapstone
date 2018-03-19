@@ -7,71 +7,77 @@ using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    public class CertificationController : Controller
+
+    public class AchievementController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Certification
+        // GET: Achievement
         public ActionResult Index()
         {
-            return View();
+            var achievements = db.Achievements.ToList();
+            var model = new List<AchievementViewModel>();
+
+            foreach (var item in achievements)
+            {
+                model.Add(new AchievementViewModel
+                {
+                    Id = item.AchievementId,
+                    AchievementType = item.AchievementType,
+                    Discription = item.Discription,
+                });
+            }
+
+            return View(model);
         }
 
-        // GET: Certification/Details/5
+        // GET: Achievement/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Certification/Create
-        [Authorize]
+        // GET: Achievement/Create
         public ActionResult Create()
         {
-            ViewBag.CertificationId = new SelectList(db.Certifications, "CertificationId", "CertificationType");
-
-            ViewBag.CertificationId = new SelectList(db.Certifications, "CertificationId", "InternationalUniversity");
+            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
             return View();
         }
 
-        // POST: Certification/Create
+        // POST: Achievement/Create
         [HttpPost]
-        public ActionResult Create(Certification model)
+        public ActionResult Create(AchievementViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var certification = new Certification
+                var achievement = new Achievement
                 {
-                    CertificationType = model.CertificationType,
-                    StartDate = model.StartDate,
-                    EndDate = model.EndDate,
-                    UniversityRank = model.UniversityRank,
-                    Major = model.Major,
-                    GPA = model.GPA,    
-                    Extracurricular = model.Extracurricular,
-                    InternationalUniversity = model.InternationalUniversity,
+                    AchievementId = model.Id,
+                    AchievementType = model.AchievementType,
+                    Discription = model.Discription,
                 };
-                db.Certifications.Add(certification);
+
+                db.Achievements.Add(achievement);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
             return View(model);
         }
 
-        // GET: Certification/Edit/5
+        // GET: Achievement/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Certification/Edit/5
+        // POST: Achievement/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -87,13 +93,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
         }
 
-        // GET: Certification/Delete/5
+        // GET: Achievement/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Certification/Delete/5
+        // POST: Achievement/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

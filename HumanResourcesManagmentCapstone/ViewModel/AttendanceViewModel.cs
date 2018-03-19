@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Description: .
+* Author: Zee
+* Due date: 20/03/2018
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -34,6 +39,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 
         // Employee Attendance.
         public int AdministratorId { get; set; }
+
         public string Employee { get; set; }
 
     }

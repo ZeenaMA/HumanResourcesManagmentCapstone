@@ -10,6 +10,7 @@ namespace HumanResourcesManagmentCapstone.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+   
     /// <summary>
     /// Constituent class is a construct with custom types, it represents a multivalued relationship between employee and performance.
     /// </summary>

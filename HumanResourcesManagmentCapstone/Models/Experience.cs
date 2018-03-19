@@ -10,6 +10,7 @@ namespace HumanResourcesManagmentCapstone.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    
     /// <summary>
     /// Experience class is a construct with custom types, this class contains all the experiences of an employee.
     /// </summary>

@@ -14,6 +14,7 @@ namespace HumanResourcesManagmentCapstone.Models
     /// <summary>
     /// Evaluation class is a construct with custom types, it represents the evlauation performed by/ belog to an employee based on criteria.
     /// </summary>
+    /// 
     [Table("Evaluation")]
     public partial class Evaluation
     {

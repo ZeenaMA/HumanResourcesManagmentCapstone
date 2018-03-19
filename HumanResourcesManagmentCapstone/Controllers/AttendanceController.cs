@@ -1,4 +1,9 @@
-﻿using AutoMapper;
+﻿/*
+* Description: 
+* Author: Zee
+* Due date: 27/02/2018
+*/
+using AutoMapper;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using HumanResourcesManagmentCapstone.Models;
@@ -56,10 +61,10 @@ namespace HumanResourcesManagmentCapstone.Controllers
         // List of Employees.
         public ActionResult Index()
         {
-            var users = db.Employees.ToList();
+            var employees = db.Employees.ToList();
             var model = new List<EmployeeViewModel>();
 
-            foreach (var item in users)
+            foreach (var item in employees)
             {
                 model.Add(new EmployeeViewModel
                 {
@@ -81,54 +86,43 @@ namespace HumanResourcesManagmentCapstone.Controllers
         //List of All attendances.
         public ActionResult AttendanceList()
         {
-            var attendance = db.Attendances.ToList();
-
+            var attendances = db.Attendances.ToList();
             var model = new List<AttendanceViewModel>();
-            foreach (var item in attendance)
+
+            foreach (var item in attendances)
             {
                 model.Add(new AttendanceViewModel
                 {
                     Id = item.AttendanceId,
                     StartDate = item.StartDate,
-                    // OTHERSTUFF??!!!
+                    EndDate = item.EndDate,
+                    TargetWorkingHours = item.TargetWorkingHours,
+                    PresentDays = item.PresentDays,
+                    AbsentDays = item.AbsentDays,
+                    EmployeeWorkingHours = item.EmployeeWorkingHours,
+                    FeedBack = item.FeedBack,
                 });
             }
             return View(model);
-            //var users = db.Attendances.ToList();
-            //var model = new List<AttendanceViewModel>();
-            //foreach (var user in users)
-            //{
-            //    model.Add(new AttendanceViewModel
-            //    {
-            //        //Id = user.Id,???????????????
-            //        StartDate = user.StartDate,
-            //        EndDate = user.EndDate,
-            //        TargetWorkingHours = user.TargetWorkingHours,
-            //        PresentDays = user.PresentDays,
-            //        AbsentDays = user.AbsentDays,
-            //        EmployeeWorkingHours = user.EmployeeWorkingHours,
-            //        FeedBack = user.FeedBack,
-            //        //Employee = user.Employee.LastName,
-            //    });
-            //}
-            //return View(model);
         }
 
+        // Create attendance. 
         //GET: Attendance/Create
         public ActionResult Create()
         {
             return View();
         }
-        //Post:
+
+        //Post:Attendance/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult Create(AttendanceViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Find Employee
                 var attendance = new Attendance
                 {
+                    AttendanceId = model.Id,
                     StartDate = model.StartDate,
                     EndDate = model.EndDate,
                     TargetWorkingHours = model.TargetWorkingHours,
@@ -136,38 +130,31 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     AbsentDays = model.AbsentDays,
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
-                    AdministratorId = model.AdministratorId,
                 };
                 db.Attendances.Add(attendance);
                 db.SaveChanges();
+                return RedirectToAction("AttendanceList");
             }
-            return RedirectToAction("AttendanceList");
+            return View(model);
         }
 
-        ////GET: Attendance/AttendanceList
-        //public ActionResult AttendanceList()
-        //{
-        //    //return View(db.Attendances.ToList());
-        //    return View(db.Attendances.ToList());
-
-        //}
-
-        //AdministratorId
-        public ActionResult ForList(int id)
+        // List attendance for each employee.
+        public ActionResult EmployeeAttendance(int id)
         {
-            var users = db.Attendances.Where(d => d.EmployeeId == id).ToList();
+            var items = db.Attendances.Where(d => d.AdministratorId == id).ToList();
             var model = new List<AttendanceViewModel>();
-            foreach (var user in users)
+            foreach (var item in items)
             {
                 model.Add(new AttendanceViewModel
                 {
-                    StartDate = user.StartDate,
-                    EndDate = user.EndDate,
-                    TargetWorkingHours = user.TargetWorkingHours,
-                    PresentDays = user.PresentDays,
-                    AbsentDays = user.AbsentDays,
-                    EmployeeWorkingHours = user.EmployeeWorkingHours,
-                    FeedBack = user.FeedBack,
+                    Id = item.AttendanceId,
+                    StartDate = item.StartDate,
+                    EndDate = item.EndDate,
+                    TargetWorkingHours = item.TargetWorkingHours,
+                    PresentDays = item.PresentDays,
+                    AbsentDays = item.AbsentDays,
+                    EmployeeWorkingHours = item.EmployeeWorkingHours,
+                    FeedBack = item.FeedBack,
                     //Employee = user.Employee,
                 });
             }

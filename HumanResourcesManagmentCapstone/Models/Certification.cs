@@ -10,6 +10,7 @@ namespace HumanResourcesManagmentCapstone.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    
     /// <summary>
     /// Certification class is a construct with custom types, this class contains all the certifications of an employee. 
     /// </summary>

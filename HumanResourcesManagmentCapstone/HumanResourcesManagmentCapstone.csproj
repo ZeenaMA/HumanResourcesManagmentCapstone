@@ -201,6 +201,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AchievementController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\CommunicationSkillController.cs" />
@@ -591,6 +592,10 @@
     <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
     <Content Include="Views\Attendance\AttendanceList.cshtml" />
+    <Content Include="Views\Attendance\ForList.cshtml" />
+    <Content Include="Views\Attendance\EmployeeAttendance.cshtml" />
+    <Content Include="Views\Achievement\Create.cshtml" />
+    <Content Include="Views\Achievement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

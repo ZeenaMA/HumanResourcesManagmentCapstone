@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CertificationViewModel</h4>
+        @*<h4>CertificationViewModel</h4>*@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -61,6 +61,7 @@
                 @Html.ValidationMessageFor(model => model.Extracurricular, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.CertificationType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

@@ -1,4 +1,9 @@
-﻿using HumanResourcesManagmentCapstone.Models;
+﻿/*
+* Description: 
+* Author: Zee
+* Due date: 27/02/2018
+*/
+using HumanResourcesManagmentCapstone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

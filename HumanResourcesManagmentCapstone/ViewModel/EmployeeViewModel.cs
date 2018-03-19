@@ -1,4 +1,9 @@
-﻿using HumanResourcesManagmentCapstone.Models;
+﻿/*
+* Description: .
+* Author: Zee
+* Due date: 20/03/2018
+*/
+using HumanResourcesManagmentCapstone.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -71,7 +76,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         // Used to diaplay the list of roles
         public string Roles { get; set; }
 
-        //This ????
+        // List of attendances ????
         public EmployeeViewModel()
         {
             Attendances = new List<Attendance>();

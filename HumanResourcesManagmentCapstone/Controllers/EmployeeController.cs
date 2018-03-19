@@ -1,4 +1,9 @@
-﻿using AutoMapper;
+﻿/*
+* Description: Controller for adding/ editing/ deleting/ viewing employess.
+* Author: Zee
+* Due date: 27/02/2018
+*/
+using AutoMapper;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using HumanResourcesManagmentCapstone.Models;
@@ -10,11 +15,10 @@ using System.Web;
 using System.Web.Mvc;
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    // Add.
-
     /// <summary>
-    /// This controller uses Employee and EmployeeViewModel classes
+    /// This controller Lists all the members and allows the admin to view/ edit or delete any member, also, the admin can create new memebers.
     /// </summary>
+    /// 
     public class EmployeeController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -119,7 +123,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         public ActionResult Create()
         {
             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
-            ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeType");
 
             return View();
         }
@@ -162,7 +166,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                         {
                             // Create a check list object
                             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
-                            ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+                            ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
 
                             // Display error messages in the view @Html.ValidationSummary()
                             ModelState.AddModelError(string.Empty, roleResult.Errors.First());
@@ -177,7 +181,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 }
                 else
                 {
-                    ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+                    ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
                     ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
 
                     // Display error messages in the view @Html.ValidationSummary()
@@ -187,7 +191,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
 
             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
-            ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeType");
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
             return View();
         }
 
