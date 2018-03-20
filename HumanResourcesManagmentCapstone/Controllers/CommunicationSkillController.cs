@@ -31,6 +31,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
         // GET: CommunicationSkill/Create
         public ActionResult Create()
         {
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+
             ViewBag.EmployeeId = new SelectList(db.Employees, "SkillLevel");
             return View();
         }
@@ -49,7 +51,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 };
             }
 
-
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
             return RedirectToAction("Index");
         }
 

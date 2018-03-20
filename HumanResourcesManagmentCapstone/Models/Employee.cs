@@ -21,7 +21,7 @@ namespace HumanResourcesManagmentCapstone.Models
         {
             Achievements = new HashSet<Achievement>();
             Attendances = new HashSet<Attendance>();
-            EmployeeAttendaces = new HashSet<Attendance>();
+            AdminAttendances = new HashSet<Attendance>();
             Certifications = new HashSet<Certification>();
             CommunicationSkills = new HashSet<CommunicationSkill>();
             Constituents = new HashSet<Constituent>();
@@ -79,7 +79,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public virtual ICollection<Attendance> Attendances { get; set; }
 
-        public virtual ICollection<Attendance> EmployeeAttendaces { get; set; }
+        public virtual ICollection<Attendance> AdminAttendances { get; set; }
 
         public virtual ICollection<Certification> Certifications { get; set; }
 

@@ -444,7 +444,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Models\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -589,21 +589,18 @@
     <Content Include="Views\CommunicationSkill\Create.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
-    <Content Include="Views\Attendance\AttendanceList.cshtml" />
-    <Content Include="Views\Attendance\ForList.cshtml" />
-    <Content Include="Views\Attendance\EmployeeAttendance.cshtml" />
     <Content Include="Views\Achievement\Create.cshtml" />
     <Content Include="Views\Achievement\Index.cshtml" />
+    <Content Include="Views\Attendance\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Models\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Models\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

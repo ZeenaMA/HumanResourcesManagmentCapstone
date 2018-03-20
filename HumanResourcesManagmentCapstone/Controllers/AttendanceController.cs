@@ -19,72 +19,36 @@ namespace HumanResourcesManagmentCapstone.Controllers
 {
     public class AttendanceController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        public AttendanceController()
-        {
-        }
-
-        public AttendanceController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
-
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
-
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
-
+        
         // GET: Attendance
         // List of Employees.
-        public ActionResult Index()
-        {
-            var employees = db.Employees.ToList();
-            var model = new List<EmployeeViewModel>();
+        //public ActionResult Index()
+        //{
+        //    var employees = db.Employees.ToList();
+        //    var model = new List<EmployeeViewModel>();
 
-            foreach (var item in employees)
-            {
-                model.Add(new EmployeeViewModel
-                {
-                    Id = item.Id,
-                    UserName = item.UserName,
-                    FirstName = item.FirstName,
-                    MiddleName = item.MiddleName,
-                    LastName = item.LastName,
-                    NationalIqamaID = item.NationalIqamaID,
-                    Nationality = item.Nationality,
-                    DateOfBirth = item.DateOfBirth,
-                });
-            }
+        //    foreach (var item in employees)
+        //    {
+        //        model.Add(new EmployeeViewModel
+        //        {
+        //            Id = item.Id,
+        //            UserName = item.UserName,
+        //            FirstName = item.FirstName,
+        //            MiddleName = item.MiddleName,
+        //            LastName = item.LastName,
+        //            NationalIqamaID = item.NationalIqamaID,
+        //            Nationality = item.Nationality,
+        //            DateOfBirth = item.DateOfBirth,
+        //        });
+        //    }
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
 
-        // GET:Attendance/AttendanceList
+        // GET:Attendance
         //List of All attendances.
-        public ActionResult AttendanceList()
+        public ActionResult Index()
         {
             var attendances = db.Attendances.ToList();
             var model = new List<AttendanceViewModel>();
@@ -110,12 +74,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
         //GET: Attendance/Create
         public ActionResult Create()
         {
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
             return View();
         }
 
         //Post:Attendance/Create
         [HttpPost]
-       // [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(AttendanceViewModel model)
         {
             if (ModelState.IsValid)
@@ -130,37 +95,15 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     AbsentDays = model.AbsentDays,
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
+                    AdministratorId = model.AdministratorId,
                 };
-                db.Attendances.Add(attendance);
-                db.SaveChanges();
-                return RedirectToAction("AttendanceList");
-            }
-            return View(model);
+            db.Attendances.Add(attendance);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
-
-        // List attendance for each employee.
-        public ActionResult EmployeeAttendance(int id)
-        {
-            var items = db.Attendances.Where(d => d.AdministratorId == id).ToList();
-            var model = new List<AttendanceViewModel>();
-            foreach (var item in items)
-            {
-                model.Add(new AttendanceViewModel
-                {
-                    Id = item.AttendanceId,
-                    StartDate = item.StartDate,
-                    EndDate = item.EndDate,
-                    TargetWorkingHours = item.TargetWorkingHours,
-                    PresentDays = item.PresentDays,
-                    AbsentDays = item.AbsentDays,
-                    EmployeeWorkingHours = item.EmployeeWorkingHours,
-                    FeedBack = item.FeedBack,
-                    //Employee = user.Employee,
-                });
-            }
-
-            return View();
-        }
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+            return RedirectToAction("Index");
+    }
 
     }
 }

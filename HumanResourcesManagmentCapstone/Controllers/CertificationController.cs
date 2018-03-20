@@ -32,9 +32,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Certification/Create
-        [Authorize]
+        //[Authorize]
         public ActionResult Create()
         {
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+
             ViewBag.CertificationId = new SelectList(db.Certifications, "CertificationId", "CertificationType");
 
             ViewBag.CertificationId = new SelectList(db.Certifications, "CertificationId", "InternationalUniversity");
@@ -62,6 +64,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
             return View(model);
         }
 

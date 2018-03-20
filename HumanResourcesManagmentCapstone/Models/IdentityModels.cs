@@ -78,13 +78,13 @@ namespace HumanResourcesManagmentCapstone.Models
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Attendances)
                 .WithRequired(e => e.Employee)
-                .HasForeignKey(e => e.AdministratorId)
+                .HasForeignKey(e => e.EmployeeId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
-                .HasMany(e => e.EmployeeAttendaces)
-                .WithRequired(e => e.EmployeeAttendace)
-                .HasForeignKey(e => e.EmployeeId)
+                .HasMany(e => e.AdminAttendances)
+                .WithRequired(e => e.Administrator)
+                .HasForeignKey(e => e.AdministratorId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
