@@ -57,7 +57,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
 
            //AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
-           return View(model);
+           return View();
     }
 
     // GET: Achievement/Create
@@ -113,7 +113,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             //AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
 
-            return View(model);
+            return View();
         }
 
     }
