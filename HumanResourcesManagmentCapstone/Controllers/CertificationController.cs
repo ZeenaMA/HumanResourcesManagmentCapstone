@@ -1,7 +1,7 @@
 ﻿/*
-* Description: 
+* Description: Controller for managing employee certification.
 * Author: Zee
-* Due date: 27/02/2018
+* Due date: 20/03/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;

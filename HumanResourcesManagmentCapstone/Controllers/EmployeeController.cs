@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for adding/ editing/ deleting/ viewing employess.
 * Author: Zee
-* Due date: 27/02/2018
+* Due date: 20/03/2018
 */
 using AutoMapper;
 using Microsoft.AspNet.Identity;
@@ -60,6 +60,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         //GET: Employee
+        // List employees.
         public ActionResult Index()
         {
             var users = db.Employees.ToList();
@@ -99,7 +100,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 {
                     var employee = (Employee)user;
 
-                    // Use Automapper instead of copying properties one by one
                     EmployeeViewModel model = Mapper.Map<EmployeeViewModel>(employee);
 
                     model.Roles = string.Join(" ", UserManager.GetRoles(userId).ToArray());
@@ -108,7 +108,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 }
                 else
                 {
-                    // Customize the error view: /Views/Shared/Error.cshtml
                     return View("Error");
                 }
             }
@@ -168,7 +167,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
                             ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
 
-                            // Display error messages in the view @Html.ValidationSummary()
                             ModelState.AddModelError(string.Empty, roleResult.Errors.First());
 
                             // Return a view if you want to see error message saved in ModelState
@@ -184,7 +182,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
                     ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
 
-                    // Display error messages in the view @Html.ValidationSummary()
                     ModelState.AddModelError(string.Empty, result.Errors.First());
                     return View();
                 }
@@ -209,7 +206,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     return View("Error");
                 }
 
-                // Use automapper instead of copying properties one by one
                 EmployeeViewModel model = Mapper.Map<EmployeeViewModel>(employee);
 
                 var userRoles = UserManager.GetRoles(userId);
