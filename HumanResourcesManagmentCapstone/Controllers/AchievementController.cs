@@ -1,7 +1,7 @@
 ﻿/*
-* Description: Controller for managing achivements 
+* Description: Controller for managing employee achievements.
 * Author: Zee
-* Due date: 27/02/2018
+* Due date: 2/03/2018
 */
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
@@ -17,7 +17,7 @@ using System.Web.Mvc;
 namespace HumanResourcesManagmentCapstone.Controllers
 {
     /// <summary>
-    /// Create/ Edit/ Delete achivements.
+    /// Create/ Edit/ Delete achievements for employees.
     /// </summary>
     public class AchievementController : Controller
     {
