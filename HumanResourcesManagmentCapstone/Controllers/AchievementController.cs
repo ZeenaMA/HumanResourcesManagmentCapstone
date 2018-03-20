@@ -26,17 +26,17 @@ namespace HumanResourcesManagmentCapstone.Controllers
         // GET: Achievement
         public ActionResult Index()
         {
-            var items = db.Achievements.ToList();
+            var achievements = db.Achievements.ToList();
             var model = new List<AchievementViewModel>();
-            foreach (var item in items)
+            foreach (var item in achievements)
             {
                 model.Add(new AchievementViewModel
                 {
                     Id = item.AchievementId,
                     AchievementType = item.AchievementType,
                     Discription = item.Discription,
-                    Employee = item.Employee.UserName,
-
+                    //HACK get the fullname
+                    EmployeeName = item.Employee.FullName,
                 });
             }
 
@@ -56,15 +56,17 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 return HttpNotFound();
             }
 
-            AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
+           //AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
            return View(model);
     }
 
     // GET: Achievement/Create
     public ActionResult Create()
         {
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
-            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
+            //HACK Build the list to display with full name
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName});
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+            //ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
             return View();
         }
 
@@ -82,12 +84,16 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     AchievementType = model.AchievementType,
                     EmployeeId = model.EmployeeId,
                 };
+
                 db.Achievements.Add(achievement);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FirstName");
-            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
+
+            //HACK Get employee list using firstname and lastname
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+            //ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
             return View(model);
         }
 
@@ -105,7 +111,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 return HttpNotFound();
             }
 
-            AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
+            //AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
 
             return View(model);
         }

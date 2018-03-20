@@ -20,7 +20,7 @@ namespace HumanResourcesManagmentCapstone.Models
         [Key]
         public int AchievementId { get; set; }
 
-        public TypeOfAchievement? AchievementType { get; set; }
+        public AchievementType? AchievementType { get; set; }
 
         [StringLength(200)]
         public string Discription { get; set; }
@@ -30,7 +30,7 @@ namespace HumanResourcesManagmentCapstone.Models
         public virtual Employee Employee { get; set; }
     }
     // Enum for AchievementType .
-    public enum TypeOfAchievement
+    public enum AchievementType
     {
         Business,
         NonProfit,

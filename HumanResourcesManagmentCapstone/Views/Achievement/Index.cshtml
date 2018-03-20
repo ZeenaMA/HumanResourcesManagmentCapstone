@@ -1,5 +1,11 @@
 ﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AchievementViewModel>
 
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -8,11 +14,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Discription)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>
+        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.Employee)
+            @Html.DisplayNameFor(model => model.EmployeeName)
         </th>
         <th></th>
     </tr>
@@ -22,11 +28,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Discription)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.EmployeeId)
-        </td>
+        </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.Employee)
+            @Html.DisplayFor(modelItem => item.EmployeeName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

@@ -98,8 +98,13 @@ namespace HumanResourcesManagmentCapstone.Models
         public virtual ICollection<Performance> Performances { get; set; }
 
         public virtual ICollection<Salary> Salaries { get; set; }
+
+        //HACK method that returns fullname not stored in database
+        [NotMapped]
+        public string FullName { get { return (FirstName + " " + LastName); } }
     }
 
+    //HACK Change TypeOfEmployee to EmployeeType
     // Enum for EmployeeType.
     public enum EmployeeType
     {

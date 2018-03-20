@@ -20,12 +20,13 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         public int Id { get; set; }
 
         [Display(Name = "Achievement Type")]
-        public TypeOfAchievement? AchievementType { get; set; }
+        public AchievementType? AchievementType { get; set; }
 
         public string Discription { get; set; }
 
         public int EmployeeId { get; set; }
 
-        public string Employee { get; set; }
+        [Display(Name ="Employee Name")]
+        public string EmployeeName { get; set; }
     }
 }
