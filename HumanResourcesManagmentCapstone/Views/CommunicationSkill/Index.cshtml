@@ -1,10 +1,10 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AchievementViewModel>
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.CommunicationSkillViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,10 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Discription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AchievementType)
+            @Html.DisplayNameFor(model => model.SkillType)
         </th>
         @*<th>
             @Html.DisplayNameFor(model => model.EmployeeId)
@@ -29,10 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Discription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AchievementType)
+            @Html.DisplayFor(modelItem => item.SkillType)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.EmployeeId)

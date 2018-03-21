@@ -3,100 +3,215 @@
 * Author: Zee
 * Due date: 20/03/2018
 */
+using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
+using HumanResourcesManagmentCapstone.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
     public class CommunicationSkillController : Controller
-    {
+    { 
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// This action lists the CommunicationSkills of each employee.
+        /// </summary>
+        /// <returns> CommunicationSkill, Index view</returns>
         // GET: CommunicationSkill
         public ActionResult Index()
         {
-            return View();
+            var communicationSkills = db.CommunicationSkills.ToList();
+            var model = new List<CommunicationSkillViewModel>();
+            foreach (var item in communicationSkills)
+            {
+                model.Add(new CommunicationSkillViewModel
+                {
+                    Id = item.CommunicationSkillId,
+                    SkillType = item.SkillType,
+                    SkillLevel = item.SkillLevel,
+                    EmployeeName = item.Employee.FullName,
+                });
+            }
+
+            return View(model);
         }
 
+        /// <summary>
+        ///  Details of each CommunicationSkill.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>CommunicationSkill, Details view</returns>
         // GET: CommunicationSkill/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CommunicationSkill communicationSkill = db.CommunicationSkills.Find(id);
+            if (communicationSkill == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new CommunicationSkillViewModel
+            {
+                Id = communicationSkill.CommunicationSkillId,
+                SkillType = communicationSkill.SkillType,
+                SkillLevel = communicationSkill.SkillLevel,
+                EmployeeName = communicationSkill.Employee.FullName,
+            };
+            return View(model);
         }
 
         // GET: CommunicationSkill/Create
         public ActionResult Create()
         {
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
 
-            ViewBag.EmployeeId = new SelectList(db.Employees, "SkillLevel");
+            ViewBag.CommunicationSkillId = new SelectList(db.CommunicationSkills, "CommunicationSkillId", "SkillLevel");
             return View();
         }
-             
+
+        /// <summary>
+        /// This action enables the creation of an CommunicationSkill.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns> CommunicationSkill, Create view</returns>    
         // POST: CommunicationSkill/Create
         [HttpPost]
-        public ActionResult Create(CommunicationSkill model)
-{ 
-       if (ModelState.IsValid)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CommunicationSkillViewModel model)
+{
+            if (ModelState.IsValid)
             {
-                // Create the course from the model
                 var communicationSkill = new CommunicationSkill
                 {
-               SkillLevel = model.SkillLevel,
-               SkillType = model.SkillType,
+                    CommunicationSkillId = model.Id,
+                    SkillType = model.SkillType,
+                    SkillLevel = model.SkillLevel,
+                    EmployeeId = model.EmployeeId,
                 };
+
+                db.CommunicationSkills.Add(communicationSkill);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
-            return RedirectToAction("Index");
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+            ViewBag.CommunicationSkillId = new SelectList(db.CommunicationSkills, "CommunicationSkillId", "SkillLevel");
+
+            return View(model);
         }
 
         // GET: CommunicationSkill/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            CommunicationSkill communicationSkill = db.CommunicationSkills.Find(id);
+            if (communicationSkill == null)
+            {
+                return HttpNotFound();
+            }
+
+            CommunicationSkillViewModel model = new CommunicationSkillViewModel
+            {
+                Id = communicationSkill.CommunicationSkillId,
+                SkillType = communicationSkill.SkillType,
+                SkillLevel = communicationSkill.SkillLevel,
+            };
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
+            ViewBag.CommunicationSkillId = new SelectList(db.CommunicationSkills, "CommunicationSkillId", "SkillLevel");
             return View();
         }
 
-        // POST: CommunicationSkill/Edit/5
+        /// <summary>
+        /// This action enables the editing of a CommunicationSkill.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns> CommunicationSkill, Edit view</returns>
+        // (POST: CommunicationSkill/Edit/5) 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CommunicationSkillViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                CommunicationSkill communicationSkill = db.CommunicationSkills.Find(id);
+                if (communicationSkill == null)
+                {
+                    return HttpNotFound();
+                }
+                communicationSkill.SkillType = model.SkillType;
+                communicationSkill.SkillLevel = model.SkillLevel;
+                db.Entry(communicationSkill).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
+            ViewBag.CommunicationSkillId = new SelectList(db.CommunicationSkills, "CommunicationSkillId", "SkillLevel");
+            return View(model);
         }
 
-        // GET: CommunicationSkill/Delete/5
-        public ActionResult Delete(int id)
+        // GET: CommunicationSkill/Delete/5. 
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CommunicationSkill communicationSkill = db.CommunicationSkills.Find(id);
+            if (communicationSkill == null)
+            {
+                return HttpNotFound();
+            }
+            var model = new CommunicationSkillViewModel
+            {
+                Id = communicationSkill.CommunicationSkillId,
+                SkillType = communicationSkill.SkillType,
+                SkillLevel = communicationSkill.SkillLevel,
+            };
+
+            return View(model);
+        }
+        /// <summary>
+        /// This action allows deleting CommunicationSkill.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> CommunicationSkill, Delete view</returns>
+        // (POST: CommunicationSkill/Delete/5) 
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            CommunicationSkill communicationSkill = db.CommunicationSkills.Find(id);
+            db.CommunicationSkills.Remove(communicationSkill);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // POST: CommunicationSkill/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        protected override void Dispose(bool disposing)
         {
-            try
+            if (disposing)
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                db.Dispose();
             }
-            catch
-            {
-                return View();
-            }
+            base.Dispose(disposing);
         }
     }
 }
+

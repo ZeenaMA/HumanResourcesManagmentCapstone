@@ -1,10 +1,9 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AchievementViewModel>
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.ExperienceViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,10 +11,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Discription)
+            @Html.DisplayNameFor(model => model.EmploymentPlace)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AchievementType)
+            @Html.DisplayNameFor(model => model.EmploymentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         @*<th>
             @Html.DisplayNameFor(model => model.EmployeeId)
@@ -29,10 +37,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Discription)
+            @Html.DisplayFor(modelItem => item.EmploymentPlace)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AchievementType)
+            @Html.DisplayFor(modelItem => item.EmploymentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.EmployeeId)

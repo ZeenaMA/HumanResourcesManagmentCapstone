@@ -1,5 +1,5 @@
 ﻿/*
-* Description: .
+* Description: View model for Achievement passes information between Achievement views and its controller.
 * Author: Zee
 * Due date: 20/03/2018
 */
@@ -13,7 +13,7 @@ using System.Web;
 namespace HumanResourcesManagmentCapstone.ViewModel
 {
     /// <summary>
-    /// 
+    /// View model based on the Achievement model.
     /// </summary>
     public class AchievementViewModel
     {

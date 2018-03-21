@@ -35,7 +35,7 @@ namespace HumanResourcesManagmentCapstone.Models
         [StringLength(200)]
         public string Description { get; set; }
 
-        public Orgnization? OrgnizationType { get; set; }
+        public OrgnizationType? OrgnizationType { get; set; }
 
         public int EmployeeId { get; set; }
 
@@ -43,7 +43,7 @@ namespace HumanResourcesManagmentCapstone.Models
     }
 
     // Enum for OrgnizationType
-    public enum Orgnization
+    public enum OrgnizationType
     {
         Corporate,
         Startup,

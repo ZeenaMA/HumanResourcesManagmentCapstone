@@ -1,7 +1,9 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel>
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.CertificationViewModel>
 @{
     ViewBag.Title = "Index";
 }
+<h2>List</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -14,23 +16,23 @@
             @Html.DisplayNameFor(model => model.EndDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TargetWorkingHours)
+            @Html.DisplayNameFor(model => model.UniversityRank)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmployeeWorkingHours)
+            @Html.DisplayNameFor(model => model.Major)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PresentDays)
+            @Html.DisplayNameFor(model => model.GPA)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AbsentDays)
+            @Html.DisplayNameFor(model => model.Extracurricular)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FeedBack)
+            @Html.DisplayNameFor(model => model.EmployeeId)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.AdministratorId)
-        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
         <th></th>
     </tr>
 
@@ -43,23 +45,23 @@
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TargetWorkingHours)
+            @Html.DisplayFor(modelItem => item.UniversityRank)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EmployeeWorkingHours)
+            @Html.DisplayFor(modelItem => item.Major)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PresentDays)
+            @Html.DisplayFor(modelItem => item.GPA)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AbsentDays)
+            @Html.DisplayFor(modelItem => item.Extracurricular)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FeedBack)
+            @Html.DisplayFor(modelItem => item.EmployeeId)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.AdministratorId)
-        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |

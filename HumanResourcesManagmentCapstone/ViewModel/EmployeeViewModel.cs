@@ -1,5 +1,5 @@
 ﻿/*
-* Description: .
+* Description: View model for Employee passes information between Employee views and its controller.
 * Author: Zee
 * Due date: 20/03/2018
 */
@@ -14,6 +14,9 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 {
     public class EmployeeViewModel
     {
+        /// <summary>
+        /// View model based on the Employee model.
+        /// </summary>
         public int Id { get; set; }
 
         [Required]

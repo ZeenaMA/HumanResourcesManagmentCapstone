@@ -37,10 +37,11 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [DataType(DataType.MultilineText)]
         public string FeedBack { get; set; }
 
-        // Employee Attendance.
         public int AdministratorId { get; set; }
 
-        public string Employee { get; set; }
+        public int EmployeeId { get; set; }
 
+        [Display(Name = "Employee Name")]
+        public string EmployeeName { get; set; }
     }
 }

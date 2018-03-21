@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for managing employee achievements.
 * Author: Zee
-* Due date: 2/03/2018
+* Due date: 20/03/2018
 */
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
@@ -16,13 +16,14 @@ using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    /// <summary>
-    /// Create/ Edit/ Delete achievements for employees.
-    /// </summary>
     public class AchievementController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// This action lists the Achivements of each employee.
+        /// </summary>
+        /// <returns> Achivement, Index view</returns>
         // GET: Achievement
         public ActionResult Index()
         {
@@ -35,7 +36,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     Id = item.AchievementId,
                     AchievementType = item.AchievementType,
                     Discription = item.Discription,
-                    //HACK get the fullname
                     EmployeeName = item.Employee.FullName,
                 });
             }
@@ -43,6 +43,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        ///  Details of each achievement-.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Achievement, Details view</returns>
         // GET: Achievement/Details/5
         public ActionResult Details(int? id)
         {
@@ -56,20 +61,30 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 return HttpNotFound();
             }
 
-           //AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
-           return View();
+            var model = new AchievementViewModel
+            {
+                Id = achievement.AchievementId,
+                Discription = achievement.Discription,
+                AchievementType = achievement.AchievementType,
+                EmployeeName = achievement.Employee.FullName,
+            };
+            return View(model);
     }
 
     // GET: Achievement/Create
     public ActionResult Create()
         {
-            //HACK Build the list to display with full name
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName});
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
-            //ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
+            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
             return View();
         }
 
+        /// <summary>
+        /// This action enables the creation of an Achievement.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns> Achievement, Create view</returns>
         // POST: Achievement/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -90,10 +105,9 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 return RedirectToAction("Index");
             }
 
-            //HACK Get employee list using firstname and lastname
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
-            //ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
+            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
             return View(model);
         }
 
@@ -111,11 +125,90 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 return HttpNotFound();
             }
 
-            //AchievementViewModel model = Mapper.Map<Achievement, AchievementViewModel>(achievement);
-
+            AchievementViewModel model = new AchievementViewModel
+            {
+                Id = achievement.AchievementId,
+                Discription = achievement.Discription,
+                AchievementType = achievement.AchievementType,
+            };
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
             return View();
         }
 
+        /// <summary>
+        /// This action enables the editing of a Achievement.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns> Achievement, Edit view</returns>
+        // (POST: Achievement/Edit/5) 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, AchievementViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Achievement achievement = db.Achievements.Find(id);
+                if (achievement == null)
+                {
+                    return HttpNotFound();
+                }
+                achievement.Discription = model.Discription;
+                achievement.AchievementType = model.AchievementType;
+                db.Entry(achievement).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
+            return View(model);
+        }
+
+        // GET: Achievement/Delete/5. 
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Achievement achievement = db.Achievements.Find(id);
+            if (achievement == null)
+            {
+                return HttpNotFound();
+            }
+            var model = new AchievementViewModel
+            {
+                Id = achievement.AchievementId,
+                Discription = achievement.Discription,
+                AchievementType = achievement.AchievementType,
+            };
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// This action allows deleting Achievement.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Achievement, Delete view</returns>
+        // (POST: Achievement/Delete/5) 
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Achievement achievement = db.Achievements.Find(id);
+            db.Achievements.Remove(achievement);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
-    }
+}
 

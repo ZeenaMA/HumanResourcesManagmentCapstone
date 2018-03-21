@@ -206,6 +206,7 @@
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\CommunicationSkillController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,14 +234,8 @@
     <Compile Include="ViewModel\AttendanceViewModel.cs" />
     <Compile Include="ViewModel\CertificationViewModel.cs" />
     <Compile Include="ViewModel\CommunicationSkillViewModel.cs" />
-    <Compile Include="ViewModel\ConstituentViewModel.cs" />
-    <Compile Include="ViewModel\CriterionViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
-    <Compile Include="ViewModel\EvaluationViewModel.cs" />
     <Compile Include="ViewModel\ExperienceViewModel.cs" />
-    <Compile Include="ViewModel\NetworkViewModel.cs" />
-    <Compile Include="ViewModel\PerformanceViewModel.cs" />
-    <Compile Include="ViewModel\SalaryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -595,6 +590,22 @@
     <Content Include="Views\Attendance\Index.cshtml" />
     <Content Include="Views\Attendance\Details.cshtml" />
     <Content Include="Views\Attendance\Edit.cshtml" />
+    <Content Include="Views\Achievement\Details.cshtml" />
+    <Content Include="Views\Achievement\Edit.cshtml" />
+    <Content Include="Views\Certification\Index.cshtml" />
+    <Content Include="Views\Experience\Index.cshtml" />
+    <Content Include="Views\Experience\Create.cshtml" />
+    <Content Include="Views\Experience\Details.cshtml" />
+    <Content Include="Views\Experience\Edit.cshtml" />
+    <Content Include="Views\Experience\Delete.cshtml" />
+    <Content Include="Views\Achievement\Delete.cshtml" />
+    <Content Include="Views\Certification\Details.cshtml" />
+    <Content Include="Views\Certification\Edit.cshtml" />
+    <Content Include="Views\Certification\Delete.cshtml" />
+    <Content Include="Views\CommunicationSkill\Index.cshtml" />
+    <Content Include="Views\CommunicationSkill\Details.cshtml" />
+    <Content Include="Views\CommunicationSkill\Delete.cshtml" />
+    <Content Include="Views\CommunicationSkill\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,5 @@
 ﻿/*
-* Description: .
+* Description: View model for Certification passes information between Certification views and its controller.
 * Author: Zee
 * Due date: 20/03/2018
 */
@@ -14,14 +14,21 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 {
     public class CertificationViewModel
     {
+        /// <summary>
+        /// View model based on the Certification model.
+        /// </summary>
         public int Id { get; set; }
 
         [Display(Name = "Certification Type")]
-        public TypeOfCertification? CertificationType { get; set; }
-        
+        public CertificationType? CertificationType { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
 
@@ -36,11 +43,11 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         public string Extracurricular { get; set; }
 
         [Display(Name = "International University")]
-        public InterlUniversity? InternationalUniversity { get; set; }
+        public InternationalUniversity? InternationalUniversity { get; set; }
 
-        //
         public int EmployeeId { get; set; }
 
-        public string Employee { get; set; }
+        [Display(Name = "Employee Name")]
+        public string EmployeeName { get; set; }
     }
-}
+    }

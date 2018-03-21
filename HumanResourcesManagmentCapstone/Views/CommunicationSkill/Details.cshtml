@@ -1,0 +1,36 @@
+﻿@model HumanResourcesManagmentCapstone.ViewModel.CommunicationSkillViewModel
+
+<div>
+    <h4>CommunicationSkillViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,5 +1,5 @@
 ﻿/*
-* Description: .
+* Description: View model for Experience passes information between Experience views and its controller.
 * Author: Zee
 * Due date: 20/03/2018
 */
@@ -14,6 +14,9 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 {
     public class ExperienceViewModel
     {
+        /// <summary>
+        /// View model based on the Experience model.
+        /// </summary>
         public int Id { get; set; }
 
         [Display(Name = "Employment Place")]
@@ -22,9 +25,13 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Employment Type")]
         public string EmploymentType { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
 
@@ -32,10 +39,11 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         public string Description { get; set; }
 
         [Display(Name = "Orgnization Type")]
-        public Orgnization? OrgnizationType { get; set; }
+        public OrgnizationType? OrgnizationType { get; set; }
 
         public int EmployeeId { get; set; }
 
-        public string Employee { get; set; }
+        [Display(Name = "Employee Name")]
+        public string EmployeeName { get; set; }
     }
 }

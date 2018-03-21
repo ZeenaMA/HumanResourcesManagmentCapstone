@@ -29,7 +29,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public virtual Employee Employee { get; set; }
     }
-    // Enum for AchievementType .
+    // Enum for AchievementType.
     public enum AchievementType
     {
         Business,

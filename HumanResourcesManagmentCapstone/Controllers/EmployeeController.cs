@@ -15,10 +15,6 @@ using System.Web;
 using System.Web.Mvc;
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    /// <summary>
-    /// This controller Lists all the members and allows the admin to view/ edit or delete any member, also, the admin can create new memebers.
-    /// </summary>
-    /// 
     public class EmployeeController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -58,9 +54,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 _userManager = value;
             }
         }
-
+        /// <summary>
+        /// This action lists employees.
+        /// </summary>
+        /// <returns> Employee, Index view</returns>
         //GET: Employee
-        // List employees.
         public ActionResult Index()
         {
             var users = db.Employees.ToList();
@@ -84,6 +82,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        ///  Details of each Employee.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Employee, Details view</returns>
         // GET: Employee/Details/5
         public ActionResult Details(int? id)
         {
@@ -127,6 +130,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View();
         }
 
+        /// <summary>
+        /// This action enables the creation of an Employee.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns> Employee, Create view</returns>
         // POST: Employee/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -225,6 +233,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View("Error");
         }
 
+        /// <summary>
+        /// This action enables the editing of a Employee.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns> Employee, Edit view</returns>
         // POST: Employee/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -307,6 +321,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return HttpNotFound();
         }
 
+        /// <summary>
+        /// This action allows deleting Employee.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Employee, Delete view</returns>
         // POST: Employee/Delete/5
         [HttpPost]
         [ActionName("Delete")]

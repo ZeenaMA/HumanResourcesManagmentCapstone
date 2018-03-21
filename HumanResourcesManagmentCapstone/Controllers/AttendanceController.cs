@@ -4,29 +4,27 @@
 * Due date: 20/03/2018
 */
 using AutoMapper;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Net;
-using System.Data.Entity;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
     public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
         /// <summary>
-        /// Action methods responsible for creating employee attendance, editing or deleleting it.
+        /// This action lists the Attendances of each employee.
         /// </summary>
-        
+        /// <returns> Attendance, Index view</returns>
         // GET:Attendance
-        //List of All attendances.
         public ActionResult Index()
         {
             var attendances = db.Attendances.ToList();
@@ -44,13 +42,18 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     AbsentDays = item.AbsentDays,
                     EmployeeWorkingHours = item.EmployeeWorkingHours,
                     FeedBack = item.FeedBack,
+                    EmployeeName = item.Employee.FullName,
                 });
             }
             return View(model);
         }
 
+        /// <summary>
+        ///  Details of each Attendance.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Attendance, Details view</returns>
         // GET: Attendance/ Detailes
-        // Attendance Detailes
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -81,10 +84,16 @@ namespace HumanResourcesManagmentCapstone.Controllers
         // Create attendance. 
         public ActionResult Create()
         {
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
             return View();
         }
 
+        /// <summary>
+        /// This action enables the creation of an Attendances.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns> Attendances, Create view</returns>
         //Post:Attendance/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -102,14 +111,17 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     AbsentDays = model.AbsentDays,
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
-                    AdministratorId = model.Id,
+                    EmployeeId = model.EmployeeId,
+                   // AdministratorId = model.AdministratorId,
                 };
 
-            db.Attendances.Add(attendance);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+                db.Attendances.Add(attendance);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
             return View(model);
         }
 
@@ -141,6 +153,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the editing of a Attendances.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns> Attendances, Edit view</returns>
         // POST: Attendance/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -196,6 +214,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action allows deleting Attendances.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Attendances, Delete view</returns>
         // POST: Attendance/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

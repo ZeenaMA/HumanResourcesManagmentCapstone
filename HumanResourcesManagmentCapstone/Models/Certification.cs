@@ -19,7 +19,7 @@ namespace HumanResourcesManagmentCapstone.Models
     {
         public int CertificationId { get; set; }
 
-        public TypeOfCertification? CertificationType { get; set; }
+        public CertificationType? CertificationType { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime StartDate { get; set; }
@@ -39,7 +39,7 @@ namespace HumanResourcesManagmentCapstone.Models
         [StringLength(100)]
         public string Extracurricular { get; set; }
 
-        public InterlUniversity? InternationalUniversity { get; set; }
+        public InternationalUniversity? InternationalUniversity { get; set; }
 
         public int EmployeeId { get; set; }
 
@@ -48,7 +48,7 @@ namespace HumanResourcesManagmentCapstone.Models
     }
 
     // Enum for CertificationType.
-    public enum TypeOfCertification
+    public enum CertificationType
     {
         Bachelor,
         Master,
@@ -61,7 +61,7 @@ namespace HumanResourcesManagmentCapstone.Models
     }
 
     // Enum for InternationalUniversity.
-    public enum InterlUniversity
+    public enum InternationalUniversity
     {
         Yes,
         No
