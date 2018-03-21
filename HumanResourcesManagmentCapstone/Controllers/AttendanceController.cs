@@ -21,7 +21,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         /// <summary>
-        /// This action lists the Attendances of each employee.
+        /// This action lists the Attendances of each existing employee.
         /// </summary>
         /// <returns> Attendance, Index view</returns>
         // GET:Attendance
