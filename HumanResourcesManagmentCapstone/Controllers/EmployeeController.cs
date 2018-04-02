@@ -117,7 +117,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             else
             {
                 return View("Error");
-                
+
             }
         }
         // GET: Employee/Create
@@ -147,6 +147,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     UserName = model.UserName,
                     Email = model.Email,
                     FirstName = model.FirstName,
+                    MiddleName = model.MiddleName,
                     LastName = model.LastName,
                     EmployeeType = model.EmployeeType,
                     HiredDate = model.HiredDate,
@@ -173,7 +174,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                         {
                             // Create a check list object
                             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
-                            ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
+                            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeType");
 
                             ModelState.AddModelError(string.Empty, roleResult.Errors.First());
 
@@ -187,7 +188,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 }
                 else
                 {
-                    ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
+                    ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeType");
                     ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
 
                     ModelState.AddModelError(string.Empty, result.Errors.First());
@@ -196,7 +197,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
 
             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id","EmployeeType");
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "EmployeeType");
             return View();
         }
 
@@ -264,6 +265,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 employee.UserName = model.UserName;
                 employee.Email = model.Email;
                 employee.FirstName = model.FirstName;
+                employee.MiddleName = model.MiddleName;
                 employee.LastName = model.LastName;
                 employee.UserName = model.Email;
                 employee.EmployeeType = model.EmployeeType;
@@ -353,6 +355,5 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             return View();
         }
-
     }
 }

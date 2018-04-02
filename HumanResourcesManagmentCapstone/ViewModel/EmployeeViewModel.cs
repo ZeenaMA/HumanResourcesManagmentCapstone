@@ -31,6 +31,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
+        [Required]
         [Display(Name = "Middl Name")]
         public string MiddleName { get; set; }
 

@@ -1,9 +1,8 @@
 ﻿/*
-* Description: Controller for managing employee achievements.
+* Description: Controller for inputting network.
 * Author: Zee
-* Due date: 20/03/2018
+* Due date: 03/04/2018
 */
-using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
 using System;
@@ -16,27 +15,26 @@ using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    public class AchievementController : Controller
+    public class NetworkController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         /// <summary>
-        /// This action lists the Achivements of each employee.
+        /// This action lists the Networks of each employee.
         /// </summary>
-        /// <returns> Achivement, Index view</returns>
-        // GET: Achievement
+        /// <returns> Network, Index view</returns>
+        // GET: Network
         public ActionResult Index()
         {
-            var achievements = db.Achievements.ToList();
-            var model = new List<AchievementViewModel>();
-
-            foreach (var item in achievements)
+            var networks = db.Networks.ToList();
+            var model = new List<NetworkViewModel>();
+            foreach (var item in networks)
             {
-                model.Add(new AchievementViewModel
+                model.Add(new NetworkViewModel
                 {
-                    Id = item.AchievementId,
-                    AchievementType = item.AchievementType,
-                    Discription = item.Discription,
+                    Id = item.NetworkId,
+                    PlatformType = item.PlatformType,
+                    ContactsNumber = item.ContactsNumber,
                     EmployeeName = item.Employee.FullName,
                 });
             }
@@ -45,74 +43,75 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         /// <summary>
-        ///  Details of each achievement-.
+        ///  Details of each Network.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>Achievement, Details view</returns>
-        // GET: Achievement/Details/5
+        /// <returns>Network, Details view</returns>
+        // GET: Network/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Achievement achievement = db.Achievements.Find(id);
-            if (achievement == null)
+            Network network = db.Networks.Find(id);
+            if (network == null)
             {
                 return HttpNotFound();
             }
 
-            var model = new AchievementViewModel
+            var model = new NetworkViewModel
             {
-                Id = achievement.AchievementId,
-                Discription = achievement.Discription,
-                AchievementType = achievement.AchievementType,
-                EmployeeName = achievement.Employee.FullName,
+                Id = network.NetworkId,
+                ContactsNumber = network.ContactsNumber,
+                PlatformType = network.PlatformType,
+                EmployeeName = network.Employee.FullName,
             };
             return View(model);
         }
 
-        // GET: Achievement/Create
+        // GET: Network/Create
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
-            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
+
+            ViewBag.NetworkId = new SelectList(db.Networks, "NetworkId", "PlatformType");
             return View();
         }
 
         /// <summary>
-        /// This action enables the creation of an Achievement.
+        /// This action enables the creation of Networks.
         /// </summary>
         /// <param name="model"></param>
-        /// <returns> Achievement, Create view</returns>
-        // POST: Achievement/Create
+        /// <returns> Network, Create view</returns>
+        // POST: Network/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AchievementViewModel model)
+        public ActionResult Create(NetworkViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var achievement = new Achievement
+                var network = new Network
                 {
-                    AchievementId = model.Id,
-                    Discription = model.Discription,
-                    AchievementType = model.AchievementType,
+                    NetworkId = model.Id,
+                    ContactsNumber = model.ContactsNumber,
+                    PlatformType = model.PlatformType,
                     EmployeeId = model.EmployeeId,
                 };
 
-                db.Achievements.Add(achievement);
+                db.Networks.Add(network);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
-            ViewBag.AchievementId = new SelectList(db.Achievements, "AchievementId", "AchievementType");
+            ViewBag.NetworkId = new SelectList(db.Networks, "NetworkId", "PlatformType");
             return View(model);
         }
 
-        // GET: Achievement/Edit/5
+        // GET: Network/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -120,43 +119,44 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Achievement achievement = db.Achievements.Find(id);
-            if (achievement == null)
+            Network network = db.Networks.Find(id);
+            if (network == null)
             {
                 return HttpNotFound();
             }
 
-            AchievementViewModel model = new AchievementViewModel
+            NetworkViewModel model = new NetworkViewModel
             {
-                Id = achievement.AchievementId,
-                Discription = achievement.Discription,
-                AchievementType = achievement.AchievementType,
+                Id = network.NetworkId,
+                ContactsNumber = network.ContactsNumber,
+                PlatformType = network.PlatformType,
             };
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
             return View();
         }
 
         /// <summary>
-        /// This action enables the editing of a Achievement.
+        /// This action enables the editing of a Networks.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="model"></param>
-        /// <returns> Achievement, Edit view</returns>
-        // (POST: Achievement/Edit/5) 
+        /// <returns> Network, Edit view</returns>
+        // POST: Network/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, AchievementViewModel model)
+        public ActionResult Edit(int id, NetworkViewModel model)
         {
             if (ModelState.IsValid)
             {
-                Achievement achievement = db.Achievements.Find(id);
-                if (achievement == null)
+                Network network = db.Networks.Find(id);
+                if (network == null)
                 {
                     return HttpNotFound();
                 }
-                achievement.Discription = model.Discription;
-                achievement.AchievementType = model.AchievementType;
-                db.Entry(achievement).State = EntityState.Modified;
+                network.ContactsNumber = model.ContactsNumber;
+                network.PlatformType = model.PlatformType;
+
+                db.Entry(network).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -164,40 +164,40 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
-        // GET: Achievement/Delete/5. 
+        // GET: Network/Delete/5. 
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Achievement achievement = db.Achievements.Find(id);
-            if (achievement == null)
+            Network network = db.Networks.Find(id);
+            if (network == null)
             {
                 return HttpNotFound();
             }
-            var model = new AchievementViewModel
+            var model = new NetworkViewModel
             {
-                Id = achievement.AchievementId,
-                Discription = achievement.Discription,
-                AchievementType = achievement.AchievementType,
+                Id = network.NetworkId,
+                ContactsNumber = network.ContactsNumber,
+                PlatformType = network.PlatformType,
             };
 
             return View(model);
         }
 
         /// <summary>
-        /// This action allows deleting Achievement.
+        /// This action allows deleting Network.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns> Achievement, Delete view</returns>
-        // (POST: Achievement/Delete/5) 
-        [HttpPost, ActionName("Delete")]
+        /// <returns> Network, Delete view</returns>
+        // POST: Network/Delete/5
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Achievement achievement = db.Achievements.Find(id);
-            db.Achievements.Remove(achievement);
+            Network network = db.Networks.Find(id);
+            db.Networks.Remove(network);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

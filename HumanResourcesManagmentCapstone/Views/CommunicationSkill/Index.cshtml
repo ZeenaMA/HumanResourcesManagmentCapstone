@@ -4,42 +4,63 @@
     ViewBag.Title = "Index";
 }
 
-<h2>List</h2>
+<h2>Communication Skills List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped" id="communicationSkillTable">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.SkillType)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeName)
-        </th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>*@
+       
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SkillType)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.EmployeeId)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillType)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#communicationSkillTable').DataTable();
+      } );
+    </script>
+}
+
+@section styles
+{
+    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+}

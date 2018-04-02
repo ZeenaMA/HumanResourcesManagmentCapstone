@@ -1,7 +1,7 @@
 ﻿/*
-* Description: .
+* Description: View model for Attendance passes information between Attendance views and its controller.
 * Author: Zee
-* Due date: 20/03/2018
+* Due date:
 */
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,9 @@ using System.Web;
 
 namespace HumanResourcesManagmentCapstone.ViewModel
 {
+    /// <summary>
+    /// View model based on the Attendance model.
+    /// </summary>
     public class AttendanceViewModel
     {
         public int Id { get; set; }
@@ -38,6 +41,9 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         public string FeedBack { get; set; }
 
         public int AdministratorId { get; set; }
+
+        [Display(Name = "Admin Name")]
+        public string AdminName { get; set; }
 
         public int EmployeeId { get; set; }
 

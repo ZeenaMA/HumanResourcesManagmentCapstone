@@ -1,36 +1,22 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.ExperienceViewModel>
-
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.NetworkViewModel>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped" id="experienceTable">
+<table class="table table-striped" id="networkTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.EmployeeName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmploymentPlace)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmploymentType)
+            @Html.DisplayNameFor(model => model.ContactsNumber)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>*@
-        @*<th>
-                @Html.DisplayNameFor(model => model.EmployeeId)
+            @Html.DisplayNameFor(model => model.EmployeeId)
             </th>*@
 
         <th></th>
@@ -43,20 +29,8 @@
                 @Html.DisplayFor(modelItem => item.EmployeeName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EmploymentPlace)
+                @Html.DisplayFor(modelItem => item.ContactsNumber)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmploymentType)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>*@
             @*<td>
                     @Html.DisplayFor(modelItem => item.EmployeeId)
                 </td>*@
@@ -78,7 +52,7 @@
 
     <script type="text/javascript">
       $(document).ready( function () {
-          $('#experienceTable').DataTable();
+          $('#networkTable').DataTable();
       } );
     </script>
 }

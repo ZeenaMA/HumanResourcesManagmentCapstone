@@ -38,7 +38,7 @@ namespace HumanResourcesManagmentCapstone.Models
         [StringLength(100)]
         public string Comment { get; set; }
 
-        public DecisionType? Decision { get; set; }
+        public Decision? Decision { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? CreationDate { get; set; }
@@ -50,7 +50,7 @@ namespace HumanResourcesManagmentCapstone.Models
         public virtual Employee Employee { get; set; }
     }
     // Enum for Decision.
-    public enum DecisionType
+    public enum Decision
     {
         Approved,
         Disapproved

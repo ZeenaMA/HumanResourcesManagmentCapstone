@@ -1,20 +1,22 @@
-﻿@model HumanResourcesManagmentCapstone.ViewModel.CommunicationSkillViewModel
-
+﻿@model HumanResourcesManagmentCapstone.ViewModel.NetworkViewModel
+@{
+    ViewBag.Title = "Edit";
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CommunicationSkillViewModel</h4>
+        <h4>NetworkViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SkillType, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ContactsNumber, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SkillType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SkillType, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ContactsNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContactsNumber, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -24,39 +26,35 @@
                 @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
             </div>
         </div>*@
+
+
         <div class="form-group">
-            @Html.LabelFor(model => model.SkillLevel, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PlatformType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.SkillLevel, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SkillLevel, "", new { @class = "text-danger" })
+                @Html.EnumDropDownListFor(model => model.PlatformType, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PlatformType, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
+    </div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

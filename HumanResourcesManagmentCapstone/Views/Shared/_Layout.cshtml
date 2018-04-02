@@ -17,20 +17,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Mnassa HR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("HR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
                     <li>@Html.ActionLink("Employee", "Index", "Employee")</li>
                     <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
                     <li>@Html.ActionLink("Certification", "Index", "Certification")</li>
-                     <li>@Html.ActionLink("Achievement", "Index", "Achievement")</li>
+                    <li>@Html.ActionLink("Achievement", "Index", "Achievement")</li>
                     <li>@Html.ActionLink("Experience", "Index", "Experience")</li>
                     <li>@Html.ActionLink("CommunicationSkill", "Index", "CommunicationSkill")</li>
-
-
+                    <li>@Html.ActionLink("Network", "Index", "Network")</li>
+                    <li>@Html.ActionLink("Performance", "Index", "Performance")</li>
+@*                    <li>@Html.ActionLink("Criterion", "Index", "Criterion")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

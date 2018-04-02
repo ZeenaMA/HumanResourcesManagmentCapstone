@@ -1,11 +1,7 @@
 ﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel>
-
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Index";
 }
-
-<h2>List</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -14,7 +10,7 @@
         <th>
             @Html.DisplayNameFor(model => model.StartDate)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EndDate)
         </th>
         <th>
@@ -33,10 +29,13 @@
             @Html.DisplayNameFor(model => model.FeedBack)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmployeeId)
+            @Html.DisplayNameFor(model => model.AdministratorId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee)
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
         </th>
         <th></th>
     </tr>
@@ -46,7 +45,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.StartDate)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
         <td>
@@ -65,10 +64,13 @@
             @Html.DisplayFor(modelItem => item.FeedBack)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EmployeeId)
+            @Html.DisplayFor(modelItem => item.AdministratorId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee)
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

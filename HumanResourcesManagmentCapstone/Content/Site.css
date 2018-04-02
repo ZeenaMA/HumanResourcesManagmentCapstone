@@ -1,7 +1,7 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+}*/
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -23,4 +23,53 @@ textarea {
     max-width: 280px;
 }
 /* Override  Navbar color*/
-/*.navbar-inverse { background-color: #66CDE1 !important; }*/
+/*.navbar-inverse { background-color: #83dcec !important; }*/
+/*Butten*/
+.btn-default {
+  color: #f5f5f5;
+  background-color: #50bac7;
+  border-color: #b4dcff;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+/*Danger*/
+.btn-danger {
+  color: #fff;
+  background-color: #e51c23;
+  border-color: #e51c23;
+}
+
+/*.btn-danger:hover {
+  color: #fff;
+  background-color: #c4161d;
+  border-color: #b9151b;
+}
+
+.btn-danger:focus, .btn-danger.focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(229, 28, 35, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(229, 28, 35, 0.5);
+}
+
+.btn-danger.disabled, .btn-danger:disabled {
+  color: #fff;
+  background-color: #e51c23;
+  border-color: #e51c23;
+}
+
+.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
+.show > .btn-danger.dropdown-toggle {
+  color: #fff;
+  background-color: #b9151b;
+  border-color: #ad1419;
+}
+
+.btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
+.show > .btn-danger.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(229, 28, 35, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(229, 28, 35, 0.5);
+}*/
+

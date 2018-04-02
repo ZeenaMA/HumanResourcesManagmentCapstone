@@ -12,9 +12,17 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
+            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.SkillType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SkillType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.SkillType, new { htmlAttributes = new { @class = "form-control" , @placeholder = "English" } })
                 @Html.ValidationMessageFor(model => model.SkillType, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,14 +48,6 @@
             <div class="col-md-10">
                 @Html.EnumDropDownListFor(model => model.SkillLevel, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SkillLevel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
             </div>
         </div>
 

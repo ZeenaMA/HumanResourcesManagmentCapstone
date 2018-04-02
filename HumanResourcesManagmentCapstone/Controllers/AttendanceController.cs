@@ -20,11 +20,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        /// <summary>
-        /// This action lists the Attendances of each existing employee.
-        /// </summary>
-        /// <returns> Attendance, Index view</returns>
-        // GET:Attendance
+        // GET: Attendance
         public ActionResult Index()
         {
             var attendances = db.Attendances.ToList();
@@ -45,12 +41,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeName = item.Employee.FullName,
                 });
             }
+
             return View(model);
         }
-
-        /// <summary>
-        ///  Details of each Attendance.
-        /// </summary>
+        ///<summary>
+        /// Details of each Employee.
+        ///</summary>
         /// <param name="id"></param>
         /// <returns>Attendance, Details view</returns>
         // GET: Attendance/ Detailes
@@ -81,7 +77,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         //GET: Attendance/Create
-        // Create attendance. 
+        // Create attendance.
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -91,7 +87,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
         /// <summary>
         /// This action enables the creation of an Attendances.
-        /// </summary>
+        ///</summary>
         /// <param name="model"></param>
         /// <returns> Attendances, Create view</returns>
         //Post:Attendance/Create
@@ -112,7 +108,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
                     EmployeeId = model.EmployeeId,
-                   // AdministratorId = model.AdministratorId,
+                    //AdministratorId = model.AdministratorId,
                 };
 
                 db.Attendances.Add(attendance);
@@ -122,6 +118,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+
             return View(model);
         }
 
@@ -155,7 +152,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
         /// <summary>
         /// This action enables the editing of a Attendances.
-        /// </summary>
+        ///</summary>
         /// <param name="id"></param>
         /// <param name="model"></param>
         /// <returns> Attendances, Edit view</returns>
@@ -187,7 +184,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Attendance/Delete/5
-        // Delete attendance 
+        // Delete attendance
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -216,7 +213,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
         /// <summary>
         /// This action allows deleting Attendances.
-        /// </summary>
+        ///</summary>
         /// <param name="id"></param>
         /// <returns> Attendances, Delete view</returns>
         // POST: Attendance/Delete/5
@@ -240,8 +237,3 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
     }
 }
-
-
-
-
-  

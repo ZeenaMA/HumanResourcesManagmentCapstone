@@ -18,7 +18,7 @@ namespace HumanResourcesManagmentCapstone.Models
     {
         public int NetworkId { get; set; }
 
-        public Platform? PlatformType { get; set; }
+        public PlatformType? PlatformType { get; set; }
 
         [Column(TypeName = "numeric")]
         public decimal ContactsNumber { get; set; }
@@ -29,7 +29,7 @@ namespace HumanResourcesManagmentCapstone.Models
     }
 
     // Enum for PlatformType.
-    public enum Platform
+    public enum PlatformType
     {
         Facebook,
         Instagram,

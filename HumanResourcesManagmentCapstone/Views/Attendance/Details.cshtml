@@ -1,5 +1,7 @@
 ﻿@model HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel
-
+@{
+    ViewBag.Title = "Details";
+}
 <div>
     <h4>AttendanceViewModel</h4>
     <hr />
@@ -69,11 +71,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Employee)
+            @Html.DisplayNameFor(model => model.AdminName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Employee)
+            @Html.DisplayFor(model => model.AdminName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
         </dd>
 
     </dl>
