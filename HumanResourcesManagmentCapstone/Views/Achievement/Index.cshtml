@@ -8,7 +8,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped">
+<table class="table table-striped" id="achievementTable">
     <tr>
         @*<th>
             @Html.DisplayNameFor(model => model.Discription)
@@ -58,7 +58,7 @@
 
     <script type="text/javascript">
       $(document).ready( function () {
-          $('#employeesTable').DataTable();
+          $('#achievementTable').DataTable();
       } );
     </script>
 }

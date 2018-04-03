@@ -59,27 +59,67 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 userManager.AddToRole(admin.Id, roles[0]);
             }
 
-
-
-            string memberEmail = "1@dah.edu";
-            string memberUserName = "member";
-            string memberPassword = "123123";
-
-
-            var member = new ApplicationUser
+            // Create Employee. 
+            var TM1 = new Employee
             {
-                UserName = memberUserName,
-                Email = memberEmail,
-                EmailConfirmed = true,
-                LockoutEnabled = false
+                UserName = "Member1",
+                Email = "email@gmail.com",
+                FirstName = "First",
+                MiddleName = "Middle",
+                LastName = "Last",
+                EmployeeType = EmployeeType.TeamMember,
+                HiredDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                NationalIqamaID = 1231231,
+                BankAccountNumber = "1",
+                Nationality = "A",
+                DateOfBirth = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
             };
+            userManager.Create(TM1, "123123");
 
-            if (userManager.FindByName(member.UserName) == null)
+            var TM2 = new Employee
             {
-                userManager.Create(member, memberPassword);
-            }
-            //DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
+                UserName = "Member2",
+                Email = "email@gmail.com",
+                FirstName = "Human",
+                MiddleName = "Middle",
+                LastName = "Last",
+                EmployeeType = EmployeeType.TeamMember,
+                HiredDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                NationalIqamaID = 1231231,
+                BankAccountNumber = "1",
+                Nationality = "A",
+                DateOfBirth = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
+            };
+            userManager.Create(TM2, "123123");
 
+            var TM3 = new Employee
+            {
+                UserName = "Member3",
+                Email = "email@gmail.com",
+                FirstName = "Human",
+                MiddleName = "Middle",
+                LastName = "Last",
+                EmployeeType = EmployeeType.TeamMember,
+                HiredDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                NationalIqamaID = 1231231,
+                BankAccountNumber = "1",
+                Nationality = "A",
+                DateOfBirth = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
+            };
+            userManager.Create(TM3, "123123");
+
+
+            //// Certification
+            //var Certification1 = new Certification
+            //{
+            //    StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+            //    EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+            //    UniversityRank = 1,
+            //    Major = "MIS",
+            //    GPA = 1,
+            //    Extracurricular = "NO",
+            //    EmployeeId = 2,
+            //};
         }
 
     }

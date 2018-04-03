@@ -83,7 +83,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.AdminAttendances)
-                .WithRequired(e => e.Administrator)
+                .WithOptional(e => e.Administrator)
                 .HasForeignKey(e => e.AdministratorId)
                 .WillCascadeOnDelete(false);
 

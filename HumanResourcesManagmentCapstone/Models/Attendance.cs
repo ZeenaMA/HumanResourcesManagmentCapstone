@@ -40,7 +40,7 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public int EmployeeId { get; set; }
 
-        public int AdministratorId { get; set; }
+        public int? AdministratorId { get; set; }
 
         public virtual Employee Employee { get; set; }
 

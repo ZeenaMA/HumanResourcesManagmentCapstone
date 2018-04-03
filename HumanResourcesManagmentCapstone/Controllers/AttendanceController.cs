@@ -6,6 +6,7 @@
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -39,6 +40,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeWorkingHours = item.EmployeeWorkingHours,
                     FeedBack = item.FeedBack,
                     EmployeeName = item.Employee.FullName,
+                    AdministratorId = item.AdministratorId
                 });
             }
 
@@ -108,7 +110,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
                     EmployeeId = model.EmployeeId,
-                    //AdministratorId = model.AdministratorId,
+                    //AdministratorId = User.Identity.GetUserId<int>()
                 };
 
                 db.Attendances.Add(attendance);

@@ -23,6 +23,8 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Attendance")]
         public DateTime StartDate { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Target Working Hours")]
@@ -40,7 +42,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [DataType(DataType.MultilineText)]
         public string FeedBack { get; set; }
 
-        public int AdministratorId { get; set; }
+        public int? AdministratorId { get; set; }
 
         [Display(Name = "Admin Name")]
         public string AdminName { get; set; }
