@@ -29,7 +29,6 @@
                     <li>@Html.ActionLink("CommunicationSkill", "Index", "CommunicationSkill")</li>
                     <li>@Html.ActionLink("Network", "Index", "Network")</li>
                     <li>@Html.ActionLink("Performance", "Index", "Performance")</li>
-@*                    <li>@Html.ActionLink("Criterion", "Index", "Criterion")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -39,10 +38,9 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Not an application yet</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

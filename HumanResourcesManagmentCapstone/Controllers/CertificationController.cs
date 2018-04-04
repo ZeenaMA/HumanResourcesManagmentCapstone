@@ -1,7 +1,7 @@
 ﻿/*
-* Description: Controller for managing employee certification.
+* Description: Controller for managing employee Certification, allows the creation of new Certification, listing of all Certification and editing and deleting.
 * Author: Zee
-* Due date: 20/03/2018
+* Due date: 04/04/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
@@ -211,6 +211,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var model = new CertificationViewModel
             {
                 Id = certification.CertificationId,
+                EmployeeName = certification.Employee.FullName,
                 CertificationType = certification.CertificationType,
                 StartDate = certification.StartDate,
                 EndDate = certification.EndDate,

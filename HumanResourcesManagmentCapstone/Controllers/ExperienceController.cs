@@ -1,12 +1,13 @@
 ﻿/*
-* Description: Controller for managing employee Experience.
+* Description: Controller for managing employee Experience, allows the creation of new Experience, listing of all Experience and editing and deleting.
 * Author: Zee
-* Due date: 20/03/2018
+* Due date: 04/04/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -66,6 +67,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         var model = new ExperienceViewModel
         {
             Id = experience.ExperienceId,
+            EmployeeName = experience.Employee.FullName,
             EmploymentPlace = experience.EmploymentPlace,
             EmploymentType = experience.EmploymentType,
             StartDate = experience.StartDate,
@@ -73,7 +75,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             Description = experience.Description,
             OrgnizationType = experience.OrgnizationType,
         };
-        return View();
+        return View(model);
     }
 
         // GET: Experience/Create
@@ -91,7 +93,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <param name="model"></param>
         /// <returns> Experience, Create view</returns>
         // POST: Experience/Create
-        [HttpPost]
+         [HttpPost]
          [ValidateAntiForgeryToken]
     public ActionResult Create(ExperienceViewModel model)
     {
@@ -114,11 +116,39 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return RedirectToAction("Index");
         }
 
-        var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
-        ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
             ViewBag.ExperienceId = new SelectList(db.Experiences, "ExperienceId", "OrgnizationType");
             return View(model);
     }
+
+        // GET: Experience/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Experience experience = db.Experiences.Find(id);
+            if (experience == null)
+            {
+                return HttpNotFound();
+            }
+
+            ExperienceViewModel model = new ExperienceViewModel
+            {
+                Id = experience.ExperienceId,
+                EmploymentPlace = experience.EmploymentPlace,
+                EmploymentType = experience.EmploymentType,
+                StartDate = experience.StartDate,
+                EndDate = experience.EndDate,
+                Description = experience.Description,
+                OrgnizationType = experience.OrgnizationType,
+            };
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
+            return View();
+        }
 
         /// <summary>
         /// This action enables the editing of a Experience.
@@ -126,33 +156,31 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <param name="id"></param>
         /// <param name="model"></param>
         /// <returns> Experience, Edit view</returns>
-        // GET: Experience/Edit/5
-        public ActionResult Edit(int? id)
-    {
-        if (id == null)
+        // (POST: Experience/Edit/5) 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ExperienceViewModel model)
         {
-            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            if (ModelState.IsValid)
+            {
+                Experience experience = db.Experiences.Find(id);
+                if (experience == null)
+                {
+                    return HttpNotFound();
+                }
+                experience.EmploymentPlace = model.EmploymentPlace;
+                experience.EmploymentType = model.EmploymentType;
+                experience.StartDate = model.StartDate;
+                experience.EndDate = model.EndDate;
+                experience.Description = model. Description;
+                experience.OrgnizationType = model. OrgnizationType;
+                db.Entry(experience).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
+            return View(model);
         }
-
-            Experience experience = db.Experiences.Find(id);
-        if (experience == null)
-        {
-            return HttpNotFound();
-        }
-
-        var model = new ExperienceViewModel
-        {
-            Id = experience.ExperienceId,
-            EmploymentPlace = experience.EmploymentPlace,
-            EmploymentType = experience.EmploymentType,
-            StartDate = experience.StartDate,
-            EndDate = experience.EndDate,
-            Description = experience.Description,
-            OrgnizationType = experience.OrgnizationType,
-            EmployeeId = experience.EmployeeId,
-        };
-        return View();
-    }
 
         // GET: Experience/Delete/5. 
         public ActionResult Delete(int? id)
@@ -169,6 +197,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var model = new ExperienceViewModel
             {
                 Id = experience.ExperienceId,
+                EmployeeName = experience.Employee.FullName,
                 EmploymentPlace = experience.EmploymentPlace,
                 EmploymentType = experience.EmploymentType,
                 StartDate = experience.StartDate,

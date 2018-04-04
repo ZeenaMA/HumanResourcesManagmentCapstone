@@ -30,6 +30,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Issue Date")]
         public DateTime IssueDate { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Comment { get; set; }
 
         public Decision? Decision { get; set; }

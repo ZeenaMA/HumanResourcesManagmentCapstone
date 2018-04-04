@@ -40,6 +40,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 
         public decimal GPA { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Extracurricular { get; set; }
 
         [Display(Name = "International University")]

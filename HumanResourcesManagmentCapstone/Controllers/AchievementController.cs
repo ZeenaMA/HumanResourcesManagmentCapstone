@@ -1,7 +1,7 @@
 ﻿/*
-* Description: Controller for managing employee achievements.
+* Description: Controller for managing employee achievements allows the creation of new achievements, listing of achievements and editing and deleting.
 * Author: Zee
-* Due date: 20/03/2018
+* Due date: 04/04/2018
 */
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
@@ -179,6 +179,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var model = new AchievementViewModel
             {
                 Id = achievement.AchievementId,
+                EmployeeName = achievement.Employee.FullName,
                 Discription = achievement.Discription,
                 AchievementType = achievement.AchievementType,
             };

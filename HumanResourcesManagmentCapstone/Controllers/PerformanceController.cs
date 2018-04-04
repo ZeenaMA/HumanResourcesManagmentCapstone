@@ -1,7 +1,7 @@
 ﻿/*
-* Description: Controller for inputting performance.
+* Description: Controller for managing employee Performance, allows the creation of new Performance, listing of all Performance and editing and deleting.
 * Author: Zee
-* Due date: 03/04/2018
+* Due date: 04/04/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
@@ -204,6 +204,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var model = new PerformanceViewModel
             {
                 Id = performance.PerformanceId,
+                EmployeeName = performance.Employee.FullName,
                 KPI = performance.KPI,
                 Discipline = performance.Discipline,
                 Status = performance.Status,
@@ -222,7 +223,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <param name="id"></param>
         /// <returns> Performance, Delete view</returns>
         // POST: Performance/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName ("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

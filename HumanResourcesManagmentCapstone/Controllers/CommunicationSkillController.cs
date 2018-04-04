@@ -1,7 +1,7 @@
 ﻿/*
-* Description: Controller for managing employee comunication skills.
+* Description: Controller for managing employee Communication Skills, allows the creation of new Communication Skills, listing of all Communication Skills and editing and deleting.
 * Author: Zee
-* Due date: 20/03/2018
+* Due date: 04/04/2018
 */
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
@@ -182,6 +182,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var model = new CommunicationSkillViewModel
             {
                 Id = communicationSkill.CommunicationSkillId,
+                EmployeeName = communicationSkill.Employee.FullName,
                 SkillType = communicationSkill.SkillType,
                 SkillLevel = communicationSkill.SkillLevel,
             };

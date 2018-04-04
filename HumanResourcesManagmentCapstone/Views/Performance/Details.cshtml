@@ -3,9 +3,16 @@
     ViewBag.Title = "Details";
 }
 <div>
-    <h4>PerformanceViewModel</h4>
+    <h4>Performance Details</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.KPI)
         </dt>
@@ -54,21 +61,13 @@
             @Html.DisplayFor(model => model.CreationDate)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.EmployeeId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EmployeeId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmployeeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmployeeName)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>

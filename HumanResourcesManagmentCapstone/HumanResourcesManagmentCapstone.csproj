@@ -205,13 +205,13 @@
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\CommunicationSkillController.cs" />
-    <Compile Include="Controllers\CriterionController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NetworkController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\TargetHoursController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -627,6 +627,7 @@
     <Content Include="Views\Attendance\Details.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
     <Content Include="Views\Attendance\Edit.cshtml" />
+    <Content Include="Views\Attendance\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

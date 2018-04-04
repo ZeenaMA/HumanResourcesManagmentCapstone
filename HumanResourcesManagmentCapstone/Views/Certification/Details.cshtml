@@ -4,9 +4,24 @@
 }
 
 <div>
-    <h4>CertificationViewModel</h4>
+    <h4>Delete Certification</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Major)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Major)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.StartDate)
         </dt>
@@ -32,14 +47,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Major)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Major)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.GPA)
         </dt>
 
@@ -55,20 +62,18 @@
             @Html.DisplayFor(model => model.Extracurricular)
         </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmployeeId)
-        </dd>*@
-
         <dt>
-            @Html.DisplayNameFor(model => model.EmployeeName)
+            @Html.DisplayNameFor(model => model.InternationalUniversity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EmployeeName)
+            @Html.DisplayFor(model => model.InternationalUniversity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CertificationType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CertificationType)
         </dd>
 
     </dl>

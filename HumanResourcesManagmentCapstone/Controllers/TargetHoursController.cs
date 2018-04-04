@@ -17,11 +17,11 @@ using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    public class AttendanceController : Controller
+    public class TargetHoursController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Attendance
+        // GET: TargetHours
         public ActionResult Index()
         {
             var attendances = db.Attendances.ToList();
@@ -50,8 +50,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// Details of each Employee.
         ///</summary>
         /// <param name="id"></param>
-        /// <returns>Attendance, Details view</returns>
-        // GET: Attendance/ Detailes
+        /// <returns>TargetHours, Details view</returns>
+        // GET: TargetHours/ Detailes
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -79,8 +79,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
-        //GET: Attendance/Create
-        // Create attendance.
+        //GET: TargetHours/Create
+        // Create TargetHours.
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -89,11 +89,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         /// <summary>
-        /// This action enables the creation of an Attendances.
+        /// This action enables the creation of an TargetHours.
         ///</summary>
         /// <param name="model"></param>
-        /// <returns> Attendances, Create view</returns>
-        //Post:Attendance/Create
+        /// <returns> TargetHours, Create view</returns>
+        //Post:TargetHours/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AttendanceViewModel model)
@@ -125,7 +125,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
-        // GET: Attendance/Edit/5
+        // GET: TargetHours/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -154,12 +154,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         /// <summary>
-        /// This action enables the editing of a Attendances.
+        /// This action enables the editing of a TargetHours.
         ///</summary>
         /// <param name="id"></param>
         /// <param name="model"></param>
         /// <returns> Attendances, Edit view</returns>
-        // POST: Attendance/Edit/5
+        // POST: TargetHours/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, AttendanceViewModel model)
@@ -186,8 +186,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
-        // GET: Attendance/Delete/5
-        // Delete attendance
+        // GET: TargetHours/Delete/5
+        // Delete TargetHours
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -216,11 +216,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         /// <summary>
-        /// This action allows deleting Attendances.
+        /// This action allows deleting TargetHours.
         ///</summary>
         /// <param name="id"></param>
-        /// <returns> Attendances, Delete view</returns>
-        // POST: Attendance/Delete/5
+        /// <returns> TargetHours, Delete view</returns>
+        // POST: TargetHours/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

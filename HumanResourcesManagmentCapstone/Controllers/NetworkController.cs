@@ -1,7 +1,7 @@
 ﻿/*
-* Description: Controller for inputting network.
+* Description: Controller for managing employee Network, allows the creation of new Network, listing of all Network and editing and deleting.
 * Author: Zee
-* Due date: 03/04/2018
+* Due date: 04/04/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
@@ -179,6 +179,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var model = new NetworkViewModel
             {
                 Id = network.NetworkId,
+                EmployeeName = network.Employee.FullName,
                 ContactsNumber = network.ContactsNumber,
                 PlatformType = network.PlatformType,
             };
@@ -192,7 +193,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <param name="id"></param>
         /// <returns> Network, Delete view</returns>
         // POST: Network/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
