@@ -1,0 +1,47 @@
+﻿@model HumanResourcesManagmentCapstone.ViewModel.NetworkViewModel
+
+@{
+    ViewBag.Title = "GetCourseSections";
+}
+
+<h2>GetCourseSections</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Network List</h4>
+        <hr />
+        <div class="form-group">
+            @Html.Label("EmployeeId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("EmployeeId", (IEnumerable<SelectListItem>)ViewBag.Employees, "Select Member", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div id="NetworkList"></div>
+}
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#EmployeeId").on("change", function () {
+                // Empty the div before displaying the received result
+                $("#NetworkList").empty();
+
+                // build data sent to the action
+                var data = { id: $("#EmployeeId").val() };
+
+                // Send a get request with course id
+                $.get("/Network/GetNetworksPartial", data)
+                    .done(function (result) { $("#NetworkList").html(result); });
+            });
+        });
+
+    </script>
+}

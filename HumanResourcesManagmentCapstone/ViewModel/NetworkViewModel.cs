@@ -22,7 +22,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Platform Type")]
         public PlatformType? PlatformType { get; set; }
 
-        public decimal ContactsNumber { get; set; }
+        public int ContactsNumber { get; set; }
 
         public int EmployeeId { get; set; }
 

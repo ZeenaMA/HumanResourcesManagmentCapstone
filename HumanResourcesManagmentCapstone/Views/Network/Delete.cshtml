@@ -15,23 +15,19 @@
             @Html.DisplayFor(model => model.EmployeeName)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.PlatformType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlatformType)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.ContactsNumber)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ContactsNumber)
         </dd>
-
-        @*<dt>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmployeeId)
-        </dd>*@
-
-       
-
     </dl>
 
     @using (Html.BeginForm()) {

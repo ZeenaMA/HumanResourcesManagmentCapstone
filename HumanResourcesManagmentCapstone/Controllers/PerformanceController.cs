@@ -111,7 +111,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     IssueDate = model.IssueDate,
                     Comment = model.Comment,
                     Decision = model.Decision,
-                    CreationDate = model.CreationDate,
+                    CreationDate = DateTime.Now,
                     EmployeeId = model.EmployeeId,
                 };
 

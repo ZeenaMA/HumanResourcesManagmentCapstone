@@ -19,8 +19,10 @@ namespace HumanResourcesManagmentCapstone.ViewModel
     {
         public int Id { get; set; }
 
+        [Range(1, 100)]
         public decimal KPI { get; set; }
 
+        [Range(1, 100)]
         public decimal Discipline { get; set; }
 
         public string Status { get; set; }

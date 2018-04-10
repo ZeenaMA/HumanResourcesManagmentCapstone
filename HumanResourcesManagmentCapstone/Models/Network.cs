@@ -18,10 +18,11 @@ namespace HumanResourcesManagmentCapstone.Models
     {
         public int NetworkId { get; set; }
 
+        [Required]
         public PlatformType? PlatformType { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal ContactsNumber { get; set; }
+        //[Column(TypeName = "numeric")]
+        public int ContactsNumber { get; set; }
 
         public int EmployeeId { get; set; }
 

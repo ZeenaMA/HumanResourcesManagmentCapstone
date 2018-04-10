@@ -23,30 +23,22 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// This action lists the Networks of each employee.
         /// </summary>
         /// <returns> Network, Index view</returns>
-        // GET: Network
+        //GET: Network
         public ActionResult Index()
         {
-            var networks = db.Networks.ToList();
-            var model = new List<NetworkViewModel>();
-            foreach (var item in networks)
+            var employees = db.Employees.ToList();
+            var model = new List<EmployeeViewModel>();
+            foreach (var item in employees)
             {
-                model.Add(new NetworkViewModel
+                model.Add(new EmployeeViewModel
                 {
-                    Id = item.NetworkId,
-                    PlatformType = item.PlatformType,
-                    ContactsNumber = item.ContactsNumber,
-                    EmployeeName = item.Employee.FullName,
+                    Id = item.Id,
+                    UserName = item.UserName
                 });
             }
 
             return View(model);
         }
-
-        /// <summary>
-        ///  Details of each Network.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>Network, Details view</returns>
         // GET: Network/Details/5
         public ActionResult Details(int? id)
         {
@@ -54,162 +46,203 @@ namespace HumanResourcesManagmentCapstone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Network network = db.Networks.Find(id);
-            if (network == null)
+
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
             {
                 return HttpNotFound();
             }
 
-            var model = new NetworkViewModel
+            var model = new EmployeeViewModel
             {
-                Id = network.NetworkId,
-                ContactsNumber = network.ContactsNumber,
-                PlatformType = network.PlatformType,
-                EmployeeName = network.Employee.FullName,
+                Id = employee.Id,
+                UserName = employee.UserName
             };
+
             return View(model);
         }
 
-        // GET: Network/Create
-        public ActionResult Create()
-        {
-            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
-            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+        //// GET: Network/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-            ViewBag.NetworkId = new SelectList(db.Networks, "NetworkId", "PlatformType");
-            return View();
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Network([Bind(Include = "NetworkId,PlatformType,ContactsNumber")] NetworkViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var network = new Network
+        //        {
+        //            PlatformType = model.PlatformType,
+        //            ContactsNumber = model.ContactsNumber,
+        //        };
+        //        db.Networks.Add(network);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(model);
+        //}
+
+        //// GET: Network/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Network network = db.Networks.Find(id);
+        //    if (network == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    var model = new NetworkViewModel
+        //    {
+        //        Id = network.NetworkId,
+        //        PlatformType = network.PlatformType,
+        //        ContactsNumber = network.ContactsNumber
+        //    };
+        //    return View(model);
+        //}
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "NetworkId,PlatformType,ContactsNumber")] NetworkViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var network = new Network
+        //        {
+        //            NetworkId = model.Id,
+        //            PlatformType = model.PlatformType,
+        //            ContactsNumber = model.ContactsNumber
+        //        };
+
+        //        db.Entry(network).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(model);
+        //}
+
+        //// GET: Network/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    var network = db.Networks.Find(id);
+        //    if (network == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    var model = new NetworkViewModel
+        //    {
+        //        Id = network.NetworkId,
+        //        PlatformType = network.PlatformType,
+        //        ContactsNumber = network.ContactsNumber
+        //    };
+
+        //    return View(model);
+        //}
+
+        //// POST: Network/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    var network = db.Networks.Find(id);
+        //    db.Networks.Remove(network);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
+
+        public ActionResult Networks(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new EmployeeViewModel
+            {
+                Id = employee.Id,
+                UserName = employee.UserName
+            };
+
+            return View(model);
         }
 
-        /// <summary>
-        /// This action enables the creation of Networks.
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns> Network, Create view</returns>
-        // POST: Network/Create
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(NetworkViewModel model)
+        public ActionResult AddNetworkPartial(NetworkViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var network = new Network
                 {
-                    NetworkId = model.Id,
-                    ContactsNumber = model.ContactsNumber,
                     PlatformType = model.PlatformType,
+                    ContactsNumber = model.ContactsNumber,
                     EmployeeId = model.EmployeeId,
                 };
 
                 db.Networks.Add(network);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                return PartialView();
             }
 
+            return PartialView(model);
+        }
+        // GET: Network
+        public ActionResult GetNetworksPartial(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var networks = db.Networks.Where(c => c.EmployeeId == id).ToList();
+
+            var model = new List<NetworkViewModel>();
+            foreach (var network in networks)
+            {
+                model.Add(new NetworkViewModel
+                {
+                    Id = network.NetworkId,
+                    ContactsNumber = network.ContactsNumber,
+                    PlatformType = network.PlatformType,
+                    EmployeeId = network.EmployeeId,
+                });
+            }
+
+            return PartialView(model);
+        }
+
+        public ActionResult GetNetworks()
+        {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
-            ViewBag.NetworkId = new SelectList(db.Networks, "NetworkId", "PlatformType");
-            return View(model);
-        }
-
-        // GET: Network/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Network network = db.Networks.Find(id);
-            if (network == null)
-            {
-                return HttpNotFound();
-            }
-
-            NetworkViewModel model = new NetworkViewModel
-            {
-                Id = network.NetworkId,
-                ContactsNumber = network.ContactsNumber,
-                PlatformType = network.PlatformType,
-            };
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
             return View();
-        }
-
-        /// <summary>
-        /// This action enables the editing of a Networks.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="model"></param>
-        /// <returns> Network, Edit view</returns>
-        // POST: Network/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, NetworkViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                Network network = db.Networks.Find(id);
-                if (network == null)
-                {
-                    return HttpNotFound();
-                }
-                network.ContactsNumber = model.ContactsNumber;
-                network.PlatformType = model.PlatformType;
-
-                db.Entry(network).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
-            return View(model);
-        }
-
-        // GET: Network/Delete/5. 
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Network network = db.Networks.Find(id);
-            if (network == null)
-            {
-                return HttpNotFound();
-            }
-            var model = new NetworkViewModel
-            {
-                Id = network.NetworkId,
-                EmployeeName = network.Employee.FullName,
-                ContactsNumber = network.ContactsNumber,
-                PlatformType = network.PlatformType,
-            };
-
-            return View(model);
-        }
-
-        /// <summary>
-        /// This action allows deleting Network.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns> Network, Delete view</returns>
-        // POST: Network/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Network network = db.Networks.Find(id);
-            db.Networks.Remove(network);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

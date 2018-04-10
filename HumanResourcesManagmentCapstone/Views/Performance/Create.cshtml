@@ -9,6 +9,8 @@
         <h4>Performance</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+
         <div class="form-group">
             @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -56,15 +58,7 @@
                 @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreationDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreationDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreationDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+        
         @*<div class="form-group">
             @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -84,19 +78,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Decision, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Decision, htmlAttributes: new { @class = "form-control" })
+                @Html.EnumDropDownListFor(model => model.Decision, "Select Decision", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Decision, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-2 control-label">Decision</label>
-            <div class="col-md-10">
-                @foreach (var item in (SelectList)ViewBag.PerformanceId)
-                {
-                    <input class="form-check-input" type="radio"  name="Decision" value="@item.Value" @*class="checkbox-inline"*@ />
-                        @Html.Label(item.Value, new { @class = "control-label" })
-                }
             </div>
         </div>
 

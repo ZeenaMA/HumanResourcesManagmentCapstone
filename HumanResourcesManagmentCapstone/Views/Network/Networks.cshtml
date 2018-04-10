@@ -1,0 +1,91 @@
+﻿@model HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Networks";
+}
+
+<h2>Networks</h2>
+
+<div>
+    <h4>EmployeeViewModel</h4>
+    <hr />
+    @Html.HiddenFor(m => m.Id)
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+</div>
+
+<div id="NetworkCreate">
+    @Html.Partial("AddNetworkPartial", new HumanResourcesManagmentCapstone.ViewModel.NetworkViewModel())
+</div>
+<div id="NetworkList"></div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section Scripts {
+    <script type="text/javascript">
+
+        function getNetworks() {
+            $.ajax({
+                url: "/Network/GetSNetworsPartial",
+                type: "get",
+                data: { id: $("#EmployeeId").val() },
+                dataType: "html",
+                success: function (result, status, jqxhr) {
+                    $("#NetworkList").html(result);
+                },
+                error: function (jqxhr, status, exception) {
+                    console.log(status);
+                }
+            });
+        }
+
+        // Clear section form fields
+        function clearNetworkForm() {
+            $("#PlatformType").val("");
+            $("#ContactsNumber").val("");
+        }
+
+        $(document).ready(function () {
+            clearNetworkForm()
+            getNetworks();
+
+            $("#CreateNetworkButton").click(function (e) {
+                // Prevent the form to be submitted regulary. Use JQuery to submit the form
+                e.preventDefault();
+
+                $.ajax({
+                    url: "/Network/AddNetworkPartial",
+                    type: "post",
+                    data: {
+                        NetworkId: $("#NetworkId").val(),
+                        PlatformType: $("#PlatformType").val(),
+                        ContactsNumber: $("#ContactsNumber").val(),
+                        EmployeeId: $("#EmployeeId").val(),
+                    },
+                    success: function (result, status, jqxhr) {
+
+                        clearNetworkForm();
+
+                        getNetworks();
+                    },
+                    error: function (jqxhr, status, exception) {
+                        console.log(status);
+                    }
+                });
+            });
+        });
+    </script>
+}

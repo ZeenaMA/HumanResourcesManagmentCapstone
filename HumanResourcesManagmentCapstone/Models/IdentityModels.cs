@@ -140,8 +140,8 @@ namespace HumanResourcesManagmentCapstone.Models
                 .HasPrecision(3, 1);
 
             modelBuilder.Entity<Network>()
-                .Property(e => e.ContactsNumber)
-                .HasPrecision(6, 0);
+                .Property(e => e.ContactsNumber);
+                //.HasPrecision(6, 0);
 
             modelBuilder.Entity<Performance>()
                 .Property(e => e.KPI)

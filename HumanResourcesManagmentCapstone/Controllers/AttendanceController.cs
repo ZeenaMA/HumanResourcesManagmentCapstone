@@ -111,7 +111,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
                     EmployeeId = model.EmployeeId,
-                    //AdministratorId = User.Identity.GetUserId<int>()
                 };
 
                 db.Attendances.Add(attendance);
