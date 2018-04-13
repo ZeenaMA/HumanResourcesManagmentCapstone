@@ -52,7 +52,7 @@
             });
         }
 
-        // Clear section form fields
+        // Clear networks form fields
         function clearNetworkForm() {
             $("#PlatformType").val("");
             $("#ContactsNumber").val("");
@@ -63,7 +63,6 @@
             getNetworks();
 
             $("#CreateNetworkButton").click(function (e) {
-                // Prevent the form to be submitted regulary. Use JQuery to submit the form
                 e.preventDefault();
 
                 $.ajax({

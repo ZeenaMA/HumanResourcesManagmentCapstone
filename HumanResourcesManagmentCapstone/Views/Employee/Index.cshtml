@@ -53,16 +53,14 @@
                     @Html.DisplayFor(modelItem => item.DateOfBirth)
                 </td>*@
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
-                    @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
-                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm box-shadow--4dp" })
                 </td>
             </tr>
         }
     </tbody>
+
 </table>
 @section scripts
 {
@@ -70,11 +68,13 @@
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
 
-    <script type="text/javascript">
-      $(document).ready( function () {
-          $('#employeesTable').DataTable();
-      } );
-    </script>
+<script type="text/javascript">
+        $('#employeesTable').dataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": -1 }
+            ]
+        });
+</script>
 }
 
 @section styles

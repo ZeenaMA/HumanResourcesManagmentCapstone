@@ -167,6 +167,8 @@ namespace HumanResourcesManagmentCapstone.Models
         }
 
         public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel> AttendanceViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel> EvaluationViewModels { get; set; }
     }
 
     public class CustomUserRole : IdentityUserRole<int> { }

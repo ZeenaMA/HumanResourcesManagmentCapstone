@@ -1,0 +1,68 @@
+﻿@model HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <h1>Team Member Evaluation</h1>
+    <h2>Evaluation</h2>
+    <table class="table table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Questions)
+                </th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+            </tr>
+            @for (int i = 0; i < Model.Questions.Count(); i++)
+            {
+                <tr>
+                    <td>
+                        @Html.HiddenFor(m => m.Questions[i].Id)
+                        @Html.DisplayFor(m => m.Questions[i].Text)
+                    </td>
+                    @foreach (var answer in Model.Questions[i].PossibleAnswers)
+                    {
+                        <td>
+                            @Html.RadioButtonFor(m => m.Questions[i].SelectedAnswer, answer.Id, new { id = answer.Id })
+                            @*<label for="@answer.Id">@answer.Text</label>*@
+                        </td>
+                    }
+                    @Html.ValidationMessageFor(m => m.Questions[i].SelectedAnswer)
+                </tr>
+        }
+</table>
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-sm">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Submit Evaluation</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>save and submit evaluation.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" value="Submit" class="btn btn-default" />
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+    }

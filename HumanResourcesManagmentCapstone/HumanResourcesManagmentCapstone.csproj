@@ -207,6 +207,7 @@
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\CommunicationSkillController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="ViewModel\AchievementViewModel.cs" />
     <Compile Include="ViewModel\AttendanceViewModel.cs" />
     <Compile Include="ViewModel\CertificationViewModel.cs" />
+    <Compile Include="ViewModel\AnswerViewModel.cs" />
     <Compile Include="ViewModel\CommunicationSkillViewModel.cs" />
     <Compile Include="ViewModel\ConstituentViewModel.cs" />
     <Compile Include="ViewModel\CriterionViewModel.cs" />
@@ -245,7 +247,7 @@
     <Compile Include="ViewModel\ExperienceViewModel.cs" />
     <Compile Include="ViewModel\NetworkViewModel.cs" />
     <Compile Include="ViewModel\PerformanceViewModel.cs" />
-    <Compile Include="ViewModel\QuestionEvaluationViewModel.cs" />
+    <Compile Include="ViewModel\QuestionViewModel.cs" />
     <Compile Include="ViewModel\SalaryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -634,6 +636,7 @@
     <Content Include="Views\Network\GetNetworks.cshtml" />
     <Content Include="Views\Network\Networks.cshtml" />
     <Content Include="Views\Network\AddNetworkPartial.cshtml" />
+    <Content Include="Views\Evaluation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
