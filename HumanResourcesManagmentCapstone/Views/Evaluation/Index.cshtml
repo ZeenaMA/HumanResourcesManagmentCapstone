@@ -1,7 +1,7 @@
 ﻿@model HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Evaluation";
 }
 
 @using (Html.BeginForm())
@@ -10,7 +10,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <h1>Team Member Evaluation</h1>
     <h2>Evaluation</h2>
-    <table class="table table-hover">
+    <table class="table table-striped table-hover">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Questions)

@@ -1,87 +1,104 @@
 ﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.CertificationViewModel>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Certifications List";
 }
-<h2>List</h2>
+<style>
+    table.dataTable thead .sorting,
+    table.dataTable thead .sorting_asc,
+    table.dataTable thead .sorting_desc {
+        background: border-box;
+    }
+</style>
+<h2>Certifications List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped" id="certificationTable">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UniversityRank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Major)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GPA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Extracurricular)
-        </th>*@
-        @*<th>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeName)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UniversityRank)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Major)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GPA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Extracurricular)
-            </td>*@
-            @*<td>
-                @Html.DisplayFor(modelItem => item.EmployeeId)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-    }
-
-</table>
+@if (Model.Count() == 0)
+{
+    <p>List not found</p>
+}
+else
+{
+    <table class="table table-striped table-hover" id="certificationTable">
+        <thead>
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UniversityRank)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GPA)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Extracurricular)
+                    </th>*@
+                @*<th>
+                        @Html.DisplayNameFor(model => model.EmployeeId)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.EmployeeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Major)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+                {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UniversityRank)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GPA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Extracurricular)
+                        </td>*@
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.EmployeeId)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Major)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm box-shadow--4dp" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 @section scripts
 {
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
-
     <script type="text/javascript">
-      $(document).ready( function () {
-          $('#certificationTable').DataTable();
-      } );
+        $('#certificationTable').dataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": -1 }
+            ]
+        });
     </script>
 }
 
