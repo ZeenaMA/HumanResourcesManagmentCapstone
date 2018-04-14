@@ -39,7 +39,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     IssueDate = item.IssueDate,
                     Comment = item.Comment,
                     Decision = item.Decision,
-                    CreationDate = item.CreationDate,
+                    CreationDate = DateTime.Now,
                     EmployeeName = item.Employee.FullName,
                 });
             }
@@ -152,7 +152,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 CreationDate = performance.CreationDate,
             };
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
-            return View();
+            return View(model);
         }
 
         /// <summary>

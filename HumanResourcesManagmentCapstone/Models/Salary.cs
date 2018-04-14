@@ -22,7 +22,7 @@ namespace HumanResourcesManagmentCapstone.Models
         public int SerialNumber { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime IssueDate { get; set; }
+        public DateTime? IssueDate { get; set; }
 
         [Column(TypeName = "numeric")]
         public decimal BasicSalary { get; set; }

@@ -27,8 +27,8 @@ namespace HumanResourcesManagmentCapstone.ViewModel
 
         public string Status { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Issue Date")]
         public DateTime IssueDate { get; set; }
 

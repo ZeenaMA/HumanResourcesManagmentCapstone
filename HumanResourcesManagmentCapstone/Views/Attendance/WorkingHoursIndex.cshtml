@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel>
+
+@{
+    ViewBag.Title = "WorkingHoursIndex";
+}
+
+<h2>WorkingHoursIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetWorkingHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeWorkingHours)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetWorkingHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeWorkingHours)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "WorkingHoursEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+            @Html.ActionLink("Delete", "WorkingHoursDelete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm box-shadow--4dp" })
+        </td>
+    </tr>
+}
+
+</table>

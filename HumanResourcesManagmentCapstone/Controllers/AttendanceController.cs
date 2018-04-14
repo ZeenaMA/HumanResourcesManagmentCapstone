@@ -238,5 +238,76 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
             base.Dispose(disposing);
         }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // GET: Attendance
+        public ActionResult WorkingHoursIndex()
+        {
+            var attendances = db.Attendances.ToList();
+            var model = new List<AttendanceViewModel>();
+
+            foreach (var item in attendances)
+            {
+                model.Add(new AttendanceViewModel
+                {
+                    Id = item.AttendanceId,
+                    StartDate = item.StartDate,
+                    EndDate = item.EndDate,
+                    TargetWorkingHours = item.TargetWorkingHours,
+                    PresentDays = item.PresentDays,
+                    AbsentDays = item.AbsentDays,
+                    EmployeeWorkingHours = item.EmployeeWorkingHours,
+                    FeedBack = item.FeedBack,
+                    EmployeeName = item.Employee.FullName,
+                    AdministratorId = item.AdministratorId
+                });
+            }
+
+            return View(model);
+        }
+        
+        //GET: Attendance/Create
+        // Create attendance.
+        public ActionResult WorkingHoursCreate()
+        {
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+            return View();
+        }
+
+        /// <summary>
+        /// This action enables the creation of an Attendances.
+        ///</summary>
+        /// <param name="model"></param>
+        /// <returns> Attendances, Create view</returns>
+        //Post:Attendance/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult WorkingHoursCreate(AttendanceViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var WorkingHours = new Attendance
+                {
+                    AttendanceId = model.Id,
+                    StartDate = model.StartDate,
+                    EndDate = model.EndDate,
+                    TargetWorkingHours = model.TargetWorkingHours,
+                    PresentDays = model.PresentDays,
+                    AbsentDays = model.AbsentDays,
+                    EmployeeWorkingHours = model.EmployeeWorkingHours,
+                    FeedBack = model.FeedBack,
+                    EmployeeId = model.EmployeeId,
+                };
+
+                db.Attendances.Add(WorkingHours);
+                db.SaveChanges();
+                return RedirectToAction("WorkingHoursIndex");
+            }
+
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+
+            return View(model);
+        }
     }
-}
+    }

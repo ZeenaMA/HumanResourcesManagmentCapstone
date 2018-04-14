@@ -114,3 +114,13 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('input[type=datetime]').datepicker({
+                dateFormat: 'yy-mm-dd',
+                maxDate: 0,
+                buttonText: "Choose"
+            });
+        });
+</script>
+}

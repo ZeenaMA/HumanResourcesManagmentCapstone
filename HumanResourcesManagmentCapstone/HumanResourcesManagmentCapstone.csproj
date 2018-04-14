@@ -213,7 +213,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NetworkController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
-    <Compile Include="Controllers\TargetHoursController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -637,6 +636,12 @@
     <Content Include="Views\Network\Networks.cshtml" />
     <Content Include="Views\Network\AddNetworkPartial.cshtml" />
     <Content Include="Views\Evaluation\Index.cshtml" />
+    <Content Include="Views\Attendance\WorkingHoursIndex.cshtml" />
+    <Content Include="Views\Attendance\WorkingHoursCreate.cshtml" />
+    <Content Include="Views\Attendance\WorkingHoursEdit.cshtml" />
+    <Content Include="Views\Attendance\WorkingHoursDelete.cshtml" />
+    <Content Include="Views\TargetHours\Index.cshtml" />
+    <Content Include="Views\TargetHours\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

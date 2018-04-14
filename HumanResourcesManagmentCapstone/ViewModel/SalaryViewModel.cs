@@ -21,7 +21,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         public int SerialNumber { get; set; }
 
         [Display(Name = "Issue Date")]
-        public DateTime IssueDate { get; set; }
+        public DateTime? IssueDate { get; set; }
 
         [Display(Name = "Basic Salary")]
         public decimal BasicSalary { get; set; }
