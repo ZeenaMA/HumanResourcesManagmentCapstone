@@ -13,6 +13,9 @@ else
         <th>
             @Html.DisplayNameFor(model => model.ContactsNumber)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlatformType)
+        </th>
         @*<th>
             @Html.DisplayNameFor(model => model.EmployeeId)
         </th>
@@ -27,6 +30,9 @@ else
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.ContactsNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlatformType)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.EmployeeId)
