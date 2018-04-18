@@ -47,7 +47,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.AchievementType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.AchievementType, htmlAttributes: new { @class = "form-control" })
+                @Html.EnumDropDownListFor(model => model.AchievementType, "Select Achievement", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AchievementType, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -61,7 +61,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -37,7 +37,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Employee Working Hours")]
         public decimal EmployeeWorkingHours { get; set; }
 
-        [Range(10, 20)]
+        [Range(0, 20)]
         [Display(Name = "Present Days")]
         public int PresentDays { get; set; }
 

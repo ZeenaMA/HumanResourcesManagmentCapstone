@@ -19,18 +19,16 @@ namespace HumanResourcesManagmentCapstone.Models
     {
         public Criterion()
         {
-            Evaluations = new HashSet<Evaluation>();
+            Scores = new HashSet<Score>();
         }
-
         public int CriterionId { get; set; }
 
         [Required]
-        [StringLength(10)]
-        public string CriteriaName { get; set; }
+        [StringLength(200)]
+        public string Criteria { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal CriteriaScore { get; set; }
+        public int? SelectedAnswer { get; set; }
 
-        public virtual ICollection<Evaluation> Evaluations { get; set; }
+        public virtual ICollection<Score> Scores { get; set; }
     }
 }

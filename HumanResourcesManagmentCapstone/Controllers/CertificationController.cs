@@ -5,6 +5,7 @@
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,9 +26,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// </summary>
         /// <returns> Certification, Index view</returns>
         // GET: Certification
+        [Authorize]
         public ActionResult Index()
         {
-            var certifications = db.Certifications.ToList();
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var certifications = db.Certifications.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
+
             var model = new List<CertificationViewModel>();
             foreach (var item in certifications)
             {
@@ -82,8 +87,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the creation of an Certification.
+        /// </summary>
+        /// <returns> Certification, Create view</returns>
         // GET: Certification/Create
-        //[Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -127,7 +136,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the editing of a Certification.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Certification, Edit view</returns>
         // GET: Certification/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -196,7 +211,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action allows deleting Certification.
+        /// </summary>
+        /// <returns> Certification, Delete view</returns>
         // GET: Certification/Delete/5. 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

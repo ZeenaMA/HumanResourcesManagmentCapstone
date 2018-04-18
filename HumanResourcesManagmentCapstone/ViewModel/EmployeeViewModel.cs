@@ -55,8 +55,8 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name ="Hire Date")]
         public DateTime HiredDate { get; set; }
 
@@ -72,8 +72,8 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [StringLength(50)]
         public string Nationality { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name ="Date of Birth")]
         public DateTime DateOfBirth { get; set; }
 

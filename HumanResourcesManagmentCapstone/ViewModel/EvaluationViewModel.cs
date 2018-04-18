@@ -14,15 +14,15 @@ namespace HumanResourcesManagmentCapstone.ViewModel
     /// <summary>
     /// View model based on the Evaluation model.
     /// </summary>
-        public class EvaluationViewModel
+    public class EvaluationViewModel
     {
-            public EvaluationViewModel()
-            {
-                Questions = new List<QuestionViewModel>();
-            }
-
-            public int Id { get; set; }
-            public string Title { get; set; }
-            public List<QuestionViewModel> Questions { get; set; }
+        public EvaluationViewModel()
+        {
+            Criteria = new List<CriterionViewModel>();
         }
+
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public List<CriterionViewModel> Criteria { get; set; }
     }
+}

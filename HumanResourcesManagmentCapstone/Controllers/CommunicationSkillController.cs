@@ -1,11 +1,12 @@
 ﻿/*
 * Description: Controller for managing employee Communication Skills, allows the creation of new Communication Skills, listing of all Communication Skills and editing and deleting.
 * Author: Zee
-* Due date: 04/04/2018
+* Due date: 18/04/2018
 */
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,9 +26,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// </summary>
         /// <returns> CommunicationSkill, Index view</returns>
         // GET: CommunicationSkill
+        [Authorize]
         public ActionResult Index()
         {
-            var communicationSkills = db.CommunicationSkills.ToList();
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var communicationSkills = db.CommunicationSkills.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList(); ;
+
             var model = new List<CommunicationSkillViewModel>();
             foreach (var item in communicationSkills)
             {
@@ -71,7 +76,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the creation of an CommunicationSkill.
+        /// </summary>
+        /// <returns> CommunicationSkill, Create view</returns>  
         // GET: CommunicationSkill/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -113,7 +123,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the editing of a CommunicationSkill.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns> CommunicationSkill, Edit view</returns>
         // GET: CommunicationSkill/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -135,7 +151,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             };
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
             ViewBag.CommunicationSkillId = new SelectList(db.CommunicationSkills, "CommunicationSkillId", "SkillLevel");
-            return View();
+            return View(model);
         }
 
         /// <summary>
@@ -167,7 +183,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action allows deleting CommunicationSkill.
+        /// </summary>
+        /// <returns> CommunicationSkill, Delete view</returns>
         // GET: CommunicationSkill/Delete/5. 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

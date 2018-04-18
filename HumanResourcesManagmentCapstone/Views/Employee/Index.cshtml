@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel>
 @{
-    ViewBag.Title = "TeamMember";
+    ViewBag.Title = "TeamMember List";
 }
 <style>
     table.dataTable thead .sorting,
@@ -11,8 +11,14 @@
 </style>
 <h2>Team Members</h2>
 <p>
-    @Html.ActionLink("Create New Member", "Create")
+    @Html.ActionLink("Create New Member", "Create", null, new { @class = "btn btn-primary" })
 </p>
+@if (Model.Count() == 0)
+{
+    <p>List not found</p>
+}
+else
+{
 <table class="table table-striped" id="employeesTable">
     <thead>
         <tr>
@@ -69,6 +75,7 @@
     </tbody>
 
 </table>
+}
 @section scripts
 {
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>

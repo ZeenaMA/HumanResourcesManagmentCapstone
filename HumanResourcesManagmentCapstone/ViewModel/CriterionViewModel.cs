@@ -3,6 +3,7 @@
 * Author: Zee
 * Due date: 03/04/2018
 */
+using HumanResourcesManagmentCapstone.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,11 +17,17 @@ namespace HumanResourcesManagmentCapstone.ViewModel
      /// </summary>
     public class CriterionViewModel
     {
+        public CriterionViewModel()
+        {
+            PossibleAnswers = new List<AnswerViewModel>();
+        }
         public int Id { get; set; }
 
         [Display(Name = "Criterion")]
-        public string CriteriaName { get; set; }
+        public string Criteria { get; set; }
 
-        public decimal CriteriaScore { get; set; }
+        public int? SelectedAnswer { get; set; }
+
+        public List<AnswerViewModel> PossibleAnswers { get; set; }
     }
 }

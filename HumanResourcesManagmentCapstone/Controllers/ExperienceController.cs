@@ -1,10 +1,11 @@
 ﻿/*
 * Description: Controller for managing employee Experience, allows the creation of new Experience, listing of all Experience and editing and deleting.
 * Author: Zee
-* Due date: 04/04/2018
+* Due date: 18/04/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,27 +25,31 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// </summary>
         /// <returns> Experience, Index view</returns>
         // GET: Experience
+        [Authorize]
         public ActionResult Index()
-    {
-        var experiences = db.Experiences.ToList();
-        var model = new List<ExperienceViewModel>();
-        foreach (var item in experiences)
         {
-            model.Add(new ExperienceViewModel
-            {
-                Id = item.ExperienceId,
-                EmploymentPlace = item.EmploymentPlace,
-                EmploymentType = item.EmploymentType,
-                StartDate = item.StartDate,
-                EndDate = item.EndDate,
-                Description = item.Description,
-                OrgnizationType = item.OrgnizationType,
-                EmployeeName = item.Employee.FullName,
-            });
-        }
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var experiences = db.Experiences.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList(); ;
 
-        return View(model);
-    }
+            var model = new List<ExperienceViewModel>();
+            foreach (var item in experiences)
+            {
+                model.Add(new ExperienceViewModel
+                {
+                    Id = item.ExperienceId,
+                    EmploymentPlace = item.EmploymentPlace,
+                    EmploymentType = item.EmploymentType,
+                    StartDate = item.StartDate,
+                    EndDate = item.EndDate,
+                    Description = item.Description,
+                    OrgnizationType = item.OrgnizationType,
+                    EmployeeName = item.Employee.FullName,
+                });
+            }
+
+            return View(model);
+        }
 
         /// <summary>
         ///  Details of each Experience.
@@ -53,76 +58,87 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <returns>Experience, Details view</returns>
         // GET: Experience/Details/5
         public ActionResult Details(int? id)
-    {
-        if (id == null)
         {
-            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        }
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             Experience experience = db.Experiences.Find(id);
-        if (experience == null)
-        {
-            return HttpNotFound();
+            if (experience == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new ExperienceViewModel
+            {
+                Id = experience.ExperienceId,
+                EmployeeName = experience.Employee.FullName,
+                EmploymentPlace = experience.EmploymentPlace,
+                EmploymentType = experience.EmploymentType,
+                StartDate = experience.StartDate,
+                EndDate = experience.EndDate,
+                Description = experience.Description,
+                OrgnizationType = experience.OrgnizationType,
+            };
+            return View(model);
         }
 
-        var model = new ExperienceViewModel
-        {
-            Id = experience.ExperienceId,
-            EmployeeName = experience.Employee.FullName,
-            EmploymentPlace = experience.EmploymentPlace,
-            EmploymentType = experience.EmploymentType,
-            StartDate = experience.StartDate,
-            EndDate = experience.EndDate,
-            Description = experience.Description,
-            OrgnizationType = experience.OrgnizationType,
-        };
-        return View(model);
-    }
-
+        /// <summary>
+        /// This action enables the creation of an Experience.
+        /// </summary>
+        /// <returns> Experience, Create view</returns>
         // GET: Experience/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
-    {
-        var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
-        ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+        {
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
 
-        ViewBag.ExperienceId = new SelectList(db.Experiences, "ExperienceId", "OrgnizationType");
-        return View();
-    }
+            ViewBag.ExperienceId = new SelectList(db.Experiences, "ExperienceId", "OrgnizationType");
+            return View();
+        }
         /// <summary>
         /// This action enables the creation of an Experience.
         /// </summary>
         /// <param name="model"></param>
         /// <returns> Experience, Create view</returns>
         // POST: Experience/Create
-         [HttpPost]
-         [ValidateAntiForgeryToken]
-    public ActionResult Create(ExperienceViewModel model)
-    {
-        if (ModelState.IsValid)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ExperienceViewModel model)
         {
-            var experience = new Experience
+            if (ModelState.IsValid)
             {
-                ExperienceId = model.Id,
-                EmploymentPlace = model.EmploymentPlace,
-                EmploymentType = model.EmploymentType,
-                StartDate = model.StartDate,
-                EndDate = model.EndDate,
-                Description = model.Description,
-                OrgnizationType = model.OrgnizationType,
-                EmployeeId = model.EmployeeId,
-            };
+                var experience = new Experience
+                {
+                    ExperienceId = model.Id,
+                    EmploymentPlace = model.EmploymentPlace,
+                    EmploymentType = model.EmploymentType,
+                    StartDate = model.StartDate,
+                    EndDate = model.EndDate,
+                    Description = model.Description,
+                    OrgnizationType = model.OrgnizationType,
+                    EmployeeId = model.EmployeeId,
+                };
 
-            db.Experiences.Add(experience);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+                db.Experiences.Add(experience);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
             ViewBag.ExperienceId = new SelectList(db.Experiences, "ExperienceId", "OrgnizationType");
             return View(model);
-    }
+        }
 
+        /// <summary>
+        /// This action enables the editing of a Experience.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Experience, Edit view</returns>
         // GET: Experience/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -147,7 +163,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 OrgnizationType = experience.OrgnizationType,
             };
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "FullName");
-            return View();
+            return View(model);
         }
 
         /// <summary>
@@ -172,8 +188,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 experience.EmploymentType = model.EmploymentType;
                 experience.StartDate = model.StartDate;
                 experience.EndDate = model.EndDate;
-                experience.Description = model. Description;
-                experience.OrgnizationType = model. OrgnizationType;
+                experience.Description = model.Description;
+                experience.OrgnizationType = model.OrgnizationType;
                 db.Entry(experience).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -182,7 +198,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action allows deleting Experience.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Experience, Delete view</returns>
         // GET: Experience/Delete/5. 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -235,5 +257,5 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
     }
-    }
+}
 

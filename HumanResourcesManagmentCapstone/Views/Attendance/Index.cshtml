@@ -9,10 +9,10 @@
         background: border-box;
     }
 </style>
-<h2>Attendance List</h2>
+<h2>Member Attendance List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Log Member Attendance", "Create", null, new { @class = "btn btn-primary" })
 </p>
 
 @if (Model.Count() == 0)
@@ -54,9 +54,7 @@ else
                 @*<th>
                         @Html.DisplayNameFor(model => model.AdminName)
                     </th>*@
-                <th>
-                    @Html.DisplayNameFor(model => model.EmployeeId)
-                </th>
+
                 <th></th>
             </tr>
         </thead>
@@ -97,14 +95,24 @@ else
                     @*<td>
                             @Html.DisplayFor(modelItem => item.EmployeeId)
                         </td>*@
+                  @if (User.IsInRole("Admin"))
+                    {
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                         @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                         @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm box-shadow--4dp" })
                     </td>
+                  }
+                  else
+                  {
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                    </td>
+                  }
                 </tr>
             }
         </tbody>
+
     </table>
 }
 @section scripts
@@ -112,19 +120,16 @@ else
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
     <script type="text/javascript">
         $('#attendanceTable').dataTable({
-
-            "scrollY": "80px",
-            "scrollCollapse": true,
-            "paging": false,
-
             "columnDefs": [
                 { "orderable": false, "targets": -1 }
             ]
         });
     </script>
 }
+
 @section styles
 {
     <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />

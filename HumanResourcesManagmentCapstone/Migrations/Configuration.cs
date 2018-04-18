@@ -70,11 +70,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 MiddleName = "Middle",
                 LastName = "Last",
                 EmployeeType = EmployeeType.TeamMember,
-                HiredDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                HiredDate = new DateTime(2016, 6, 6),
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
+                DateOfBirth = new DateTime(2016, 6, 6)
             };
             userManager.Create(TM1, "123123");
 
@@ -86,11 +86,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 MiddleName = "Middle",
                 LastName = "Last",
                 EmployeeType = EmployeeType.TeamMember,
-                HiredDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                HiredDate = new DateTime(2016, 6, 6),
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
+                DateOfBirth = new DateTime(2016, 6, 6),
             };
             userManager.Create(TM2, "123123");
 
@@ -102,11 +102,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 MiddleName = "Middle",
                 LastName = "Last",
                 EmployeeType = EmployeeType.TeamMember,
-                HiredDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                HiredDate = new DateTime(2016, 6, 6),
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null)
+                DateOfBirth = new DateTime(2016, 6, 6),                
             };
             userManager.Create(TM3, "123123");
 
@@ -138,8 +138,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 {
                 EmploymentPlace = "Google",
                 EmploymentType = "Manager",
-                StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
-                EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                StartDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2016,6,6),
                 Description = "",
                 OrgnizationType = OrgnizationType.Corporate,
                 EmployeeId = context.Employees.Single(c => c.UserName == "Member1").Id
@@ -149,8 +149,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 {
                 EmploymentPlace = "Dah",
                 EmploymentType = "Manager",
-                StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
-                EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                StartDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2016,6,6),
                 Description = "",
                 OrgnizationType = OrgnizationType.Corporate,
                 EmployeeId = context.Employees.Single(c => c.UserName == "Member2").Id
@@ -184,8 +184,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
             {
                 new Attendance
                 {
-                StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
-                EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                StartDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2016,6,6),
                 TargetWorkingHours = 30,
                 PresentDays = 30,
                 AbsentDays = 1,
@@ -196,8 +196,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
 
                 new Attendance
                 {
-                StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
-                EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                StartDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2016,6,6),
                 TargetWorkingHours = 30,
                 PresentDays = 30,
                 AbsentDays = 1,
@@ -238,10 +238,10 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 KPI = 66,
                 Discipline = 100,
                 Status = "",
-                IssueDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                IssueDate = new DateTime(2016,6,6),
                 Comment = "",
                 Decision = Decision.Approved,
-                CreationDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                CreationDate = new DateTime(2016,6,6),
                 EmployeeId = context.Employees.Single(c => c.UserName == "Member1").Id
                 },
 
@@ -250,10 +250,10 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 KPI = 66,
                 Discipline = 100,
                 Status = "",
-                IssueDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                IssueDate = new DateTime(2016,6,6),
                 Comment = "",
                 Decision = Decision.Approved,
-                CreationDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                CreationDate = new DateTime(2016,6,6),
                 EmployeeId = context.Employees.Single(c => c.UserName == "Member2").Id
                 }
             };
@@ -265,8 +265,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
             {
                 new Certification
                 {
-                StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
-                EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                StartDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2016,6,6),
                 UniversityRank = 1,
                 Major = "MIS",
                 GPA = 1,
@@ -277,8 +277,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
 
                  new Certification
                 {
-                StartDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
-                EndDate = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
+                StartDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2016,6,6),
                 UniversityRank = 1,
                 Major = "MIS",
                 GPA = 1,
@@ -288,11 +288,32 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 },
 
             };
-
             certifications.ForEach(s => context.Certifications.AddOrUpdate(m => m.CertificationId, s));
             context.SaveChanges();
-        }
 
+
+            // Criteria 
+            var criteria = new List<Criterion>
+            {
+                new Criterion { Criteria = "Positive Energy"},
+                new Criterion { Criteria = "Taking Initiatives "},
+                new Criterion { Criteria = "Action "},
+                new Criterion { Criteria = "Project Managment"},
+                new Criterion { Criteria = "Time Management "},
+                new Criterion { Criteria = "Functionallys"},
+                new Criterion { Criteria = "Personally"},
+                new Criterion { Criteria = "Listening Skills"},
+                new Criterion { Criteria = "Skills"},
+                new Criterion { Criteria = "Knowladge "},
+                new Criterion { Criteria = "Attitudes "},
+                new Criterion { Criteria = "Doing their best" },
+                new Criterion { Criteria = "Having a vision"},
+                new Criterion { Criteria = "Moving others"},
+                new Criterion { Criteria = "Doning Something deferent"}
+            };
+            criteria.ForEach(s => context.Criteria.AddOrUpdate(m => m.Criteria, s));
+            context.SaveChanges();
+        }
     }
 }
   

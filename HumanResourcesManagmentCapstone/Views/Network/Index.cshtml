@@ -3,29 +3,74 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<style>
+    table.dataTable thead .sorting,
+    table.dataTable thead .sorting_asc,
+    table.dataTable thead .sorting_desc {
+        background: border-box;
+    }
+</style>
+<h2>List of memebrs</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Network", "Create", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.ActionLink("Networks", "Networks", new { id=item.Id })
-        </td>
-    </tr>
+@if (Model.Count() == 0)
+{
+    <p>List not found</p>
+}
+else
+{
+    <table class="table table-striped table-hover" id="memebrsTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Networks", "Networks", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+}
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
+
+    <script type="text/javascript">
+        $('#memebrsTable').dataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": -1 }
+            ]
+        });
+    </script>
 }
 
-</table>
+@section styles
+{
+    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
+}

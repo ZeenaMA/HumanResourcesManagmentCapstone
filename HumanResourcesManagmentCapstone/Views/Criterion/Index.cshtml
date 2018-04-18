@@ -1,41 +1,21 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel>
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.CriterionViewModel>
+
 @{
     ViewBag.Title = "Index";
 }
+
+<h2>Index</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.EndDate)
+            @Html.DisplayNameFor(model => model.Criteria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TargetWorkingHours)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeWorkingHours)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PresentDays)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AbsentDays)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FeedBack)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AdministratorId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeName)
+            @Html.DisplayNameFor(model => model.SelectedAnswer)
         </th>
         <th></th>
     </tr>
@@ -43,34 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.EndDate)
+            @Html.DisplayFor(modelItem => item.Criteria)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TargetWorkingHours)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeWorkingHours)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PresentDays)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AbsentDays)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FeedBack)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdministratorId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeId)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeName)
+            @Html.DisplayFor(modelItem => item.SelectedAnswer)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

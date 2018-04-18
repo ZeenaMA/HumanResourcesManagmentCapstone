@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for adding/ editing/ deleting/ viewing employess.
 * Author: Zee
-* Due date: 04/04/2018
+* Due date: 18/04/2018
 */
 using AutoMapper;
 using Microsoft.AspNet.Identity;
@@ -13,8 +13,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+
 namespace HumanResourcesManagmentCapstone.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class EmployeeController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -121,7 +124,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
         }
         // GET: Employee/Create
-        [Authorize]
         public ActionResult Create()
         {
             ViewBag.Roles = new SelectList(db.Roles.ToList(), "Name", "Name");

@@ -18,6 +18,10 @@ namespace HumanResourcesManagmentCapstone.Models
     [Table("Evaluation")]
     public partial class Evaluation
     {
+        public Evaluation()
+        {
+            Scores = new HashSet<Score>();
+        }
         public int EvaluationId { get; set; }
 
         [Column(TypeName = "date")]
@@ -30,12 +34,11 @@ namespace HumanResourcesManagmentCapstone.Models
 
         public int EmployeeId { get; set; }
 
-        public int CriterionId { get; set; }
-
-        public virtual Criterion Criterion { get; set; }
-
         public virtual Employee Employee { get; set; }
 
         public virtual Employee EmployeeEvaluation { get; set; }
+
+        public virtual ICollection<Score> Scores { get; set; }
+
     }
 }

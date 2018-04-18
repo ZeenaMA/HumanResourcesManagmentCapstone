@@ -22,6 +22,7 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Achievement Type")]
         public AchievementType? AchievementType { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Discription { get; set; }
 
         public int EmployeeId { get; set; }

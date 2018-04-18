@@ -44,6 +44,7 @@ namespace HumanResourcesManagmentCapstone.Models
         public virtual DbSet<Network> Networks { get; set; }
         public virtual DbSet<Performance> Performances { get; set; }
         public virtual DbSet<Salary> Salaries { get; set; }
+        ///public virtual DbSet<Score> Scores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -61,14 +62,14 @@ namespace HumanResourcesManagmentCapstone.Models
                 .Property(e => e.GPA)
                 .HasPrecision(3, 2);
 
-            modelBuilder.Entity<Criterion>()
-                .Property(e => e.CriteriaScore)
-                .HasPrecision(3, 1);
+            //modelBuilder.Entity<Criterion>()
+            //    .Property(e => e.CriteriaScore);
+            //    //.HasPrecision(3, 1);
 
-            modelBuilder.Entity<Criterion>()
-                .HasMany(e => e.Evaluations)
-                .WithRequired(e => e.Criterion)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Criterion>()
+            //    .HasMany(e => e.Evaluations)
+            //    .WithRequired(e => e.Criterion)
+            //    .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Achievements)

@@ -54,13 +54,13 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.EmployeeId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EmployeeId)
-        </dd>
+        </dd>*@
 
     </dl>
 
@@ -68,8 +68,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm box-shadow--4dp" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
         </div>
     }
 </div>

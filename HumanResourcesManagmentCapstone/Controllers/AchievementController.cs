@@ -6,6 +6,7 @@
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,9 +26,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// </summary>
         /// <returns> Achivement, Index view</returns>
         // GET: Achievement
+        [Authorize]
         public ActionResult Index()
         {
-            var achievements = db.Achievements.ToList();
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var achievements = db.Achievements.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
+
             var model = new List<AchievementViewModel>();
 
             foreach (var item in achievements)
@@ -73,6 +78,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Achievement/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -113,6 +119,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Achievement/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -165,6 +172,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Achievement/Delete/5. 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

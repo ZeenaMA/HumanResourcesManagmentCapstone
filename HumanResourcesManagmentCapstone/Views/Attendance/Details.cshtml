@@ -3,7 +3,7 @@
     ViewBag.Title = "Details";
 }
 <div>
-    <h4>Attendance </h4>
+    <h2>Member Attendance</h2>
     <hr />
     <dl class="dl-horizontal">
 
@@ -20,14 +20,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
         </dd>
 
         <dt>
@@ -63,41 +55,51 @@
         </dd>
 
         @*<dt>
-            @Html.DisplayNameFor(model => model.FeedBack)
-        </dt>
+                @Html.DisplayNameFor(model => model.FeedBack)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FeedBack)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.FeedBack)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AdministratorId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AdministratorId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AdministratorId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AdministratorId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AdminName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AdminName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AdminName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AdminName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EmployeeId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EmployeeId)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.EmployeeId)
+            </dd>*@
 
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", null, new { id = Model.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+    </p>
+}
+else
+{
+    <p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+    </p >
+}

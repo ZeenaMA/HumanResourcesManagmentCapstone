@@ -1,7 +1,7 @@
 /*
 * Description: This class depicts components of the human resource management system.
 * Author: Zee
-* Due date: 27/02/2018
+* Due date: 18/04/2018
 */
 namespace HumanResourcesManagmentCapstone.Models
 {

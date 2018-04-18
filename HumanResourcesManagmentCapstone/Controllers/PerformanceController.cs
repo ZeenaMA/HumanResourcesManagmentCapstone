@@ -1,10 +1,11 @@
 ﻿/*
 * Description: Controller for managing employee Performance, allows the creation of new Performance, listing of all Performance and editing and deleting.
 * Author: Zee
-* Due date: 04/04/2018
+* Due date: 18/04/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,9 +25,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// </summary>
         /// <returns> Performance, Index view</returns>
         // GET: Performance
+        [Authorize]
         public ActionResult Index()
         {
-            var performances = db.Performances.ToList();
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var performances = db.Performances.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
+
             var model = new List<PerformanceViewModel>();
             foreach (var item in performances)
             {
@@ -80,7 +85,12 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the creation of a Performance.
+        /// </summary>
+        /// <returns> Performance, Create view</returns>
         // GET: Performance/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -126,7 +136,14 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action enables the editing of a Performance.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns> Performance, Edit view</returns>
         // GET: Performance/Edit/5
+        [Authorize(Roles = "Admin, CEO")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -189,7 +206,13 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action allows deleting Performance.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Performance, Delete view</returns>
         // GET: Performance/Delete/5. 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

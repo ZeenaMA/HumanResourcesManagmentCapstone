@@ -13,7 +13,7 @@
     <table class="table table-striped table-hover">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Questions)
+                    @Html.DisplayNameFor(model => model.Criteria)
                 </th>
                 <th>1</th>
                 <th>2</th>
@@ -21,21 +21,21 @@
                 <th>4</th>
                 <th>5</th>
             </tr>
-            @for (int i = 0; i < Model.Questions.Count(); i++)
+            @for (int i = 0; i < Model.Criteria.Count(); i++)
             {
                 <tr>
                     <td>
-                        @Html.HiddenFor(m => m.Questions[i].Id)
-                        @Html.DisplayFor(m => m.Questions[i].Text)
+                        @Html.HiddenFor(m => m.Criteria[i].Id)
+                        @Html.DisplayFor(m => m.Criteria[i].Criteria)
                     </td>
-                    @foreach (var answer in Model.Questions[i].PossibleAnswers)
+                    @foreach (var answer in Model.Criteria[i].PossibleAnswers)
                     {
                         <td>
-                            @Html.RadioButtonFor(m => m.Questions[i].SelectedAnswer, answer.Id, new { id = answer.Id })
+                            @Html.RadioButtonFor(m => m.Criteria[i].SelectedAnswer, answer.Id, new { id = answer.Id })
                             @*<label for="@answer.Id">@answer.Text</label>*@
                         </td>
                     }
-                    @Html.ValidationMessageFor(m => m.Questions[i].SelectedAnswer)
+                    @Html.ValidationMessageFor(m => m.Criteria[i].SelectedAnswer)
                 </tr>
         }
 </table>

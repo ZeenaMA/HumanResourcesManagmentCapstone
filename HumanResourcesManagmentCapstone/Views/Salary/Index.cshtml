@@ -1,6 +1,7 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.AchievementViewModel>
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.SalaryViewModel>
+
 @{
-    ViewBag.Title = "Achievements List";
+    ViewBag.Title = "Salary List";
 }
 <style>
     table.dataTable thead .sorting,
@@ -9,65 +10,68 @@
         background: border-box;
     }
 </style>
-<h2>Achievements list</h2>
+<h2>Salaries List</h2>
 
 <p>
-    @Html.ActionLink("Create New Achievement", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Add Salary", "Create", null, new { @class = "btn btn-primary" })
 </p>
-
 @if (Model.Count() == 0)
 {
     <p>List not found</p>
 }
 else
 {
-    <table class="table table-striped table-hover" id="achievementsTable">
-        <thead>
+    <table class="table table-striped table-hover" id="salaryTable">
+    <thead>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.EmployeeName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AchievementType)
-                </th>
 
-                <th></th>
-            </tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BasicSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerformanceBasedSalary)
+            </th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Discription)
-                        </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EmployeeName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AchievementType)
-                    </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.EmployeeId)
-                        </td>*@
-                    @if (User.IsInRole("Admin"))
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IssueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BasicSalary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PerformanceBasedSalary)
+                </td>
+
+                @if (User.IsInRole("Admin"))
                     {
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                         @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm box-shadow--4dp" })
                     </td>
                     }
                     else
                     {
                         <td>
-                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                         </td>
                     }
-                </tr>
-            }
+            </tr>
+        }
         </tbody>
-
     </table>
 }
 @section scripts
@@ -75,16 +79,14 @@ else
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.bootstrap.min.js")"></script>
-
     <script type="text/javascript">
-        $('#achievementsTable').dataTable({
+        $('#salaryTable').dataTable({
             "columnDefs": [
                 { "orderable": false, "targets": -1 }
             ]
         });
     </script>
 }
-
 @section styles
 {
     <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />

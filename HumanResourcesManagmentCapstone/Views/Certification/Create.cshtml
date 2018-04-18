@@ -22,7 +22,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Major, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control", @placeholder = "MIS" } })
                 @Html.ValidationMessageFor(model => model.Major, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CertificationType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.CertificationType, htmlAttributes: new { @class = "form-control" })
+                @Html.EnumDropDownListFor(model => model.CertificationType, "Select Type", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CertificationType, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.UniversityRank, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.UniversityRank, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.UniversityRank, new { htmlAttributes = new { @class = "form-control", @placeholder = "100" } })
                 @Html.ValidationMessageFor(model => model.UniversityRank, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -63,7 +63,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GPA, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GPA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.GPA, new { htmlAttributes = new { @class = "form-control", @placeholder = "4.00" } })
                 @Html.ValidationMessageFor(model => model.GPA, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -71,7 +71,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Extracurricular, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Extracurricular, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Extracurricular, new { htmlAttributes = new { @class = "form-control", @placeholder = "Chess Club" } })
                 @Html.ValidationMessageFor(model => model.Extracurricular, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -101,7 +101,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
 </div>
 
 @section Scripts {

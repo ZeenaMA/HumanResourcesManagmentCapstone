@@ -20,13 +20,19 @@ namespace HumanResourcesManagmentCapstone.Controllers
     public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         // GET: Attendance
+        [Authorize]
         public ActionResult Index()
         {
-            var attendances = db.Attendances.ToList();
-            var model = new List<AttendanceViewModel>();
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var attendances = db.Attendances.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
 
+            var model = new List<AttendanceViewModel>();
             foreach (var item in attendances)
             {
                 model.Add(new AttendanceViewModel
@@ -81,6 +87,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
         //GET: Attendance/Create
         // Create attendance.
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -125,6 +132,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         }
 
         // GET: Attendance/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -187,6 +195,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
         // GET: Attendance/Delete/5
         // Delete attendance
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -239,7 +248,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
             base.Dispose(disposing);
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // GET: Attendance
         public ActionResult WorkingHoursIndex()
         {
             var attendances = db.Attendances.ToList();
@@ -264,9 +272,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             return View(model);
         }
-        
-        //GET: Attendance/Create
-        // Create attendance.
+
         public ActionResult WorkingHoursCreate()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -286,20 +292,19 @@ namespace HumanResourcesManagmentCapstone.Controllers
         {
             if (ModelState.IsValid)
             {
-                var WorkingHours = new Attendance
+                var attendance = new Attendance
                 {
                     AttendanceId = model.Id,
                     StartDate = model.StartDate,
                     EndDate = model.EndDate,
                     TargetWorkingHours = model.TargetWorkingHours,
-                    PresentDays = model.PresentDays,
                     AbsentDays = model.AbsentDays,
                     EmployeeWorkingHours = model.EmployeeWorkingHours,
                     FeedBack = model.FeedBack,
                     EmployeeId = model.EmployeeId,
                 };
 
-                db.Attendances.Add(WorkingHours);
+                db.Attendances.Add(attendance);
                 db.SaveChanges();
                 return RedirectToAction("WorkingHoursIndex");
             }
@@ -307,6 +312,67 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
             ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
 
+            return View(model);
+        }
+
+        // GET: Attendance/Edit/5
+        public ActionResult WorkingHoursEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Attendance attendance = db.Attendances.Find(id);
+            if (attendance == null)
+            {
+                return HttpNotFound();
+            }
+            AttendanceViewModel model = new AttendanceViewModel
+            {
+                Id = attendance.AttendanceId,
+                StartDate = attendance.StartDate,
+                EndDate = attendance.EndDate,
+                TargetWorkingHours = attendance.TargetWorkingHours,
+                PresentDays = attendance.PresentDays,
+                AbsentDays = attendance.AbsentDays,
+                EmployeeWorkingHours = attendance.EmployeeWorkingHours,
+                FeedBack = attendance.FeedBack,
+            };
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
+            return View(model);
+        }
+
+        /// <summary>
+        /// This action enables the editing of a Attendances.
+        ///</summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns> Attendances, Edit view</returns>
+        // POST: Attendance/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult WorkingHoursEdit(int id, AttendanceViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Attendance attendance = db.Attendances.Find(id);
+                if (attendance == null)
+                {
+                    return HttpNotFound();
+                }
+                attendance.StartDate = model.StartDate;
+                attendance.EndDate = model.EndDate;
+                attendance.TargetWorkingHours = model.TargetWorkingHours;
+                attendance.PresentDays = model.PresentDays;
+                attendance.AbsentDays = model.AbsentDays;
+                attendance.EmployeeWorkingHours = model.EmployeeWorkingHours;
+                attendance.FeedBack = model.FeedBack;
+                db.Entry(attendance).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("WorkingHoursIndex");
+            }
+            ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
             return View(model);
         }
     }

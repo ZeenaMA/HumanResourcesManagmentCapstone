@@ -46,7 +46,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SkillLevel, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.SkillLevel, htmlAttributes: new { @class = "form-control" })
+                @Html.EnumDropDownListFor(model => model.SkillLevel, "Select Level", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SkillLevel, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -60,7 +60,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
 </div>
 
 @section Scripts {
