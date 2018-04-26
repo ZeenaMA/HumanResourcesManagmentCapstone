@@ -4,10 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")
     @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)*@
+
+    @Styles.Render("~/bundles/cssdatatables")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
+
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -66,9 +72,14 @@
     </div>
 
 
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jsdatatables")
     @RenderSection("scripts", required: false)
 </body>
 </html>

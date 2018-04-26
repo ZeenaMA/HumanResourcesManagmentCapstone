@@ -70,11 +70,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 MiddleName = "Middle",
                 LastName = "Last",
                 EmployeeType = EmployeeType.TeamMember,
-                HiredDate = new DateTime(2016, 6, 6),
+                HiredDate = new DateTime(2015, 6, 20),
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = new DateTime(2016, 6, 6)
+                DateOfBirth = new DateTime(2016, 8, 6)
             };
             userManager.Create(TM1, "123123");
 
@@ -86,11 +86,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 MiddleName = "Middle",
                 LastName = "Last",
                 EmployeeType = EmployeeType.TeamMember,
-                HiredDate = new DateTime(2016, 6, 6),
+                HiredDate = new DateTime(2014, 1, 1),
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = new DateTime(2016, 6, 6),
+                DateOfBirth = new DateTime(2018, 6, 6),
             };
             userManager.Create(TM2, "123123");
 
@@ -102,11 +102,11 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 MiddleName = "Middle",
                 LastName = "Last",
                 EmployeeType = EmployeeType.TeamMember,
-                HiredDate = new DateTime(2016, 6, 6),
+                HiredDate = new DateTime(2017, 9, 10),
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = new DateTime(2016, 6, 6),                
+                DateOfBirth = new DateTime(2016, 11, 1),                
             };
             userManager.Create(TM3, "123123");
 
@@ -139,7 +139,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 EmploymentPlace = "Google",
                 EmploymentType = "Manager",
                 StartDate = new DateTime(2016,6,6),
-                EndDate = new DateTime(2016,6,6),
+                EndDate = new DateTime(2018,6,6),
                 Description = "",
                 OrgnizationType = OrgnizationType.Corporate,
                 EmployeeId = context.Employees.Single(c => c.UserName == "Member1").Id
@@ -149,8 +149,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 {
                 EmploymentPlace = "Dah",
                 EmploymentType = "Manager",
-                StartDate = new DateTime(2016,6,6),
-                EndDate = new DateTime(2016,6,6),
+                StartDate = new DateTime(2015,7,6),
+                EndDate = new DateTime(2016,9,1),
                 Description = "",
                 OrgnizationType = OrgnizationType.Corporate,
                 EmployeeId = context.Employees.Single(c => c.UserName == "Member2").Id
@@ -184,8 +184,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
             {
                 new Attendance
                 {
-                StartDate = new DateTime(2016,6,6),
-                EndDate = new DateTime(2016,6,6),
+                StartDate = new DateTime(2018,1,1),
+                EndDate = new DateTime(2014,6,6),
                 TargetWorkingHours = 30,
                 PresentDays = 30,
                 AbsentDays = 1,
@@ -196,7 +196,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
 
                 new Attendance
                 {
-                StartDate = new DateTime(2016,6,6),
+                StartDate = new DateTime(2016,6,7),
                 EndDate = new DateTime(2016,6,6),
                 TargetWorkingHours = 30,
                 PresentDays = 30,
@@ -238,7 +238,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 KPI = 66,
                 Discipline = 100,
                 Status = "",
-                IssueDate = new DateTime(2016,6,6),
+                IssueDate = new DateTime(2018,1,1),
                 Comment = "",
                 Decision = Decision.Approved,
                 CreationDate = new DateTime(2016,6,6),
@@ -250,7 +250,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 KPI = 66,
                 Discipline = 100,
                 Status = "",
-                IssueDate = new DateTime(2016,6,6),
+                IssueDate = new DateTime(2018,2,1),
                 Comment = "",
                 Decision = Decision.Approved,
                 CreationDate = new DateTime(2016,6,6),
@@ -265,8 +265,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
             {
                 new Certification
                 {
-                StartDate = new DateTime(2016,6,6),
-                EndDate = new DateTime(2016,6,6),
+                StartDate = new DateTime(2004,9,6),
+                EndDate = new DateTime(2008,1,1),
                 UniversityRank = 1,
                 Major = "MIS",
                 GPA = 1,
@@ -277,8 +277,8 @@ namespace HumanResourcesManagmentCapstone.Migrations
 
                  new Certification
                 {
-                StartDate = new DateTime(2016,6,6),
-                EndDate = new DateTime(2016,6,6),
+                StartDate = new DateTime(2006,1,1),
+                EndDate = new DateTime(2010,1,1),
                 UniversityRank = 1,
                 Major = "MIS",
                 GPA = 1,

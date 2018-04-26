@@ -167,9 +167,9 @@ namespace HumanResourcesManagmentCapstone.Models
                 .HasPrecision(7, 2);
         }
 
-        public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel> AttendanceViewModels { get; set; }
+        //public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel> AttendanceViewModels { get; set; }
 
-        public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel> EvaluationViewModels { get; set; }
+        //public System.Data.Entity.DbSet<HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel> EvaluationViewModels { get; set; }
     }
 
     public class CustomUserRole : IdentityUserRole<int> { }

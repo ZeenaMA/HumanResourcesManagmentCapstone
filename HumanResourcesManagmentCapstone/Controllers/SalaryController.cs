@@ -33,7 +33,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var loggedadmin = User.IsInRole("Admin");
             var salaries = db.Salaries.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
 
-            var model = new List<SalaryViewModel>();
+                var model = new List<SalaryViewModel>();
             foreach (var item in salaries)
             {
                 model.Add(new SalaryViewModel
@@ -42,18 +42,88 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeName = item.Employee.FullName,
                     IssueDate = item.IssueDate,
                     BasicSalary = item.BasicSalary,
-                    PerformanceBasedSalary = item.PerformanceBasedSalary
+                    PerformanceBasedSalary = item.PerformanceBasedSalary,
                 });
             }
 
             return View(model);
         }
 
-        //TODO salary calculation
-        //public static void CalculateSalary(AttendanceViewModel)
-        //{
+        public ActionResult Salary()
+        {
+            //var CertificationGrade = 0.0;
+            //switch ()
+            //{
+            //    case CertificationType.Bachelor:
+            //        CertificationGrade = 6.3;
+            //        break;
+            //    case CertificationType.Diploma:
+            //        CertificationGrade = 1.4;
+            //        break;
+            //    case CertificationType.Master:
+            //        CertificationGrade = 5.6;
+            //        break;
+            //    case CertificationType.Phd:
+            //        CertificationGrade = 12.6;
+            //        break;
+            //    case CertificationType.PostGrad:
+            //        CertificationGrade = 2.1;
+            //        break;
+            //    default:
+            //        CertificationGrade += 0;
+            //        break;
+            //}
 
-        //}
+
+            foreach (var employee in db.Employees.ToList())
+            {
+                // Points.
+                var workingHours = db.Attendances.Where(x => x.EmployeeId == employee.Id).Select(x => x.EmployeeWorkingHours).Sum();
+                var discipline = db.Performances.Where(x => x.EmployeeId == employee.Id).Select(x => x.Discipline).Sum();
+                var KPI = db.Performances.Where(x => x.EmployeeId == employee.Id).Select(x => x.KPI).Sum();
+                //var evaluation = db.Evaluations.Where(x => x.EmployeeId == employee.Id).Select(x => x.Scores).Sum();
+
+                var totalWorkingHours = (workingHours / workingHours) * 100;
+                var totaldiscipline = (discipline / discipline) * 100;
+                var totalKPI = (KPI / KPI) * 100;
+                //var totalevaluation = (evaluation / evaluation) * 100;
+
+                //var points = totalWorkingHours + totaldiscipline + totalKPI + totalevaluation;
+
+                //MK
+                //var education = ;
+                //var network = db.Networks.Where(x => x.EmployeeId == employee.Id).Select(x => x.ContactsNumber).Sum();
+                //var experience =
+                var a = db.Experiences.Where(x => x.EmployeeId == employee.Id).Select(x => x.StartDate);
+                var b = db.Experiences.Where(x => x.EmployeeId == employee.Id).Select(x => x.EndDate);
+
+                //Score%
+                // var marketValue = networks + education + experienc + premuim;
+                // var points = KPI + workingHours + discipline + evaluation;
+                // var score = marketValue * points;
+                // var totalScores = score; // total tho
+                // var scorePercentage = score / totalScores;
+
+                //Basic salary
+                // var basicsalary = Salaries.basicsalary;
+                // var totalbasicsalary =  ;
+
+                //Total salary
+                var basicSalary = db.Salaries.Where(x => x.EmployeeId == employee.Id).Select(x => x.BasicSalary);
+                var salary = basicSalary * (totalScore * totalBasicSalary)  ;
+                     
+                var salaryentity = db.Salaries.Where(x => x.EmployeeId == employee.Id).Single();
+                salaryentity.PerformanceBasedSalary = salary;
+                salaryentity.IssueDate = DateTime.Now;
+                db.SaveChanges();
+
+            }
+            
+            //var a = new DateTime(2010, 10, 1);
+            //var b = new DateTime(2012, 10, 1);
+            //var c = b - a;
+            return View();
+        }
 
         /// <summary>
         /// This action enables the creation of a salary.

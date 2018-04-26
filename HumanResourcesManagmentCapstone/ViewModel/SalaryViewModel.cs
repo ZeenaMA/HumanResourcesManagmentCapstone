@@ -23,9 +23,11 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         [Display(Name = "Issue Date")]
         public DateTime? IssueDate { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Basic Salary")]
         public decimal BasicSalary { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Performance Based Salary")]
         public decimal PerformanceBasedSalary { get; set; }
 

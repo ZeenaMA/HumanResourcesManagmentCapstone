@@ -751,3 +751,17 @@ legend.legend-border {
     padding: 5px 10px;
     border-bottom: none;
 }
+
+.dl-horizontal dt {
+    float: left;
+    width: auto;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+dt, dd {
+    line-height: 2.1;
+}

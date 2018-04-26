@@ -60,6 +60,19 @@ namespace HumanResourcesManagmentCapstone
                         "~/Content/themes/base/theme.css",
                         "~/Content/themes/base/tooltip.css"
                         ));
+
+            // DataTables JavaScript Bundle
+            bundles.Add(new ScriptBundle("~/bundles/jsdatatables").Include(
+                        "~/Scripts/DataTables/jquery.dataTables.js",
+                        "~/Scripts/DataTables/dataTables.scroller.js",
+                        "~/Scripts/DataTables/dataTables.bootstrap.js"
+                        ));
+
+            // DataTables CSS Styles Bundle
+            bundles.Add(new StyleBundle("~/bundles/cssdatatables").Include(
+                        "~/Content/DataTables/css/dataTables.scroller.css",
+                        "~/Content/DataTables/css/dataTables.bootstrap.css"
+                        ));
         }
     }
-}
+    }
