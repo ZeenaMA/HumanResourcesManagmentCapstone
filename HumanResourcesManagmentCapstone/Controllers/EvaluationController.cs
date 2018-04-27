@@ -73,7 +73,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 }
                 if (count != 0)
                 {
-                    //calculate the average of the scores???
+                    //calculate the average of the scores or the sum ???
                     sum = sum / count;
 
                     var evaluation = new Evaluation
