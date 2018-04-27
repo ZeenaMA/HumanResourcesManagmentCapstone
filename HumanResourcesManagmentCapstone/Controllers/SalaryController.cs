@@ -84,7 +84,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var workingHours = db.Attendances.Where(x => x.EmployeeId == id).Select(x => x.EmployeeWorkingHours).Sum();
             var discipline = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.Discipline).Sum();
             var KPI = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.KPI).Sum();
-            var evaluation = db.Evaluations.Where(x => x.EmployeeId == id).OrderBy(p => p.EvaluationDate).Select(x => x.GradeAttained).FirstOrDefault();
+            var evaluation = db.Evaluations.Where(x => x.EmployeeId == id).OrderByDescending(p => p.EvaluationDate).Select(x => x.GradeAttained).FirstOrDefault();
 
             var totalWorkingHours = (workingHours / workingHours) * 100;
             var totaldiscipline = (discipline / discipline) * 100;
