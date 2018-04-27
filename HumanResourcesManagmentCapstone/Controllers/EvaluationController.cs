@@ -5,6 +5,7 @@
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,11 +35,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             };
 
             // Get from db
-            var name = db.Criteria.ToList();
+            var criteria = db.Criteria.ToList();
 
             var model = new EvaluationViewModel();
 
-            foreach (var item in name)
+            foreach (var item in criteria)
             {
                 model.Criteria.Add(
                     new CriterionViewModel
@@ -57,23 +58,44 @@ namespace HumanResourcesManagmentCapstone.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(EvaluationViewModel model)
         {
-            var evaluation = new Evaluation
-            {
-                EvaluationId = model.Id
-            };
 
+            decimal sum = 0;
+            int count = 0;
             if (ModelState.IsValid)
             {
                 foreach (var criterion in model.Criteria)
                 {
-                    criterion.Id = model.Id;
-                    evaluation.GradeAttained = criterion.SelectedAnswer;
+                    if (criterion.SelectedAnswer.HasValue)
+                    {
+                        count++;
+                        sum = sum + criterion.SelectedAnswer.Value;
+                    }
+                }
+                if (count != 0)
+                {
+                    //calculate the average of the scores???
+                    sum = sum / count;
+
+                    var evaluation = new Evaluation
+                    {
+                        EmployeeId = 2, // Dropdownbox in the view to select employee to evaluate
+                        EvaluatorId = 3, //User.Identity.GetUserId<int>(),
+                        EvaluationDate = DateTime.Now,
+                        GradeAttained = sum, // Store the average score for instance
+                    };
+
+                    db.Evaluations.Add(evaluation);
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index", "Home");
                 }
 
-                return RedirectToAction("Index", "Home");
+                ModelState.AddModelError(String.Empty, "Select at least one answer");
+                return RedirectToAction("Index");
             }
 
-            return View(model);
+            ModelState.AddModelError(String.Empty, "Something went wrong");
+            return View();
         }
     }
 }
