@@ -21,3 +21,8 @@ The need for creating a custom system rather than purchasing a commercial system
 -	Visual Studio (Version 15.5)
 -	MVC (Version 5.2.3.0)
 -	Microsoft SQL Server Management Studio (version 14.0)  
+- Entity Framework (version 6.1.3)
+- Microsoft Asp.Net Identity (version 2.2.1)
+
+## license 
+Licensed under 
