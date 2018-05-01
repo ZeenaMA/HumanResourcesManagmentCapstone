@@ -1,56 +1,60 @@
 ﻿@model HumanResourcesManagmentCapstone.ViewModel.SalaryViewModel
 
 @{
-    ViewBag.Title = "IssueSalary";
+    ViewBag.Title = "Issue Salary";
 }
 
-<h2>Issue salary</h2>
+<h2>Salary</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>SalaryViewModel</h4>
+        <h4>Issue Salary for team member</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+        <fieldset class="fieldset-border">
+            <div class="form-horizontal">
+                <legend class="legend-border"></legend>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Premium, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Premium, new { htmlAttributes = new { @class = "form-control", @placeholder = "5.6" } })
+                        @Html.ValidationMessageFor(model => model.Premium, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BasicSalary, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.BasicSalary, new { htmlAttributes = new { @class = "form-control", @placeholder = "2000" } })
+                        @Html.ValidationMessageFor(model => model.BasicSalary, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                </div>
+            </fieldset>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
             </div>
-        </div>
+            }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BasicSalary, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BasicSalary, new { htmlAttributes = new { @class = "form-control", @placeholder = "2000" } })
-                @Html.ValidationMessageFor(model => model.BasicSalary, "", new { @class = "text-danger" })
+            <div>
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PerformanceBasedSalary, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PerformanceBasedSalary, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PerformanceBasedSalary, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }

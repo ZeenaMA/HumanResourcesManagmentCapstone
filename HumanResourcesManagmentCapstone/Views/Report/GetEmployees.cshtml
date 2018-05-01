@@ -1,0 +1,66 @@
+﻿@model HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel
+
+@{
+    ViewBag.Title = "GetEmployees";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-horizontal">
+        <h4>Performance report</h4>
+        <hr />
+        <div class="form-group">
+            @Html.Label("Course Title", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("EmployeeId", (IEnumerable<SelectListItem>)ViewBag.Courses, "Select Course", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div id="List"></div>
+}
+@section Scripts {
+    @*<script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#EmployeeId").on("change", function () {
+                // Empty the div before displaying the received result
+                $("#List").empty();
+
+                // build data sent to the action
+                var data = { id: $("#EmployeeId").val() };
+
+
+                // Send a get request with course id
+                $.get("/Report/GetPerformancePartial", data)
+                    .done(function (result) { $("#List").html(result); });
+
+                $.get("/Report/GetSalaryPartial", data)
+                  .done(function (result) { $("#List").html(result); });
+            });
+        });
+    </script>*@
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#EmployeeId").on("change", function () {
+                // Empty the div before displaying the received result
+                $("#List").empty();
+
+                // build data sent to the action
+                var data = { id: $("#EmployeeId").val() };
+
+                // Send a get request with course id
+                $.get("/Report/GetPerformancePartial", data)
+                    .done(function (result) { $("#List").html(result); });
+            });
+        });
+
+    </script>
+
+}

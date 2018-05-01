@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.PerformanceViewModel>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KPI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discipline)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KPI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discipline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+    </tr>
+}
+
+</table>
+<button type="button" class="btn btn-default box-shadow--4dp" onclick="window.print()">Print <span class="glyphicon glyphicon-print"></span></button>

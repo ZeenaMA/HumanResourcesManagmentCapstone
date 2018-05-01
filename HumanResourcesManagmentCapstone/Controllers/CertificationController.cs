@@ -109,7 +109,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <returns> Certification, Create view</returns>
         // POST: Certification/Create
         [HttpPost]
-        public ActionResult Create(Certification model)
+        public ActionResult Create(CertificationViewModel model)
         {
             if (ModelState.IsValid)
             {

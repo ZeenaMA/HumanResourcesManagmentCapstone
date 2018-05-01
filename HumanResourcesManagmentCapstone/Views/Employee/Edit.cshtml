@@ -19,22 +19,6 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
 
     </fieldset>
 
@@ -130,7 +114,7 @@
 
             <div class="form-group">
                 @Html.Label("Roles", new { @class = "control-label col-md-2" })
-                <span class=" col-md-10">
+                <span class="col-md-10">
                     @foreach (var item in (IEnumerable<SelectListItem>)ViewBag.RolesSelectList)
                 {
                         <input type="checkbox" name="roles" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />

@@ -59,14 +59,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #29ABE0;
-    border-color: #29ABE0;
+    background-color: #3794a9;
+    border-color: #1a9cb5
 }
 
     .btn-primary:hover {
         color: #fff;
-        background-color: #0c83e2;
-        border-color: #0c7cd5;
+        background-color: #129ab4;
+        border-color: #1a9cb5;
     }
 
     .btn-primary:focus, .btn-primary.focus {
@@ -693,21 +693,24 @@ input[type="button"].btn-block {
 
 /*NavBar*/
 .navbar {
-    font-family: Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 0;
-    background-color: #2196F3;
+    background-color: #66cde1;
     border: 0;
-    font-size: 15px !important;
-    letter-spacing: 4px;
+    font-size: 20px !important;
+    letter-spacing: initial;
     opacity: 0.9;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 10px -7px #999;
 }
 
     .navbar li a, .navbar .navbar-brand {
-        color: #d5d5d5 !important;
+        color: #fff !important;
     }
 
 .navbar-nav li a:hover {
-    color: #fff !important;
+    color: gainsboro !important;
 }
 
 .navbar-nav li.active a {
@@ -721,22 +724,18 @@ input[type="button"].btn-block {
 
 .open .dropdown-toggle {
     color: #fff;
-    background-color: #555 !important;
+    background-color: #1a9cb5 !important;
 }
 
 .dropdown-menu li a {
     color: #000 !important;
+        font-size: medium;
+
 }
 
     .dropdown-menu li a:hover {
-        background-color: dodgerblue !important;
+        background-color: #1a9cb5 !important;
     }
-
-/*Footer*/
-/*body*/
-body {
-    padding-top: 70px;
-}
 
 /* Borders for fieldsets and legends */
 fieldset.fieldset-border {
@@ -764,4 +763,33 @@ legend.legend-border {
 
 dt, dd {
     line-height: 2.1;
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.428571429;
+    text-decoration: none;
+    background-color: #1a9cb5;
+    border: 1px solid #1a9cb5;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #1a9cb5;
+    border-color: #1a9cb5;
+}
+/*.panel-footer {
+    padding: 10px 15px;
+    background-color: dimgray;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: black;    
+}*/
+body{
+    color: #545252;
 }

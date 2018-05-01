@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*@Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/themes/base/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @RenderSection("styles", required: false)*@
+        @Styles.Render("~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @RenderSection("styles", required: false)*@
 
     @Styles.Render("~/bundles/cssdatatables")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
 
+    <style>
+        .affix {
+            top: 0;
+            width: 100%;
+            z-index: 9999 !important;
+        }
+
+            .affix + .container-fluid {
+                padding-top: 70px;
+            }
+    </style>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+<body id="myPage">
+    <div class="container-fluid" style="background-color: #66CDE1; color: #fff; height: 60px; opacity:0.9;">
+        <img src="data:text/plain;base64,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" height="60" width="60" class="img-responsive center-block">
+
+    </div>
+
+    <nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="80">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,92 +45,116 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Employee", "Index", "Employee")</li>
+                    }
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Team members <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Market Value <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Employee", "Index", "Employee")</li>
-                            <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
                             <li>@Html.ActionLink("Certification", "Index", "Certification")</li>
-                            <li>@Html.ActionLink("Achievement", "Index", "Achievement")</li>
                             <li>@Html.ActionLink("Experience", "Index", "Experience")</li>
-                            <li>@Html.ActionLink("Communication Skill", "Index", "CommunicationSkill")</li>
                             <li>@Html.ActionLink("Network", "Index", "Network")</li>
-                            <li>@Html.ActionLink("Performance", "Index", "Performance")</li>
-                            <li>@Html.ActionLink("Evaluation", "Index", "Evaluation")</li>
-                            <li>@Html.ActionLink("Working Hours", "WorkingHoursIndex", "Attendance")</li>
-                            <li>@Html.ActionLink("Salary", "Index", "Salary")</li>
-
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Premium <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Performance", "Index", "Performance")</li>
+                            <li>@Html.ActionLink("Working Hours", "WorkingHoursIndex", "Attendance")</li>
+                            <li>@Html.ActionLink("Achievement", "Index", "Achievement")</li>
+                            <li>@Html.ActionLink("Communication Skill", "Index", "CommunicationSkill")</li>
+                        </ul>
+                    </li>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Report <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Report", "GetEmployees", "Report")</li>
+                                <li>@Html.ActionLink("Charts", "Index", "Charts")</li>
+                            </ul>
+                        </li>
+                    }
+                    @if (ViewContext.HttpContext.User.IsInRole("CEO"))
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Report <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Report", "Index", "Report")</li>
+                                <li>@Html.ActionLink("Charts", "Index", "Charts")</li>
+                            </ul>
+                        </li>                    }
+                    <li>@Html.ActionLink("Attendance", "Index", "Attendance")</li>
+                    <li>@Html.ActionLink("Evaluation", "Index", "Evaluation")</li>
+                    <li>@Html.ActionLink("Salary", "Index", "Salary")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+
+    <div class="container body-content ">
         @RenderBody()
         <hr />
-            <footer class="container-fluid text-center">
-                <a href="#myPage" title="To Top">
-                    <span class="glyphicon glyphicon-chevron-up"></span>
-                </a>
-                <div id="contact" class="container-fluid bg-grey">
-                    <h4 class="text-center">CONTACT</h4>
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-                            <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-                            <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
     </div>
-
+    <footer class="panel-footer text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <h3 class="text-center">CONTACT</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <p><span class="glyphicon glyphicon-map-marker"></span> Jeddah, SA</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+            </div>
+        </div>
+    </footer>
 
     @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jsdatatables")
     @RenderSection("scripts", required: false)
+
+
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
 </body>
 </html>
-
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    }
-  });
-
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-})
-</script>

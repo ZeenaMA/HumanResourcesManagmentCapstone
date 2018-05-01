@@ -159,6 +159,10 @@ namespace HumanResourcesManagmentCapstone.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Salary>()
+                .Property(e => e.Premium)
+                .HasPrecision(7, 2);
+
+            modelBuilder.Entity<Salary>()
                 .Property(e => e.BasicSalary)
                 .HasPrecision(7, 2);
 

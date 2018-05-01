@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="chart1"></canvas>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/Chart.js"></script>
+
+    <script>
+        // Convert arrays to javascript arrays
+        var data = @Html.Raw(Json.Encode(@ViewBag.Data));
+        var labels = @Html.Raw(Json.Encode(@ViewBag.Labels));
+
+        // Background colors of the bars
+        var bgColors = [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ];
+
+        // Border colors of the bars
+        borderColors = [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ];
+
+        // First chart
+        var chartTitle = "Total of Evaluations for Each Employee";
+        getChart("chart1", "bar", bgColors, borderColors, chartTitle, labels, data);
+
+        // Global definitions of charts
+        Chart.defaults.global.title.display = true;
+
+        function getChart(chartId, chartType, bgColors, borderColors, chartTitle, labels, data) {
+
+            // Get the chart convas
+            var ctx = document.getElementById(chartId).getContext('2d');
+
+            // Create the chart
+            var chart = new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Number of Evaluations',
+                        data: data, 
+                        backgroundColor: bgColors,
+                        borderColor: borderColors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: chartTitle,
+                        position: 'top',
+                        fontSize: 14
+                    },
+                    legend: {
+                        position: 'right'
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+    </script>
+}

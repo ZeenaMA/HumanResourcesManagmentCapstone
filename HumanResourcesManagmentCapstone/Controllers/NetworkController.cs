@@ -29,7 +29,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         public ActionResult Index()
         {
             var loggeduserid = User.Identity.GetUserId<int>();
-            var loggedadmin = User.IsInRole("Admin , CEO");
+            var loggedadmin = User.IsInRole("Admin");
             var employees = db.Employees.Where(d => d.Id == loggeduserid || loggedadmin).ToList();
 
             var model = new List<EmployeeViewModel>();

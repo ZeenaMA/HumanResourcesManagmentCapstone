@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for managing employee salary, allows the creation of new salary, listing of all salary and editing and deleting.
 * Author: Zee
-* Due date: 18/04/2018
+* Due date: 05/05/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
@@ -40,10 +40,9 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 {
                     Id = item.SerialId,
                     EmployeeName = item.Employee.FullName,
-                    IssueDate = item.IssueDate,
+                    IssueDate = item.IssueDate.Value.Date,
                     BasicSalary = item.BasicSalary,
-                    //PerformanceBasedSalary = item.PerformanceBasedSalary,
-                    PerformanceBasedSalary = GetEmployeePerformanceSalary(item.EmployeeId), // Calculate salary
+                    PerformanceBasedSalary = GetEmployeePerformanceSalary(item.EmployeeId)
                 });
             }
 
@@ -52,8 +51,31 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
         public decimal GetEmployeePerformanceSalary(int id)
         {
+            // Points
+            // Sum WorkingHours, Discipline, KPI, Evaluation for each employee.
+            var employeeWorkingHours = db.Attendances.Where(x => x.EmployeeId == id).Select(x => x.EmployeeWorkingHours).DefaultIfEmpty().Sum();
+            var employeeDiscipline = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.Discipline).Sum();
+            var employeeKPI = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.KPI).Sum();
+            var employeeEvaluation = db.Evaluations.Where(x => x.EmployeeId == id).Select(x => x.GradeAttained).Sum();
+            //OrderByDescending(p => p.EvaluationDate).Select(x => x.GradeAttained).FirstOrDefault();
+
+            // Sum WorkingHours, Discipline, KPI, Evaluation for all employees.
+            var totalWorkingHours = db.Attendances.Select(x => x.EmployeeWorkingHours).Sum();
+            var totalDiscipline = db.Performances.Select(x => x.Discipline).Sum();
+            var totalKPI = db.Performances.Select(x => x.KPI).Sum();
+            var totalEvaluation = db.Evaluations.Select(x => x.GradeAttained).Sum();
+
+            var workingHours = (employeeWorkingHours / totalWorkingHours) * 100;
+            var discipline = (employeeDiscipline / totalDiscipline) * 100;
+            var KPI = (employeeKPI / totalKPI) * 100;
+            var evaluation = (employeeEvaluation / totalEvaluation) * 100;
+
+            // Total points.
+            var points = (workingHours + discipline + KPI + evaluation.GetValueOrDefault());
+
+            // Market Value. 
             // Get certificate type of the employee
-            var certificateType = db.Certifications.Where(p => p.EmployeeId == id).Select(p => p.CertificationType).Single();
+            var certificateType = db.Certifications.Where(p => p.EmployeeId == id).Select(p => p.CertificationType).FirstOrDefault();
 
             decimal CertificationGrade = 0M;
 
@@ -81,105 +103,40 @@ namespace HumanResourcesManagmentCapstone.Controllers
                         break;
                 }
             }
-            var workingHours = db.Attendances.Where(x => x.EmployeeId == id).Select(x => x.EmployeeWorkingHours).Sum();
-            var discipline = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.Discipline).Sum();
-            var KPI = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.KPI).Sum();
-            var evaluation = db.Evaluations.Where(x => x.EmployeeId == id).OrderByDescending(p => p.EvaluationDate).Select(x => x.GradeAttained).FirstOrDefault();
 
-            var totalWorkingHours = (workingHours / workingHours) * 100;
-            var totaldiscipline = (discipline / discipline) * 100;
-            var totalKPI = (KPI / KPI) * 100;
-            //var totalevaluation = (evaluation / evaluation) * 100;
+            // Sum Networks, premium for each employee.
+            var employeeNetworks = db.Networks.Where(x => x.EmployeeId == id).Select(x => x.ContactsNumber).DefaultIfEmpty().Sum();
+            var premium = db.Salaries.Where(x => x.EmployeeId == id).Select(x => x.Premium).Sum();
 
-            //var points = totalWorkingHours + totaldiscipline + totalKPI + totalevaluation;
+            // Sum Networks for all employees.
+            var totalNetworks = db.Networks.Select(x => x.ContactsNumber).Sum();
+            var networks = ((employeeNetworks / totalNetworks) * 10) * 2;
 
-            //MK
-            //var education = ;
-            //var network = db.Networks.Where(x => x.EmployeeId == employee.Id).Select(x => x.ContactsNumber).Sum();
-            //var experience =
-            var a = db.Experiences.Where(x => x.EmployeeId == id).Select(x => x.StartDate);
-            var b = db.Experiences.Where(x => x.EmployeeId == id).Select(x => x.EndDate);
+            // Extract year and month from Start and End date.
+            var experienceStartDate = db.Experiences.Where(x => x.EmployeeId == id).Select(x => x.StartDate.Year).Min();
+            var experienceEndDate = db.Experiences.Where(x => x.EmployeeId == id).Select(x => x.EndDate.Year).Max();
+            var experienceStartDateMonth = db.Experiences.Where(x => x.EmployeeId == id).Select(x => x.StartDate.Month).Min();
+            var experienceEndDateMonth = db.Experiences.Where(x => x.EmployeeId == id).Select(x => x.EndDate.Month).Max();
+            var experienceYear = experienceEndDate - experienceStartDate;
+            var experienceMonth = experienceEndDateMonth - experienceStartDateMonth;
+            var experience = (experienceYear * 2.0M) + (experienceMonth * 0.16M);
 
+            // Total Market Value 
+            var marketValue = (networks + premium + experience + CertificationGrade);
+
+            // Get basicSalary for each employee then for all employees.
+            var basicSalary = db.Salaries.Where(x => x.EmployeeId == id).Select(x => x.BasicSalary).Sum();
+            var tatalBasicSalary = db.Salaries.Select(x => x.BasicSalary).Sum();
+
+            //Score %
+            var score = marketValue * points;
+            var totalScores = score + score;
+            var scorePercentage = score / totalScores;
+            var salary = basicSalary + ((scorePercentage * tatalBasicSalary));
 
             // return final salary
-            return 1M;
+            return (salary);
         }
-
-        //public ActionResult Salary()
-        //{
-        //    //var CertificationGrade = 0.0;
-        //    //switch ()
-        //    //{
-        //    //    case CertificationType.Bachelor:
-        //    //        CertificationGrade = 6.3;
-        //    //        break;
-        //    //    case CertificationType.Diploma:
-        //    //        CertificationGrade = 1.4;
-        //    //        break;
-        //    //    case CertificationType.Master:
-        //    //        CertificationGrade = 5.6;
-        //    //        break;
-        //    //    case CertificationType.Phd:
-        //    //        CertificationGrade = 12.6;
-        //    //        break;
-        //    //    case CertificationType.PostGrad:
-        //    //        CertificationGrade = 2.1;
-        //    //        break;
-        //    //    default:
-        //    //        CertificationGrade += 0;
-        //    //        break;
-        //    //}
-
-
-        //    foreach (var employee in db.Employees.ToList())
-        //    {
-        //        // Points.
-        //        var workingHours = db.Attendances.Where(x => x.EmployeeId == employee.Id).Select(x => x.EmployeeWorkingHours).Sum();
-        //        var discipline = db.Performances.Where(x => x.EmployeeId == employee.Id).Select(x => x.Discipline).Sum();
-        //        var KPI = db.Performances.Where(x => x.EmployeeId == employee.Id).Select(x => x.KPI).Sum();
-        //        //var evaluation = db.Evaluations.Where(x => x.EmployeeId == employee.Id).Select(x => x.Scores).Sum();
-
-        //        var totalWorkingHours = (workingHours / workingHours) * 100;
-        //        var totaldiscipline = (discipline / discipline) * 100;
-        //        var totalKPI = (KPI / KPI) * 100;
-        //        //var totalevaluation = (evaluation / evaluation) * 100;
-
-        //        //var points = totalWorkingHours + totaldiscipline + totalKPI + totalevaluation;
-
-        //        //MK
-        //        //var education = ;
-        //        //var network = db.Networks.Where(x => x.EmployeeId == employee.Id).Select(x => x.ContactsNumber).Sum();
-        //        //var experience =
-        //        var a = db.Experiences.Where(x => x.EmployeeId == employee.Id).Select(x => x.StartDate);
-        //        var b = db.Experiences.Where(x => x.EmployeeId == employee.Id).Select(x => x.EndDate);
-
-        //        //Score%
-        //        // var marketValue = networks + education + experienc + premuim;
-        //        // var points = KPI + workingHours + discipline + evaluation;
-        //        // var score = marketValue * points;
-        //        // var totalScores = score; // total tho
-        //        // var scorePercentage = score / totalScores;
-
-        //        //Basic salary
-        //        // var basicsalary = Salaries.basicsalary;
-        //        // var totalbasicsalary =  ;
-
-        //        //Total salary
-        //        var basicSalary = db.Salaries.Where(x => x.EmployeeId == employee.Id).Select(x => x.BasicSalary).Single();
-        //        var salary = basicSalary;// * (totalScore * totalBasicSalary)  ;
-
-        //        var salaryentity = db.Salaries.Where(x => x.EmployeeId == employee.Id).Single();
-        //        salaryentity.PerformanceBasedSalary = salary;
-        //        salaryentity.IssueDate = DateTime.Now;
-        //        db.SaveChanges();
-
-        //    }
-
-        //    //var a = new DateTime(2010, 10, 1);
-        //    //var b = new DateTime(2012, 10, 1);
-        //    //var c = b - a;
-        //    return View();
-        //}
 
         /// <summary>
         /// This action enables the creation of a salary.
@@ -211,6 +168,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     EmployeeId = model.EmployeeId,
                     IssueDate = DateTime.Now,
                     BasicSalary = model.BasicSalary,
+                    Premium = model.Premium,
                     PerformanceBasedSalary = model.PerformanceBasedSalary,
                 };
                 db.Salaries.Add(salary);
@@ -338,5 +296,42 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Report()
+        {
+            var loggeduserid = User.Identity.GetUserId<int>();
+            var loggedadmin = User.IsInRole("Admin");
+            var salaries = db.Salaries.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
+
+            var model = new List<SalaryViewModel>();
+            foreach (var item in salaries)
+            {
+                model.Add(new SalaryViewModel
+                {
+
+                });
+            }
+
+            return View(model);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

@@ -25,12 +25,14 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// </summary>
         /// <returns> Performance, Index view</returns>
         // GET: Performance
-        [Authorize]
+        [Authorize(Roles = "Admin, CEO")]
         public ActionResult Index()
         {
-            var loggeduserid = User.Identity.GetUserId<int>();
-            var loggedadmin = User.IsInRole("Admin");
-            var performances = db.Performances.Where(d => d.EmployeeId == loggeduserid || loggedadmin).ToList();
+            //var loggeduserid = User.Identity.GetUserId<int>();
+            //var loggedadmin = User.IsInRole("Admin");
+            //var loggedCEO = User.IsInRole("CEO");
+            //var performances = db.Performances.Where(d => d.EmployeeId == loggeduserid || loggedadmin || loggedCEO).ToList();
+            var performances = db.Performances.ToList();
 
             var model = new List<PerformanceViewModel>();
             foreach (var item in performances)

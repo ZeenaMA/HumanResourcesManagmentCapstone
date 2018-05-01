@@ -2,22 +2,23 @@
 @{
     ViewBag.Title = "Attendance List";
 }
-<style>
+@*<style>
     table.dataTable thead .sorting,
     table.dataTable thead .sorting_asc,
     table.dataTable thead .sorting_desc {
         background: border-box;
     }
-</style>
+</style>*@
 <h2>Member Attendance List</h2>
 
-<p>
-    @Html.ActionLink("Log Member Attendance", "Create", null, new { @class = "btn btn-primary" })
-</p>
+<a style="margin-bottom:15px;" , href="@Url.Action("Create", "Attendance")" class="btn btn-primary">
+    <span class="glyphicon small glyphicon-plus "></span>
+    Log Member Attendance
+</a>
 
 @if (Model.Count() == 0)
 {
-    <p>List not found</p>
+    <p>Attendance list not found</p>
 }
 else
 {
@@ -115,7 +116,7 @@ else
 
     </table>
 }
-@*@section scripts
+@section scripts
 {
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
@@ -132,17 +133,7 @@ else
 
 @section styles
 {
-    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
-}*@
-@section styles
-{
-    <script type="text/javascript">
-        $('#attendanceTable').dataTable({
-            "columnDefs": [
-                { "orderable": false, "targets": -1 }
-            ]
-        });
-</script>
 }

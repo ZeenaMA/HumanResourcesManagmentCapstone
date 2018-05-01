@@ -25,6 +25,9 @@ namespace HumanResourcesManagmentCapstone.Controllers
         // GET: Evaluation
         public ActionResult Index()
         {
+            var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
+            ViewBag.EmployeeId = new SelectList(list, "Id", "FullName");
+
             var possibleAnswers = new List<AnswerViewModel>
             {
                 new AnswerViewModel { Id = 1, Text= "1"},
@@ -74,12 +77,14 @@ namespace HumanResourcesManagmentCapstone.Controllers
                 if (count != 0)
                 {
                     //calculate the average of the scores or the sum ???
-                    sum = sum / count;
+                    //sum = sum / count;
 
                     var evaluation = new Evaluation
                     {
-                        EmployeeId = 2, // Dropdownbox in the view to select employee to evaluate
-                        EvaluatorId = 3, //User.Identity.GetUserId<int>(),
+                        EmployeeId = model.EmployeeId,
+                        EvaluatorId = User.Identity.IsAuthenticated ? User.Identity.GetUserId<int>() : db.Users.First().Id,
+                        //EmployeeId = 2, // Dropdownbox in the view to select employee to evaluate 
+                        //EvaluatorId = 3, //User.Identity.GetUserId<int>(),
                         EvaluationDate = DateTime.Now,
                         GradeAttained = sum, // Store the average score for instance
                     };

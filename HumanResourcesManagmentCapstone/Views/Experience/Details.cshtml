@@ -38,13 +38,13 @@
             @Html.DisplayFor(model => model.StartDate)
         </dd>
 
-        @*<dt>
+        <dt>
             @Html.DisplayNameFor(model => model.EndDate)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EndDate)
-        </dd>*@
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Description)
@@ -66,5 +66,5 @@
 </div>
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
-    @*@Html.ActionLink("Edit", "Edit", null, new { id = Model.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })*@
+    @Html.ActionLink("Edit", "Edit", null, new { id = Model.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })</p>

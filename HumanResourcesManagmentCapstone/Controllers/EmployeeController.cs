@@ -17,7 +17,7 @@ using System.Net;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class EmployeeController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -263,13 +263,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
                     return HttpNotFound();
                 }
 
-                // Update the properties of the employee
                 employee.UserName = model.UserName;
                 employee.Email = model.Email;
                 employee.FirstName = model.FirstName;
                 employee.MiddleName = model.MiddleName;
                 employee.LastName = model.LastName;
-                employee.UserName = model.Email;
                 employee.EmployeeType = model.EmployeeType;
                 employee.HiredDate = model.HiredDate;
                 employee.NationalIqamaID = model.NationalIqamaID;

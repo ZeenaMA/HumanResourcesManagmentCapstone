@@ -24,5 +24,15 @@ namespace HumanResourcesManagmentCapstone.ViewModel
         public int Id { get; set; }
         public string Title { get; set; }
         public List<CriterionViewModel> Criteria { get; set; }
+
+        public int EmployeeId { get; set; }
+
+        [Display(Name = "Employee Name")]
+        public string EmployeeName { get; set; }
+
+        public int? EvaluatorId { get; set; }
+
+        [Display(Name = "Evaluator Name")]
+        public string EvaluatorName { get; set; }
     }
 }

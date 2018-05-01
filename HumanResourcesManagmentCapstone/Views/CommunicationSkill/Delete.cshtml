@@ -40,7 +40,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger btn-sm box-shadow--4dp" />
+            <button class="btn btn-danger  btn-sm box-shadow--4dp"> <span class="glyphicon glyphicon-trash" type="submit"></span> Delete</button>
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
         </div>
     }

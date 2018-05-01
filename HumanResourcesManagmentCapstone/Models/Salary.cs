@@ -25,6 +25,9 @@ namespace HumanResourcesManagmentCapstone.Models
         public DateTime? IssueDate { get; set; }
 
         [Column(TypeName = "numeric")]
+        public decimal Premium { get; set; }
+
+        [Column(TypeName = "numeric")]
         public decimal BasicSalary { get; set; }
 
         [Column(TypeName = "numeric")]

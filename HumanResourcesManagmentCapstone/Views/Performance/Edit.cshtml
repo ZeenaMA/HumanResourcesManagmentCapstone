@@ -61,7 +61,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
+                        <input type="submit" value="Save" class="btn btn-default box-shadow--4dp" />
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
         else if (User.IsInRole("CEO"))
         {
             <div class="form-horizontal">
-                <h4>PerformanceViewModel</h4>
+                <h4>Approve Performance</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.Id)
@@ -77,7 +77,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.KPI, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.KPI, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.KPI, new { htmlAttributes = new { @class = "form-control" ,@readonly = "readonly" } })
                         @Html.ValidationMessageFor(model => model.KPI, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Discipline, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Discipline, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Discipline, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                         @Html.ValidationMessageFor(model => model.Discipline, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IssueDate, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.IssueDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.IssueDate, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                         @Html.ValidationMessageFor(model => model.IssueDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -116,7 +116,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
+                        <input type="submit" value="Save" class="btn btn-default box-shadow--4dp" />
                     </div>
                 </div>
             </div>

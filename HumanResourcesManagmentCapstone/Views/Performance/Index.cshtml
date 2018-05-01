@@ -2,22 +2,24 @@
 @{
     ViewBag.Title = "Performance List";
 }
-<style>
+@*<style>
     table.dataTable thead .sorting,
     table.dataTable thead .sorting_asc,
     table.dataTable thead .sorting_desc {
         background: border-box;
     }
-</style>
+</style>*@
 
 <h1>Performance List</h1>
 
-<p>
-    @Html.ActionLink("Create New Performance", "Create", null, new { @class = "btn btn-primary" })
-</p>
+<a style="margin-bottom:15px;" , href="@Url.Action("Create", "Performance")" class="btn btn-primary">
+    <span class="glyphicon small glyphicon-plus "></span>
+    Create New Performance
+</a>
+
 @if (Model.Count() == 0)
 {
-    <p>List not found</p>
+    <p>Performance list not found</p>
 }
 else
 {
@@ -93,18 +95,24 @@ else
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm box-shadow--4dp" })
                         </td>
                     }
-                    else
+                    else if (User.IsInRole("CEO"))
                     {
                         <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                             @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                         </td>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+
                     }
                 </tr>
             }
         </tbody>
     </table>
 }
-@*@section scripts
+@section scripts
 {
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
@@ -120,17 +128,7 @@ else
 
 @section styles
 {
-    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
-}*@
-@section styles
-{
-    <script type="text/javascript">
-        $('#performanceTable').dataTable({
-            "columnDefs": [
-                { "orderable": false, "targets": -1 }
-            ]
-        });
-    </script>
 }

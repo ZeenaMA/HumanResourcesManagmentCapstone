@@ -205,6 +205,7 @@
     <Compile Include="Controllers\AchievementController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
+    <Compile Include="Controllers\ChartsController.cs" />
     <Compile Include="Controllers\CommunicationSkillController.cs" />
     <Compile Include="Controllers\CriterionController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NetworkController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SalaryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -474,6 +476,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
@@ -658,7 +662,10 @@
     <Content Include="Views\Salary\Index.cshtml" />
     <Content Include="Views\Salary\Edit.cshtml" />
     <Content Include="Views\Salary\Delete.cshtml" />
-    <Content Include="Views\Salary\Salary.cshtml" />
+    <Content Include="Views\Charts\Index.cshtml" />
+    <Content Include="Views\Report\GetEmployees.cshtml" />
+    <Content Include="Views\Report\GetPerformancePartial.cshtml" />
+    <Content Include="Views\Report\GetSalaryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

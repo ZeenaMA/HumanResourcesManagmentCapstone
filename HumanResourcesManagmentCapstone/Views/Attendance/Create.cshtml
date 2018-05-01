@@ -1,7 +1,7 @@
 ﻿@model HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "CreateAttendance";
 }
 
 <h2>Member Attendance</h2>
@@ -9,72 +9,82 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h3>Log Attendance</h3>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+        <fieldset class="fieldset-border">
+            <div class="form-horizontal">
+                <legend class="legend-border">Attendance Date</legend>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
-        </div>
-         <div class="form-group">
-            @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        </fieldset>
+        <fieldset class="fieldset-border">
+            <div class="form-horizontal">
+                <legend class="legend-border">Days Attended</legend>
 
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PresentDays, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PresentDays, new { htmlAttributes = new { @class = "form-control", @placeholder = "20" } })
+                        @Html.ValidationMessageFor(model => model.PresentDays, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PresentDays, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PresentDays, new { htmlAttributes = new { @class = "form-control", @placeholder = "20" } })
-                @Html.ValidationMessageFor(model => model.PresentDays, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AbsentDays, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AbsentDays, new { htmlAttributes = new { @class = "form-control", @placeholder = "0" } })
+                        @Html.ValidationMessageFor(model => model.AbsentDays, "", new { @class = "text-danger" })
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AbsentDays, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AbsentDays, new { htmlAttributes = new { @class = "form-control", @placeholder = "0" } })
-                @Html.ValidationMessageFor(model => model.AbsentDays, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        </fieldset>
 
         @*<div class="form-group">
-            @Html.LabelFor(model => model.FeedBack, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FeedBack, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FeedBack, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+                @Html.LabelFor(model => model.FeedBack, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FeedBack, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FeedBack, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default box-shadow--4dp" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
-</div>
+            <div>
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+            </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-<script type="text/javascript">
-        $(document).ready(function () {
-            $('input[type=datetime]').datepicker({
-                dateFormat: 'yy-mm-dd',
-                maxDate: 0,
-                buttonText: "Choose"
-            });
-        });
-</script>
-}
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('input[type=datetime]').datepicker({
+                            dateFormat: 'yy-mm-dd',
+                            maxDate: 0,
+                            buttonText: "Choose"
+                        });
+                    });
+                </script>
+            }

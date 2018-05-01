@@ -3,21 +3,23 @@
 @{
     ViewBag.Title = "Experience list";
 }
-<style>
+@*<style>
     table.dataTable thead .sorting,
     table.dataTable thead .sorting_asc,
     table.dataTable thead .sorting_desc {
         background: border-box;
     }
-</style>
+</style>*@
 <h2>Experience list</h2>
 
-<p>
-    @Html.ActionLink("Add New Experience", "Create", null, new { @class = "btn btn-primary" })
-</p>
+<a style="margin-bottom:15px;" , href="@Url.Action("Create", "Experience")" class="btn btn-primary">
+    <span class="glyphicon small glyphicon-plus "></span>
+    Add New Experience
+</a>
+
 @if (Model.Count() == 0)
 {
-    <p>List not found</p>
+    <p>Experience list not found</p>
 }
 else
 {
@@ -94,7 +96,7 @@ else
         </tbody>
     </table>
 }
-@*@section scripts
+@section scripts
 {
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("/Scripts/DataTables/dataTables.scroller.min.js")"></script>
@@ -110,17 +112,7 @@ else
 
 @section styles
 {
-    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
-}*@
-@section styles
-{
-    <script type="text/javascript">
-        $('#experienceTable').dataTable({
-            "columnDefs": [
-                { "orderable": false, "targets": -1 }
-            ]
-        });
-    </script>
 }

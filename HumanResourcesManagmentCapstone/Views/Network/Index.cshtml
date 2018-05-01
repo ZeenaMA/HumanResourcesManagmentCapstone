@@ -1,24 +1,18 @@
-﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel>
+﻿@*@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
-<style>
-    table.dataTable thead .sorting,
-    table.dataTable thead .sorting_asc,
-    table.dataTable thead .sorting_desc {
-        background: border-box;
-    }
-</style>
 <h2>List of memebrs</h2>
 
-<p>
-    @Html.ActionLink("Create New Network", "Create", null, new { @class = "btn btn-primary" })
-</p>
+<a style="margin-bottom:15px;" , href="@Url.Action("Create", "Network")" class="btn btn-primary">
+    <span class="glyphicon small glyphicon-plus "></span>
+    Add New Network
+</a>
 
 @if (Model.Count() == 0)
 {
-    <p>List not found</p>
+    <p>Memebrs List not found</p>
 }
 else
 {
@@ -70,7 +64,7 @@ else
 
 @section styles
 {
-    <link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
-}
+}*@

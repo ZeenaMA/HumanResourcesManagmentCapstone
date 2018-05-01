@@ -30,7 +30,7 @@ namespace HumanResourcesManagmentCapstone.Models
         [Column(TypeName = "numeric")]
         public decimal? GradeAttained { get; set; }
 
-        public int EvaluatorId { get; set; }
+        public int? EvaluatorId { get; set; }
 
         public int EmployeeId { get; set; }
 
