@@ -25,4 +25,4 @@ The need for creating a custom system rather than purchasing a commercial system
 - Microsoft Asp.Net Identity (version 2.2.1)
 
 ## license 
-Licensed under 
+Licensed under GNU General Public License v3.0	
