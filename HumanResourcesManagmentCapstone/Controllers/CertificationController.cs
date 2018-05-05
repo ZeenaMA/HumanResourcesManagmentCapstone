@@ -56,7 +56,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         ///  Details of each Certification.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns>Certification, Details view</returns>
         // GET: Certification/Details/5
         public ActionResult Details(int? id)
@@ -139,7 +139,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Certification.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Certification, Edit view</returns>
         // GET: Certification/Edit/5
         [Authorize(Roles = "Admin")]
@@ -178,7 +178,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Certification.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Certification, Edit view</returns>
         // (POST: Certification/Edit/5) 
@@ -248,7 +248,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Certification.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Certification, Delete view</returns>
         // (POST: Certification/Delete/5) 
         [HttpPost, ActionName("Delete")]

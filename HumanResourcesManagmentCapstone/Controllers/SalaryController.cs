@@ -51,7 +51,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// Method to calculate the salary.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns></returns>
         public decimal GetEmployeePerformanceSalary(int id)
         {
@@ -188,7 +188,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a salary.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Performance, Edit view</returns>
         // GET: Salary/Edit/5
@@ -222,7 +222,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a salary.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Performance, Edit view</returns>
         // POST: Salary/Edit/5
@@ -249,7 +249,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting salary.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Performance, Delete view</returns>
         // GET: Salary/Delete/5
         [Authorize(Roles = "Admin")]
@@ -279,7 +279,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting salary.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Performance, Delete view</returns>
         // POST: Salary/Delete/5
         [HttpPost, ActionName("Delete")]

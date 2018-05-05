@@ -57,7 +57,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         ///  Details of each Performance-.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">PerformanceId</param>
         /// <returns>Performance, Details view</returns>
         // GET: Performance/Details/5
         public ActionResult Details(int? id)
@@ -141,7 +141,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Performance.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Performance, Edit view</returns>
         // GET: Performance/Edit/5
@@ -177,7 +177,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Performance.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Performance, Edit view</returns>
         // POST: Performance/Edit/5
@@ -211,7 +211,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Performance.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Performance, Delete view</returns>
         // GET: Performance/Delete/5. 
         [Authorize(Roles = "Admin")]
@@ -245,7 +245,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Performance.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Performance, Delete view</returns>
         // POST: Performance/Delete/5
         [HttpPost, ActionName ("Delete")]

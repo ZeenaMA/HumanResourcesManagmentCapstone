@@ -17,15 +17,15 @@ using System.Web.Mvc;
 
 namespace HumanResourcesManagmentCapstone.Controllers
 {
+    [Authorize]
     public class AttendanceController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         /// <summary>
-        /// 
+        /// List employee attendance.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Attendance list</returns>
         // GET: Attendance
-        [Authorize]
         public ActionResult Index()
         {
             var loggeduserid = User.Identity.GetUserId<int>();
@@ -55,7 +55,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         ///<summary>
         /// Details of each Employee.
         ///</summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns>Attendance, Details view</returns>
         // GET: Attendance/ Detailes
         public ActionResult Details(int? id)
@@ -131,6 +131,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Edit attendance.
+        /// </summary>
+        /// <param name="id">Employee Id</param>
+        /// <returns></returns>
         // GET: Attendance/Edit/5
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
@@ -163,7 +168,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Attendances.
         ///</summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Attendances, Edit view</returns>
         // POST: Attendance/Edit/5
@@ -192,7 +197,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             ViewBag.EmployeeId = new SelectList(db.Employees, "Id", "UserName");
             return View(model);
         }
-
+        /// <summary>
+        /// Delete employee attendance. 
+        /// </summary>
+        /// <param name="id">Employee Id</param>
+        /// <returns></returns>
         // GET: Attendance/Delete/5
         // Delete attendance
         [Authorize(Roles = "Admin")]
@@ -226,7 +235,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Attendances.
         ///</summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Attendances, Delete view</returns>
         // POST: Attendance/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -247,7 +256,10 @@ namespace HumanResourcesManagmentCapstone.Controllers
             }
             base.Dispose(disposing);
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// List employee wotking hours.
+        /// </summary>
+        /// <returns>Workinghours Index</returns>
         public ActionResult WorkingHoursIndex()
         {
             var attendances = db.Attendances.ToList();
@@ -315,6 +327,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Edit employee working hours.
+        /// </summary>
+        /// <param name="id">Employee Id</param>
+        /// <returns></returns>
         // GET: Attendance/Edit/5
         public ActionResult WorkingHoursEdit(int? id)
         {
@@ -346,7 +363,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Attendances.
         ///</summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Attendances, Edit view</returns>
         // POST: Attendance/Edit/5

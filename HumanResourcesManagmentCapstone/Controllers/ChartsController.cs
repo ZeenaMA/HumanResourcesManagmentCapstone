@@ -16,7 +16,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         [Authorize(Roles = "Admin, CEO")]
-
+        
+        
         // GET: Charts
         public ActionResult Index()
         {

@@ -515,7 +515,8 @@
   <h6><strong>Assembly</strong>: HumanResourcesManagmentCapstone.dll</h6>
   <h5 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AttendanceController : Controller, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer</code></pre>
+    <pre><code class="lang-csharp hljs">[Authorize]
+public class AttendanceController : Controller, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -606,11 +607,12 @@ public ActionResult Create(AttendanceViewModel model)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_Delete_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.Delete(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L198">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L207">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Delete_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Delete*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Delete_System_Nullable_System_Int32__" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Delete(System.Nullable{System.Int32})">Delete(Nullable&lt;Int32&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Delete employee attendance. </p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -630,7 +632,8 @@ public ActionResult Delete(int? id)</code></pre>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -654,7 +657,7 @@ public ActionResult Delete(int? id)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_DeleteConfirmed_System_Int32_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.DeleteConfirmed(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L232">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L241">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_DeleteConfirmed_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.DeleteConfirmed*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_DeleteConfirmed_System_Int32_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.DeleteConfirmed(System.Int32)">DeleteConfirmed(Int32)</h4>
@@ -681,7 +684,8 @@ public ActionResult DeleteConfirmed(int id)</code></pre>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -730,7 +734,8 @@ public ActionResult DeleteConfirmed(int id)</code></pre>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -755,7 +760,7 @@ public ActionResult DeleteConfirmed(int id)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L242">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L251">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Dispose_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Dispose*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Dispose_System_Boolean_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Dispose(System.Boolean)">Dispose(Boolean)</h4>
@@ -789,7 +794,7 @@ public ActionResult DeleteConfirmed(int id)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_Edit_System_Int32_HumanResourcesManagmentCapstone_ViewModel_AttendanceViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.Edit(System.Int32%2CHumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L170">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L175">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Edit_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Edit*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Edit_System_Int32_HumanResourcesManagmentCapstone_ViewModel_AttendanceViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Edit(System.Int32,HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel)">Edit(Int32, AttendanceViewModel)</h4>
@@ -815,7 +820,8 @@ public ActionResult Edit(int id, AttendanceViewModel model)</code></pre>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel.html">AttendanceViewModel</a></td>
@@ -845,11 +851,12 @@ public ActionResult Edit(int id, AttendanceViewModel model)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_Edit_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.Edit(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L135">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L140">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Edit_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Edit*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Edit_System_Nullable_System_Int32__" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Edit(System.Nullable{System.Int32})">Edit(Nullable&lt;Int32&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Edit attendance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -869,7 +876,8 @@ public ActionResult Edit(int? id)</code></pre>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -893,16 +901,16 @@ public ActionResult Edit(int? id)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_Index.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.Index%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L28">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L29">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Index_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Index*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_Index" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.Index">Index()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>List employee attendance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Authorize]
-public ActionResult Index()</code></pre>
+    <pre><code class="lang-csharp hljs">public ActionResult Index()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -915,7 +923,8 @@ public ActionResult Index()</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
-        <td></td>
+        <td><p>Attendance list</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -924,7 +933,7 @@ public ActionResult Index()</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursCreate.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursCreate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L276">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L288">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursCreate_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursCreate*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursCreate" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursCreate">WorkingHoursCreate()</h4>
@@ -954,7 +963,7 @@ public ActionResult Index()</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursCreate_HumanResourcesManagmentCapstone_ViewModel_AttendanceViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursCreate(HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L289">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L301">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursCreate_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursCreate*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursCreate_HumanResourcesManagmentCapstone_ViewModel_AttendanceViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursCreate(HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel)">WorkingHoursCreate(AttendanceViewModel)</h4>
@@ -1005,7 +1014,7 @@ public ActionResult WorkingHoursCreate(AttendanceViewModel model)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursEdit_System_Int32_HumanResourcesManagmentCapstone_ViewModel_AttendanceViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursEdit(System.Int32%2CHumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L353">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L370">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursEdit_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursEdit*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursEdit_System_Int32_HumanResourcesManagmentCapstone_ViewModel_AttendanceViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursEdit(System.Int32,HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel)">WorkingHoursEdit(Int32, AttendanceViewModel)</h4>
@@ -1031,7 +1040,8 @@ public ActionResult WorkingHoursEdit(int id, AttendanceViewModel model)</code></
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel.html">AttendanceViewModel</a></td>
@@ -1061,11 +1071,12 @@ public ActionResult WorkingHoursEdit(int id, AttendanceViewModel model)</code></
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursEdit_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursEdit(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L319">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L336">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursEdit_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursEdit*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursEdit_System_Nullable_System_Int32__" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursEdit(System.Nullable{System.Int32})">WorkingHoursEdit(Nullable&lt;Int32&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Edit employee working hours.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1084,7 +1095,8 @@ public ActionResult WorkingHoursEdit(int id, AttendanceViewModel model)</code></
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1108,11 +1120,12 @@ public ActionResult WorkingHoursEdit(int id, AttendanceViewModel model)</code></
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursIndex.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursIndex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L251">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AttendanceController.cs/#L263">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursIndex_" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursIndex*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_AttendanceController_WorkingHoursIndex" data-uid="HumanResourcesManagmentCapstone.Controllers.AttendanceController.WorkingHoursIndex">WorkingHoursIndex()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>List employee wotking hours.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1129,7 +1142,8 @@ public ActionResult WorkingHoursEdit(int id, AttendanceViewModel model)</code></
     <tbody>
       <tr>
         <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
-        <td></td>
+        <td><p>Workinghours Index</p>
+</td>
       </tr>
     </tbody>
   </table>

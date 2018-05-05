@@ -94,7 +94,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Networks.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Network, Edit view</returns>
         // GET: Network/Edit/5
@@ -124,7 +124,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Networks.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Network, Edit view</returns>
         // POST: Network/Edit/5
@@ -153,7 +153,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Network.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Network, Delete view</returns>
         // GET: Network/Delete/5. 
         public ActionResult Delete(int? id)
@@ -181,7 +181,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Network.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Network, Delete view</returns>
         // POST: Network/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -206,7 +206,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns></returns>
         public ActionResult Networks(int? id)
         {
@@ -253,6 +253,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             return PartialView(model);
         }
+        /// <summary>
+        /// List of networks. 
+        /// </summary>
+        /// <param name="id">Employee Id</param>
+        /// <returns>Partial View</returns>
         // GET: Network
         public ActionResult GetNetworksPartial(int? id)
         {

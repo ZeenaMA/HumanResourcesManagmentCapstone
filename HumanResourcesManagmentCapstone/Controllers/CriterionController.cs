@@ -22,7 +22,6 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action lists critera for the evaluation.
         /// </summary>
-        /// <returns></returns>
         // GET: Criterion
         public ActionResult Index()
         {

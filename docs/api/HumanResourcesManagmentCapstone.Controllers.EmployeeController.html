@@ -518,7 +518,8 @@
   <h6><strong>Assembly</strong>: HumanResourcesManagmentCapstone.dll</h6>
   <h5 id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EmployeeController : Controller, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer</code></pre>
+    <pre><code class="lang-csharp hljs">[Authorize(Roles = &quot;Admin&quot;)]
+public class EmployeeController : Controller, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -699,7 +700,8 @@ public ActionResult Create(EmployeeViewModel model, params string[] roles)</code
       <tr>
         <td><a class="xref" href="HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel.html">EmployeeViewModel</a></td>
         <td><span class="parametername">model</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span>[]</td>
@@ -729,11 +731,12 @@ public ActionResult Create(EmployeeViewModel model, params string[] roles)</code
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_EmployeeController_Delete_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.EmployeeController.Delete(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L307">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L317">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_Delete_" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.Delete*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_Delete_System_Nullable_System_Int32__" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.Delete(System.Nullable{System.Int32})">Delete(Nullable&lt;Int32&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Delete employee information</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -752,7 +755,8 @@ public ActionResult Create(EmployeeViewModel model, params string[] roles)</code
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -776,7 +780,7 @@ public ActionResult Create(EmployeeViewModel model, params string[] roles)</code
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_EmployeeController_DeleteConfirmed_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.EmployeeController.DeleteConfirmed(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L332">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L342">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_DeleteConfirmed_" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.DeleteConfirmed*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_DeleteConfirmed_System_Nullable_System_Int32__" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.DeleteConfirmed(System.Nullable{System.Int32})">DeleteConfirmed(Nullable&lt;Int32&gt;)</h4>
@@ -803,7 +807,8 @@ public ActionResult DeleteConfirmed(int? id)</code></pre>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -852,7 +857,8 @@ public ActionResult DeleteConfirmed(int? id)</code></pre>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -877,11 +883,12 @@ public ActionResult DeleteConfirmed(int? id)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_EmployeeController_Edit_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.EmployeeController.Edit(System.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L207">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L212">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_Edit_" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.Edit*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_Edit_System_Nullable_System_Int32__" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.Edit(System.Nullable{System.Int32})">Edit(Nullable&lt;Int32&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Edit employee infromation</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -900,7 +907,8 @@ public ActionResult DeleteConfirmed(int? id)</code></pre>
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -924,7 +932,7 @@ public ActionResult DeleteConfirmed(int? id)</code></pre>
     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_EmployeeController_Edit_System_Nullable_System_Int32__HumanResourcesManagmentCapstone_ViewModel_EmployeeViewModel_System_String___.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.EmployeeController.Edit(System.Nullable%7BSystem.Int32%7D%2CHumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L246">View Source</a>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L251">View Source</a>
   </span>
   <a id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_Edit_" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.Edit*"></a>
   <h4 id="HumanResourcesManagmentCapstone_Controllers_EmployeeController_Edit_System_Nullable_System_Int32__HumanResourcesManagmentCapstone_ViewModel_EmployeeViewModel_System_String___" data-uid="HumanResourcesManagmentCapstone.Controllers.EmployeeController.Edit(System.Nullable{System.Int32},HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel,System.String[])">Edit(Nullable&lt;Int32&gt;, EmployeeViewModel, String[])</h4>
@@ -950,7 +958,8 @@ public ActionResult Edit(int? id, EmployeeViewModel model, params string[] roles
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">id</span></td>
-        <td></td>
+        <td><p>Employee Id</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel.html">EmployeeViewModel</a></td>
@@ -1051,7 +1060,7 @@ public ActionResult Edit(int? id, EmployeeViewModel model, params string[] roles
                     <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_EmployeeController.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.EmployeeController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L21" class="contribution-link">View Source</a>
+                    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/EmployeeController.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

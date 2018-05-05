@@ -54,7 +54,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         ///  Details of each Experience.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns>Experience, Details view</returns>
         // GET: Experience/Details/5
         public ActionResult Details(int? id)
@@ -135,7 +135,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Experience.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Experience, Edit view</returns>
         // GET: Experience/Edit/5
         [Authorize(Roles = "Admin")]
@@ -169,7 +169,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Experience.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Experience, Edit view</returns>
         // (POST: Experience/Edit/5) 
@@ -201,7 +201,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Experience.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Experience, Delete view</returns>
         // GET: Experience/Delete/5. 
         [Authorize(Roles = "Admin")]
@@ -234,7 +234,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Experience.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Experience, Delete view</returns>
         // (POST: Experience/Delete/5) 
         [HttpPost, ActionName("Delete")]

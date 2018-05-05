@@ -74,9 +74,15 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 NationalIqamaID = 1231231,
                 BankAccountNumber = "1",
                 Nationality = "A",
-                DateOfBirth = new DateTime(2016, 8, 6)
+                DateOfBirth = new DateTime(2016, 8, 6),
             };
             userManager.Create(TM1, "123123");
+
+            var ceo = userManager.FindByName(TM1.UserName);
+            if (!userManager.IsInRole(ceo.Id, roles[1]))
+            {
+                userManager.AddToRole(ceo.Id, roles[1]);
+            }
 
             var TM2 = new Employee
             {

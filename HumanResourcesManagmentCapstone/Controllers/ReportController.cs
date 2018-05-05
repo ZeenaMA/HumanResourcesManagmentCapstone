@@ -21,7 +21,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// Gets employee name drop down list.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>GetEmployee, Index view on success</returns>
         public ActionResult GetEmployees()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -56,7 +56,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// Gets the salary List
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">EmployeeId</param>
         /// <returns></returns>
         public ActionResult GetSalaryPartial(int? id)
         {

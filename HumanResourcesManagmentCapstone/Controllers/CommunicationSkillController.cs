@@ -51,7 +51,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         ///  Details of each CommunicationSkill.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns>CommunicationSkill, Details view</returns>
         // GET: CommunicationSkill/Details/5
         public ActionResult Details(int? id)
@@ -157,7 +157,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a CommunicationSkill.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> CommunicationSkill, Edit view</returns>
         // (POST: CommunicationSkill/Edit/5) 
@@ -213,7 +213,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting CommunicationSkill.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> CommunicationSkill, Delete view</returns>
         // (POST: CommunicationSkill/Delete/5) 
         [HttpPost, ActionName("Delete")]

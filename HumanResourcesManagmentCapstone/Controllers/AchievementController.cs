@@ -52,7 +52,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         ///  Details of each achievement-.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns>Achievement, Details view</returns>
         // GET: Achievement/Details/5
         public ActionResult Details(int? id)
@@ -77,6 +77,10 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Create achievement
+        /// </summary>
+        /// <returns>Create achievement</returns>
         // GET: Achievement/Create
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
@@ -118,6 +122,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Edit achievement.
+        /// </summary>
+        /// <param name="id">Employee Id</param>
+        /// <returns></returns>
         // GET: Achievement/Edit/5
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
@@ -146,7 +155,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action enables the editing of a Achievement.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <param name="model"></param>
         /// <returns> Achievement, Edit view</returns>
         // (POST: Achievement/Edit/5) 
@@ -171,6 +180,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Delete achievement.
+        /// </summary>
+        /// <param name="id">Employee Id</param>
+        /// <returns></returns>
         // GET: Achievement/Delete/5. 
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
@@ -198,7 +212,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
         /// <summary>
         /// This action allows deleting Achievement.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Employee Id</param>
         /// <returns> Achievement, Delete view</returns>
         // (POST: Achievement/Delete/5) 
         [HttpPost, ActionName("Delete")]
