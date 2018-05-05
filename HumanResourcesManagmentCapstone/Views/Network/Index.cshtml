@@ -1,14 +1,14 @@
-﻿@*@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel>
+﻿@model IEnumerable<HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 <h2>List of memebrs</h2>
 
-<a style="margin-bottom:15px;" , href="@Url.Action("Create", "Network")" class="btn btn-primary">
+@*<a style="margin-bottom:15px;" , href="@Url.Action("Create", "Network")" class="btn btn-primary">
     <span class="glyphicon small glyphicon-plus "></span>
     Add New Network
-</a>
+</a>*@
 
 @if (Model.Count() == 0)
 {
@@ -64,7 +64,7 @@ else
 
 @section styles
 {
-    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />*@
     <link href="@Url.Content("/Content/DataTables/css/dataTables.scroller.min.css")" rel="stylesheet" />
     <link href="@Url.Content("/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
-}*@
+}

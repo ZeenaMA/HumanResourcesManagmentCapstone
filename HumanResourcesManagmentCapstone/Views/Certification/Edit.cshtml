@@ -70,61 +70,61 @@
             <div class="form-horizontal">
                 <legend class="legend-border">University</legend>
                 <div class="form-group">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.UniversityRank, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.UniversityRank, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.UniversityRank, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Extracurricular, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Extracurricular, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Extracurricular, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-
-                    @*<div class="form-group">
-                            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>*@
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.InternationalUniversity, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EnumDropDownListFor(model => model.InternationalUniversity, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.InternationalUniversity, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    </div>
-                </fieldset>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Save" class="btn btn-default box-shadow--4dp" />
-                        </div>
+                    @Html.LabelFor(model => model.UniversityRank, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.UniversityRank, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UniversityRank, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                }
 
-                <div>
-                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Extracurricular, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Extracurricular, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Extracurricular, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-                @section Scripts {
-                    @Scripts.Render("~/bundles/jqueryval")
-                }
+
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("EmployeeId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.InternationalUniversity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.InternationalUniversity, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.InternationalUniversity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default box-shadow--4dp" />
+            </div>
+        </div>
+    </div>
+}
+<hr />
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

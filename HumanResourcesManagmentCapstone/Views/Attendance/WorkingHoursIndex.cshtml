@@ -10,11 +10,13 @@
     }
 </style>*@
 <h2>Target Hours List</h2>
-
+@if (User.IsInRole("Admin"))
+{
 <a style="margin-bottom:15px;" , href="@Url.Action("WorkingHoursCreate", "Attendance")" class="btn btn-primary">
     <span class="glyphicon small glyphicon-plus "></span>
     Add Member Working Hours
 </a>
+}
 
 @if (Model.Count() == 0)
 {
@@ -55,7 +57,7 @@ else
                     @if (User.IsInRole("Admin"))
                     {
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+                            @Html.ActionLink("Edit", "WorkingHoursEdit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
                         </td>
                     }
                     else
@@ -80,6 +82,8 @@ else
                 { "orderable": false, "targets": -1 }
             ]
         });
+        $('.dataTables_filter input').attr("placeholder", "Seach")
+
     </script>
 }
 

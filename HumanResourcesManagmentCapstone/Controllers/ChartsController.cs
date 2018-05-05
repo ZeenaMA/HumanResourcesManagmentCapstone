@@ -1,4 +1,9 @@
-﻿using HumanResourcesManagmentCapstone.Models;
+﻿/*
+* Description: Controller for managing employee Performance, allows the creation of new Performance, listing of all Performance and editing and deleting.
+* Author: Zee
+* Due date: 05/05/2018
+*/
+using HumanResourcesManagmentCapstone.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,38 +15,21 @@ namespace HumanResourcesManagmentCapstone.Controllers
     public class ChartsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-       
+        [Authorize(Roles = "Admin, CEO")]
+
         // GET: Charts
         public ActionResult Index()
         {
-            //var E = db.Employees.ToList();
-            //var V = db.Evaluations;
-            //int count = 0;
-            //var labels = new List<string>();
-            //var data = new List<int>();
-            //foreach (var item in E)
-            //{
-            //    count = V.Count(m => m.Employee.Id == item.Id);
-            //    if (count != 0)
-            //    {
-            //        labels.Add(item.FirstName);
-            //        data.Add(count);
-            //    }
-            //}
-            //ViewBag.Labels = labels.ToArray();
-            //ViewBag.Data = data.ToArray();
-
-            //return View();
 
             var employee = db.Employees.ToList();
-            var evaluation = db.Evaluations.Select(x => x.GradeAttained).Sum();
+            var evaluation = db.Evaluations;
             decimal? count = 0;
             var labels = new List<string>();
             var data = new List<decimal?>();
 
             foreach (var item in employee)
             {
-                count = evaluation; /*.Sum(m => m.GradeAttained);*/ /*/ V.Average(m => m.GradeAttained);*/
+                count = evaluation.Where(m => m.Employee.Id == item.Id).Select(x => x.GradeAttained).Sum();
                 if (count != 0)
                 {
                     labels.Add(item.UserName);

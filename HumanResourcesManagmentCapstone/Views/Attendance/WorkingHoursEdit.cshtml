@@ -35,22 +35,23 @@
                         @Html.ValidationMessageFor(model => model.EmployeeWorkingHours, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                </div>
-            </fieldset>
-
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default box-shadow--4dp" />
-                    </div>
-                </div>
             </div>
-            }
+        </fieldset>
 
-            <div>
-                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default box-shadow--4dp" />
             </div>
+        </div>
+    </div>
+}
+<hr />
 
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
-            }
+<div>
+    @Html.ActionLink("Back to List", "WorkingHoursIndex", null, new { @class = "btn btn-primary btn-sm box-shadow--4dp" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

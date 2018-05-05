@@ -1,6 +1,13 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
 }
+<style>
+    @@media print {
+        header[role="banner"], footer, a[href], button {
+            display: none;
+        }
+    }
+</style>
 
 <div class="container" style="margin-top: 20px;">
     <div class="row">
@@ -9,6 +16,8 @@
         </div>
     </div>
 </div>
+<hr />
+<button type="button" class="btn btn-default box-shadow--4dp" onclick="window.print()">Print <span class="glyphicon glyphicon-print"></span></button>
 
 @section scripts
 {
@@ -40,7 +49,7 @@
         ];
 
         // First chart
-        var chartTitle = "Total of Evaluations for Each Employee";
+        var chartTitle = "Total Evaluations for Each Member";
         getChart("chart1", "bar", bgColors, borderColors, chartTitle, labels, data);
 
         // Global definitions of charts
@@ -85,4 +94,5 @@
             });
         }
     </script>
+
 }

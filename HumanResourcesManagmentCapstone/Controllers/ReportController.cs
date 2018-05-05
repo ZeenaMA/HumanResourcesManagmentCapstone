@@ -1,4 +1,9 @@
-﻿using HumanResourcesManagmentCapstone.Models;
+﻿/*
+* Description: Controller for managing reports.
+* Author: Zee
+* Due date: 05/05/2018
+*/
+using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -13,6 +18,10 @@ namespace HumanResourcesManagmentCapstone.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// Gets employee name drop down list.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GetEmployees()
         {
             var list = db.Employees.ToList().Select(e => new { e.Id, e.FullName });
@@ -44,7 +53,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             return PartialView(model);
         }
-
+        /// <summary>
+        /// Gets the salary List
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult GetSalaryPartial(int? id)
         {
             if (id == null)

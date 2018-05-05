@@ -5,7 +5,7 @@
 }
 <style>
     @@media print {
-        aside#sidebar, header[role="banner"], footer, a[href] {
+        header[role="banner"], footer, a[href], button {
             display: none;
         }
        
@@ -15,11 +15,13 @@
 
 <h3>Team Members Salaries</h3>
 
+@if (User.IsInRole("Admin"))
+{
 <a style="margin-bottom:15px;" , href="@Url.Action("Create", "Salary")" class="btn btn-primary">
     <span class="glyphicon small glyphicon-plus "></span>
     Issue New Salary
 </a>
-
+}
 @if (Model.Count() == 0)
 {
     <p>Salaries list not found</p>
@@ -85,6 +87,8 @@ else
                 { "orderable": false, "targets": -1 }
             ]
         });
+        $('.dataTables_filter input').attr("placeholder", "Seach")
+
     </script>
 }
 

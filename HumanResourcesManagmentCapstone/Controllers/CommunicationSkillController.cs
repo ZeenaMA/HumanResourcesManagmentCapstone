@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for managing employee Communication Skills, allows the creation of new Communication Skills, listing of all Communication Skills and editing and deleting.
 * Author: Zee
-* Due date: 18/04/2018
+* Due date: 05/05/2018
 */
 using AutoMapper;
 using HumanResourcesManagmentCapstone.Models;

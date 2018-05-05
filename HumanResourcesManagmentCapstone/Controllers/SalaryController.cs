@@ -48,7 +48,11 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             return View(model);
         }
-
+        /// <summary>
+        /// Method to calculate the salary.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public decimal GetEmployeePerformanceSalary(int id)
         {
             // Points
@@ -56,8 +60,8 @@ namespace HumanResourcesManagmentCapstone.Controllers
             var employeeWorkingHours = db.Attendances.Where(x => x.EmployeeId == id).Select(x => x.EmployeeWorkingHours).DefaultIfEmpty().Sum();
             var employeeDiscipline = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.Discipline).Sum();
             var employeeKPI = db.Performances.Where(x => x.EmployeeId == id).Select(x => x.KPI).Sum();
-            var employeeEvaluation = db.Evaluations.Where(x => x.EmployeeId == id).Select(x => x.GradeAttained).Sum();
-            //OrderByDescending(p => p.EvaluationDate).Select(x => x.GradeAttained).FirstOrDefault();
+            var employeeEvaluation = db.Evaluations.Where(x => x.EmployeeId == id).Select(x => x.GradeAttained).FirstOrDefault();
+            //OrderByDescending(p => p.EvaluationDate).Select(x => x.GradeAttained).();
 
             // Sum WorkingHours, Discipline, KPI, Evaluation for all employees.
             var totalWorkingHours = db.Attendances.Select(x => x.EmployeeWorkingHours).Sum();
@@ -130,7 +134,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
 
             //Score %
             var score = marketValue * points;
-            var totalScores = score + score;
+            var totalScores = score + score + score;
             var scorePercentage = score / totalScores;
             var salary = basicSalary + ((scorePercentage * tatalBasicSalary));
 

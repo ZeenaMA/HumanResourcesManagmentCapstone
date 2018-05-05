@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for managing employee Criterion, allows the creation of new Criterion, listing of all Criterion and editing and deleting.
 * Author: Zee
-* Due date: 18/04/2018
+* Due date: 05/05/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;

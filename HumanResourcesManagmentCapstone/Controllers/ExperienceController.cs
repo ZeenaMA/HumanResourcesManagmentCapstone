@@ -1,7 +1,7 @@
 ﻿/*
 * Description: Controller for managing employee Experience, allows the creation of new Experience, listing of all Experience and editing and deleting.
 * Author: Zee
-* Due date: 18/04/2018
+* Due date: 05/05/2018
 */
 using HumanResourcesManagmentCapstone.Models;
 using HumanResourcesManagmentCapstone.ViewModel;

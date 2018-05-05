@@ -489,7 +489,7 @@ namespace HumanResourcesManagmentCapstone.Migrations
                 new Criterion { Criteria = "(Proactivity) Action "},
                 new Criterion { Criteria = "(Organized) Project Managment"},
                 new Criterion { Criteria = "(Organized) Time Management "},
-                new Criterion { Criteria = "(Support Others) Functionallys"},
+                new Criterion { Criteria = "(Support Others) Functionally"},
                 new Criterion { Criteria = "(Support Others) Personally"},
                 new Criterion { Criteria = "(Communication) Listening Skills"},
                 new Criterion { Criteria = "(Communication) Skills"},
