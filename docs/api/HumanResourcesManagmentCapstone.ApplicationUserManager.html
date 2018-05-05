@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ApplicationUserManager
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ApplicationUserManager
+   ">
+    <meta name="generator" content="docfx 2.35.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="HumanResourcesManagmentCapstone.ApplicationUserManager">
+  
+  
+  <h1 id="HumanResourcesManagmentCapstone_ApplicationUserManager" data-uid="HumanResourcesManagmentCapstone.ApplicationUserManager" class="text-break">Class ApplicationUserManager
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Microsoft.AspNet.Identity.UserManager</span>&lt;<a class="xref" href="HumanResourcesManagmentCapstone.Models.ApplicationUser.html">ApplicationUser</a>, <span class="xref">System.Int32</span>&gt;</div>
+    <div class="level2"><span class="xref">ApplicationUserManager</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.CreateIdentityAsync(HumanResourcesManagmentCapstone.Models.ApplicationUser, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.CreateAsync(HumanResourcesManagmentCapstone.Models.ApplicationUser)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.UpdateAsync(HumanResourcesManagmentCapstone.Models.ApplicationUser)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.DeleteAsync(HumanResourcesManagmentCapstone.Models.ApplicationUser)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.FindByIdAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.FindByNameAsync(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.CreateAsync(HumanResourcesManagmentCapstone.Models.ApplicationUser, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.FindAsync(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.CheckPasswordAsync(HumanResourcesManagmentCapstone.Models.ApplicationUser, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.HasPasswordAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.AddPasswordAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.ChangePasswordAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.RemovePasswordAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.UpdatePassword(Microsoft.AspNet.Identity.IUserPasswordStore&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;, HumanResourcesManagmentCapstone.Models.ApplicationUser, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.VerifyPasswordAsync(Microsoft.AspNet.Identity.IUserPasswordStore&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;, HumanResourcesManagmentCapstone.Models.ApplicationUser, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetSecurityStampAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.UpdateSecurityStampAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GeneratePasswordResetTokenAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.ResetPasswordAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.FindAsync(Microsoft.AspNet.Identity.UserLoginInfo)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.RemoveLoginAsync(System.Int32, Microsoft.AspNet.Identity.UserLoginInfo)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.AddLoginAsync(System.Int32, Microsoft.AspNet.Identity.UserLoginInfo)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetLoginsAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.AddClaimAsync(System.Int32, System.Security.Claims.Claim)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.RemoveClaimAsync(System.Int32, System.Security.Claims.Claim)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetClaimsAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.AddToRoleAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.AddToRolesAsync(System.Int32, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.RemoveFromRolesAsync(System.Int32, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.RemoveFromRoleAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetRolesAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.IsInRoleAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetEmailAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SetEmailAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.FindByEmailAsync(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GenerateEmailConfirmationTokenAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.ConfirmEmailAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.IsEmailConfirmedAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetPhoneNumberAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SetPhoneNumberAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.ChangePhoneNumberAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.IsPhoneNumberConfirmedAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GenerateChangePhoneNumberTokenAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.VerifyChangePhoneNumberTokenAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.VerifyUserTokenAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GenerateUserTokenAsync(System.String, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.RegisterTwoFactorProvider(System.String, Microsoft.AspNet.Identity.IUserTokenProvider&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetValidTwoFactorProvidersAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.VerifyTwoFactorTokenAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GenerateTwoFactorTokenAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.NotifyTwoFactorTokenAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetTwoFactorEnabledAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SetTwoFactorEnabledAsync(System.Int32, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SendEmailAsync(System.Int32, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SendSmsAsync(System.Int32, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.IsLockedOutAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SetLockoutEnabledAsync(System.Int32, System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetLockoutEnabledAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetLockoutEndDateAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SetLockoutEndDateAsync(System.Int32, System.DateTimeOffset)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.AccessFailedAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.ResetAccessFailedCountAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.GetAccessFailedCountAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.Dispose(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.Store</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.PasswordHasher</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.UserValidator</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.PasswordValidator</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.ClaimsIdentityFactory</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.EmailService</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SmsService</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.UserTokenProvider</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.UserLockoutEnabledByDefault</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.MaxFailedAccessAttemptsBeforeLockout</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.DefaultAccountLockoutTimeSpan</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserTwoFactor</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserPassword</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserSecurityStamp</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserRole</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserLogin</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserEmail</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserPhoneNumber</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserClaim</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsUserLockout</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.SupportsQueryableUsers</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.Users</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.AspNet.Identity.UserManager&lt;HumanResourcesManagmentCapstone.Models.ApplicationUser, System.Int32&gt;.TwoFactorProviders</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="HumanResourcesManagmentCapstone.html">HumanResourcesManagmentCapstone</a></h6>
+  <h6><strong>Assembly</strong>: HumanResourcesManagmentCapstone.dll</h6>
+  <h5 id="HumanResourcesManagmentCapstone_ApplicationUserManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ApplicationUserManager : UserManager&lt;ApplicationUser, int&gt;, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_ApplicationUserManager__ctor_Microsoft_AspNet_Identity_IUserStore_HumanResourcesManagmentCapstone_Models_ApplicationUser_System_Int32__.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.ApplicationUserManager.%23ctor(Microsoft.AspNet.Identity.IUserStore%7BHumanResourcesManagmentCapstone.Models.ApplicationUser%2CSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/App_Start/IdentityConfig.cs/#L38">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_ApplicationUserManager__ctor_" data-uid="HumanResourcesManagmentCapstone.ApplicationUserManager.#ctor*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_ApplicationUserManager__ctor_Microsoft_AspNet_Identity_IUserStore_HumanResourcesManagmentCapstone_Models_ApplicationUser_System_Int32__" data-uid="HumanResourcesManagmentCapstone.ApplicationUserManager.#ctor(Microsoft.AspNet.Identity.IUserStore{HumanResourcesManagmentCapstone.Models.ApplicationUser,System.Int32})">ApplicationUserManager(IUserStore&lt;ApplicationUser, Int32&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApplicationUserManager(IUserStore&lt;ApplicationUser, int&gt; store)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNet.Identity.IUserStore</span>&lt;<a class="xref" href="HumanResourcesManagmentCapstone.Models.ApplicationUser.html">ApplicationUser</a>, <span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">store</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_ApplicationUserManager_Create_Microsoft_AspNet_Identity_Owin_IdentityFactoryOptions_HumanResourcesManagmentCapstone_ApplicationUserManager__Microsoft_Owin_IOwinContext_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.ApplicationUserManager.Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions%7BHumanResourcesManagmentCapstone.ApplicationUserManager%7D%2CMicrosoft.Owin.IOwinContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/App_Start/IdentityConfig.cs/#L43">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_ApplicationUserManager_Create_" data-uid="HumanResourcesManagmentCapstone.ApplicationUserManager.Create*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_ApplicationUserManager_Create_Microsoft_AspNet_Identity_Owin_IdentityFactoryOptions_HumanResourcesManagmentCapstone_ApplicationUserManager__Microsoft_Owin_IOwinContext_" data-uid="HumanResourcesManagmentCapstone.ApplicationUserManager.Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{HumanResourcesManagmentCapstone.ApplicationUserManager},Microsoft.Owin.IOwinContext)">Create(IdentityFactoryOptions&lt;ApplicationUserManager&gt;, IOwinContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ApplicationUserManager Create(IdentityFactoryOptions&lt;ApplicationUserManager&gt; options, IOwinContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions</span>&lt;<a class="xref" href="HumanResourcesManagmentCapstone.ApplicationUserManager.html">ApplicationUserManager</a>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Owin.IOwinContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.ApplicationUserManager.html">ApplicationUserManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_ApplicationUserManager.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.ApplicationUserManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/App_Start/IdentityConfig.cs/#L36" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

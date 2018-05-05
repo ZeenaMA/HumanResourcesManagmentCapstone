@@ -14,13 +14,13 @@
         <div class="form-group">
             @Html.Label("Course Title", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("EmployeeId", (IEnumerable<SelectListItem>)ViewBag.Courses, "Select Course", new { @class = "form-control" })
+                @Html.DropDownList("EmployeeId", (IEnumerable<SelectListItem>)ViewBag.Courses, "Select Memeber", new { @class = "form-control" })
             </div>
         </div>
     </div>
+    <div id="List2"></div>
 
     <div id="List"></div>
-    <div id="List2"></div>
 
 }
 @section Scripts {

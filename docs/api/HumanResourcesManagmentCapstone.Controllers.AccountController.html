@@ -1,0 +1,1652 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AccountController
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AccountController
+   ">
+    <meta name="generator" content="docfx 2.35.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController">
+  
+  
+  <h1 id="HumanResourcesManagmentCapstone_Controllers_AccountController" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController" class="text-break">Class AccountController
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Web.Mvc.ControllerBase</span></div>
+    <div class="level2"><span class="xref">System.Web.Mvc.Controller</span></div>
+    <div class="level3"><span class="xref">AccountController</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Web.Mvc.IActionFilter</span></div>
+    <div><span class="xref">System.Web.Mvc.Filters.IAuthenticationFilter</span></div>
+    <div><span class="xref">System.Web.Mvc.IAuthorizationFilter</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Web.Mvc.IExceptionFilter</span></div>
+    <div><span class="xref">System.Web.Mvc.IResultFilter</span></div>
+    <div><span class="xref">System.Web.Mvc.Async.IAsyncController</span></div>
+    <div><span class="xref">System.Web.Mvc.IController</span></div>
+    <div><span class="xref">System.Web.Mvc.Async.IAsyncManagerContainer</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Content(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Content(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Content(System.String, System.String, System.Text.Encoding)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.CreateActionInvoker()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.CreateTempDataProvider()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.ExecuteCore()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.File(System.Byte[], System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.File(System.Byte[], System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.File(System.IO.Stream, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.File(System.IO.Stream, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.File(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.File(System.String, System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.HandleUnknownAction(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.HttpNotFound()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.HttpNotFound(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.JavaScript(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Json(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Json(System.Object, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Json(System.Object, System.String, System.Text.Encoding)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Json(System.Object, System.Web.Mvc.JsonRequestBehavior)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Json(System.Object, System.String, System.Web.Mvc.JsonRequestBehavior)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Json(System.Object, System.String, System.Text.Encoding, System.Web.Mvc.JsonRequestBehavior)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Initialize(System.Web.Routing.RequestContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnAuthentication(System.Web.Mvc.Filters.AuthenticationContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnAuthenticationChallenge(System.Web.Mvc.Filters.AuthenticationChallengeContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnAuthorization(System.Web.Mvc.AuthorizationContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnException(System.Web.Mvc.ExceptionContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnResultExecuted(System.Web.Mvc.ResultExecutedContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.OnResultExecuting(System.Web.Mvc.ResultExecutingContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.PartialView()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.PartialView(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.PartialView(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.PartialView(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Redirect(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectPermanent(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToAction(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToAction(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToAction(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToAction(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToAction(System.String, System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToAction(System.String, System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToActionPermanent(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToActionPermanent(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToActionPermanent(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToActionPermanent(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToActionPermanent(System.String, System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToActionPermanent(System.String, System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoute(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoute(System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoute(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoute(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoute(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoutePermanent(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoutePermanent(System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoutePermanent(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoutePermanent(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RedirectToRoutePermanent(System.String, System.Web.Routing.RouteValueDictionary)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String, System.String[], System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String, System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String[], System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String, System.String[], System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryUpdateModel&lt;TModel&gt;(TModel, System.String, System.String[], System.String[], System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryValidateModel(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TryValidateModel(System.Object, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String, System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String, System.String[], System.String[])</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String, System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String[], System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String, System.String[], System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.UpdateModel&lt;TModel&gt;(TModel, System.String, System.String[], System.String[], System.Web.Mvc.IValueProvider)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.ValidateModel(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.ValidateModel(System.Object, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View()</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.String, System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.Web.Mvc.IView)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.View(System.Web.Mvc.IView, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.BeginExecute(System.Web.Routing.RequestContext, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.BeginExecute(System.Web.Routing.RequestContext, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.BeginExecuteCore(System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.EndExecute(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.EndExecuteCore(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.IActionFilter.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.IActionFilter.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.Filters.IAuthenticationFilter.OnAuthentication(System.Web.Mvc.Filters.AuthenticationContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.Filters.IAuthenticationFilter.OnAuthenticationChallenge(System.Web.Mvc.Filters.AuthenticationChallengeContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.IAuthorizationFilter.OnAuthorization(System.Web.Mvc.AuthorizationContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.IExceptionFilter.OnException(System.Web.Mvc.ExceptionContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.IResultFilter.OnResultExecuting(System.Web.Mvc.ResultExecutingContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.System.Web.Mvc.IResultFilter.OnResultExecuted(System.Web.Mvc.ResultExecutedContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Resolver</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.AsyncManager</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.DisableAsyncSupport</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.ActionInvoker</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Binders</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.HttpContext</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.ModelState</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Profile</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Request</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Response</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.RouteData</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Server</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Session</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.TempDataProvider</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.Url</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.User</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.Controller.ViewEngineCollection</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.Execute(System.Web.Routing.RequestContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(System.Web.Routing.RequestContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.ControllerContext</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.TempData</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.ValidateRequest</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.ValueProvider</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.ViewBag</span>
+    </div>
+    <div>
+      <span class="xref">System.Web.Mvc.ControllerBase.ViewData</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="HumanResourcesManagmentCapstone.Controllers.html">HumanResourcesManagmentCapstone.Controllers</a></h6>
+  <h6><strong>Assembly</strong>: HumanResourcesManagmentCapstone.dll</h6>
+  <h5 id="HumanResourcesManagmentCapstone_Controllers_AccountController_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Authorize]
+public class AccountController : Controller, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController__ctor.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L21">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController__ctor_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.#ctor*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController__ctor" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.#ctor">AccountController()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AccountController()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController__ctor_HumanResourcesManagmentCapstone_ApplicationUserManager_HumanResourcesManagmentCapstone_ApplicationSignInManager_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.%23ctor(HumanResourcesManagmentCapstone.ApplicationUserManager%2CHumanResourcesManagmentCapstone.ApplicationSignInManager)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L25">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController__ctor_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.#ctor*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController__ctor_HumanResourcesManagmentCapstone_ApplicationUserManager_HumanResourcesManagmentCapstone_ApplicationSignInManager_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.#ctor(HumanResourcesManagmentCapstone.ApplicationUserManager,HumanResourcesManagmentCapstone.ApplicationSignInManager)">AccountController(ApplicationUserManager, ApplicationSignInManager)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.ApplicationUserManager.html">ApplicationUserManager</a></td>
+        <td><span class="parametername">userManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.ApplicationSignInManager.html">ApplicationSignInManager</a></td>
+        <td><span class="parametername">signInManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_SignInManager.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.SignInManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L31">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_SignInManager_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.SignInManager*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_SignInManager" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.SignInManager">SignInManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApplicationSignInManager SignInManager { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.ApplicationSignInManager.html">ApplicationSignInManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_UserManager.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.UserManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L43">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_UserManager_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.UserManager*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_UserManager" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.UserManager">UserManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApplicationUserManager UserManager { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.ApplicationUserManager.html">ApplicationUserManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ConfirmEmail_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ConfirmEmail(System.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L177">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ConfirmEmail_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ConfirmEmail*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ConfirmEmail_System_Int32_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ConfirmEmail(System.Int32,System.String)">ConfirmEmail(Int32, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public Task&lt;ActionResult&gt; ConfirmEmail(int userId, string code)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">code</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L407">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_Dispose_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Dispose*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_Dispose_System_Boolean_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Web.Mvc.Controller.Dispose(System.Boolean)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLogin_System_String_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLogin(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L277">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLogin_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLogin*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLogin_System_String_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLogin(System.String,System.String)">ExternalLogin(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public ActionResult ExternalLogin(string provider, string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginCallback_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginCallback(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L323">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginCallback_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginCallback*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginCallback_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginCallback(System.String)">ExternalLoginCallback(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public Task&lt;ActionResult&gt; ExternalLoginCallback(string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginConfirmation_HumanResourcesManagmentCapstone_Models_ExternalLoginConfirmationViewModel_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginConfirmation(HumanResourcesManagmentCapstone.Models.ExternalLoginConfirmationViewModel%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L353">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginConfirmation_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginConfirmation*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginConfirmation_HumanResourcesManagmentCapstone_Models_ExternalLoginConfirmationViewModel_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginConfirmation(HumanResourcesManagmentCapstone.Models.ExternalLoginConfirmationViewModel,System.String)">ExternalLoginConfirmation(ExternalLoginConfirmationViewModel, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.ExternalLoginConfirmationViewModel.html">ExternalLoginConfirmationViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginFailure.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginFailure%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L401">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginFailure_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginFailure*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ExternalLoginFailure" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ExternalLoginFailure">ExternalLoginFailure()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult ExternalLoginFailure()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPassword.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPassword%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L190">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPassword_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPassword*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPassword" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPassword">ForgotPassword()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult ForgotPassword()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPassword_HumanResourcesManagmentCapstone_Models_ForgotPasswordViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPassword(HumanResourcesManagmentCapstone.Models.ForgotPasswordViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L198">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPassword_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPassword*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPassword_HumanResourcesManagmentCapstone_Models_ForgotPasswordViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPassword(HumanResourcesManagmentCapstone.Models.ForgotPasswordViewModel)">ForgotPassword(ForgotPasswordViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; ForgotPassword(ForgotPasswordViewModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.ForgotPasswordViewModel.html">ForgotPasswordViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPasswordConfirmation.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPasswordConfirmation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L227">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPasswordConfirmation_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPasswordConfirmation*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ForgotPasswordConfirmation" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ForgotPasswordConfirmation">ForgotPasswordConfirmation()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult ForgotPasswordConfirmation()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_Login_HumanResourcesManagmentCapstone_Models_LoginViewModel_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.Login(HumanResourcesManagmentCapstone.Models.LoginViewModel%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L66">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_Login_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Login*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_Login_HumanResourcesManagmentCapstone_Models_LoginViewModel_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Login(HumanResourcesManagmentCapstone.Models.LoginViewModel,System.String)">Login(LoginViewModel, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; Login(LoginViewModel model, string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.LoginViewModel.html">LoginViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_Login_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.Login(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L57">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_Login_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Login*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_Login_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Login(System.String)">Login(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult Login(string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_LogOff.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.LogOff%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L391">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_LogOff_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.LogOff*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_LogOff" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.LogOff">LogOff()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult LogOff()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_Register.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.Register%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L139">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_Register_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Register*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_Register" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Register">Register()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult Register()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_Register_HumanResourcesManagmentCapstone_Models_RegisterViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.Register(HumanResourcesManagmentCapstone.Models.RegisterViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L147">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_Register_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Register*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_Register_HumanResourcesManagmentCapstone_Models_RegisterViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.Register(HumanResourcesManagmentCapstone.Models.RegisterViewModel)">Register(RegisterViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; Register(RegisterViewModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.RegisterViewModel.html">RegisterViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPassword_HumanResourcesManagmentCapstone_Models_ResetPasswordViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPassword(HumanResourcesManagmentCapstone.Models.ResetPasswordViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L243">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPassword_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPassword*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPassword_HumanResourcesManagmentCapstone_Models_ResetPasswordViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPassword(HumanResourcesManagmentCapstone.Models.ResetPasswordViewModel)">ResetPassword(ResetPasswordViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; ResetPassword(ResetPasswordViewModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.ResetPasswordViewModel.html">ResetPasswordViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPassword_System_String_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPassword(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L235">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPassword_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPassword*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPassword_System_String_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPassword(System.String)">ResetPassword(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult ResetPassword(string code)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">code</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPasswordConfirmation.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPasswordConfirmation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L269">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPasswordConfirmation_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPasswordConfirmation*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_ResetPasswordConfirmation" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.ResetPasswordConfirmation">ResetPasswordConfirmation()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public ActionResult ResetPasswordConfirmation()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Web.Mvc.ActionResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_SendCode_HumanResourcesManagmentCapstone_Models_SendCodeViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.SendCode(HumanResourcesManagmentCapstone.Models.SendCodeViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L303">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_SendCode_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.SendCode*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_SendCode_HumanResourcesManagmentCapstone_Models_SendCodeViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.SendCode(HumanResourcesManagmentCapstone.Models.SendCodeViewModel)">SendCode(SendCodeViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; SendCode(SendCodeViewModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.SendCodeViewModel.html">SendCodeViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_SendCode_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.SendCode(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L288">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_SendCode_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.SendCode*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_SendCode_System_String_System_Boolean_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.SendCode(System.String,System.Boolean)">SendCode(String, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public Task&lt;ActionResult&gt; SendCode(string returnUrl, bool rememberMe)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">rememberMe</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_VerifyCode_HumanResourcesManagmentCapstone_Models_VerifyCodeViewModel_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.VerifyCode(HumanResourcesManagmentCapstone.Models.VerifyCodeViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L109">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_VerifyCode_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.VerifyCode*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_VerifyCode_HumanResourcesManagmentCapstone_Models_VerifyCodeViewModel_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.VerifyCode(HumanResourcesManagmentCapstone.Models.VerifyCodeViewModel)">VerifyCode(VerifyCodeViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost]
+[AllowAnonymous]
+[ValidateAntiForgeryToken]
+public Task&lt;ActionResult&gt; VerifyCode(VerifyCodeViewModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="HumanResourcesManagmentCapstone.Models.VerifyCodeViewModel.html">VerifyCodeViewModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController_VerifyCode_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController.VerifyCode(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L96">View Source</a>
+  </span>
+  <a id="HumanResourcesManagmentCapstone_Controllers_AccountController_VerifyCode_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.VerifyCode*"></a>
+  <h4 id="HumanResourcesManagmentCapstone_Controllers_AccountController_VerifyCode_System_String_System_String_System_Boolean_" data-uid="HumanResourcesManagmentCapstone.Controllers.AccountController.VerifyCode(System.String,System.String,System.Boolean)">VerifyCode(String, String, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[AllowAnonymous]
+public Task&lt;ActionResult&gt; VerifyCode(string provider, string returnUrl, bool rememberMe)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">rememberMe</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Web.Mvc.ActionResult</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Web.Mvc.IActionFilter</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.Filters.IAuthenticationFilter</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.IAuthorizationFilter</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.IExceptionFilter</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.IResultFilter</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.Async.IAsyncController</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.IController</span>
+  </div>
+  <div>
+      <span class="xref">System.Web.Mvc.Async.IAsyncManagerContainer</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/new/master/apiSpec/new?filename=HumanResourcesManagmentCapstone_Controllers_AccountController.md&amp;value=---%0Auid%3A%20HumanResourcesManagmentCapstone.Controllers.AccountController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/ZeenaMA/HumanResourcesManagmentCapstone/blob/master/HumanResourcesManagmentCapstone/Controllers/AccountController.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

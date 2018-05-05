@@ -17,7 +17,7 @@ namespace HumanResourcesManagmentCapstone.Controllers
     public class EvaluationController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        [Authorize]
         /// <summary>
         /// This action lists Evaluation.
         /// </summary>

@@ -1,0 +1,1268 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/VIP/source/repos/HumanResourcesManagmentCapstone/HumanResourcesManagmentCapstone",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "5O+BRP2w3quhg8YJMDgD8A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "7uRjtrkG0nBEbTeMh4NdyA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "b1tHhIsvJG0jnhltbQY13g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.App_Start.AutoMapperConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.App_Start.AutoMapperConfig.html",
+          "hash": "181/9aZy3DoKFm1zLXFB5w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.App_Start.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.App_Start.html",
+          "hash": "Nmm6CEitZMJWDzKvFBNjTQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ApplicationSignInManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ApplicationSignInManager.html",
+          "hash": "3QsfkGSUQDQleEqm17eE3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ApplicationUserManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ApplicationUserManager.html",
+          "hash": "3gho/l079bO5bGwroP7OHw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.BundleConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.BundleConfig.html",
+          "hash": "4c9KhBnX3PJI3EYDyzuZLw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Common.CurrentDateAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Common.CurrentDateAttribute.html",
+          "hash": "8G3xtzRLC5YQvOO2yFUBTQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Common.html",
+          "hash": "tNe1y2wloABWhwZs8J3LlQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.AccountController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.AccountController.html",
+          "hash": "s7AjbvAWdK5b/r+riiXvRA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.AchievementController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.AchievementController.html",
+          "hash": "wxScD69Ai8RfkEFx8Y14og=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.AttendanceController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.AttendanceController.html",
+          "hash": "I3Fx759c7dNcdc1oKlJj4A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.CertificationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.CertificationController.html",
+          "hash": "RKOWIq2Zm82tM1uY0uzrpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.ChartsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.ChartsController.html",
+          "hash": "GuWyy/bXcIj5XMa14zap0A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.CommunicationSkillController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.CommunicationSkillController.html",
+          "hash": "kPUB/FtdoSa5Zi1wjLiz6g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.CriterionController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.CriterionController.html",
+          "hash": "U4nOKdJlpsRwnDPORIrM6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.EmployeeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.EmployeeController.html",
+          "hash": "/Emt090fqFSbCDZXQDBMSg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.EvaluationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.EvaluationController.html",
+          "hash": "G8w0NP7HxfIgmiWy5KoTAA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.ExperienceController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.ExperienceController.html",
+          "hash": "jsJm6BUbqAmHRogpXsSdIQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.HomeController.html",
+          "hash": "JEywCaX6jHJ7hwsbBTVVow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.ManageController.ManageMessageId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.ManageController.ManageMessageId.html",
+          "hash": "nm5aqeCDJPdf2JXVZMXLtg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.ManageController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.ManageController.html",
+          "hash": "FRQz0DHEdkX3p36+kXLf/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.NetworkController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.NetworkController.html",
+          "hash": "EnMklgBOfnZj5SLV/0R/2w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.PerformanceController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.PerformanceController.html",
+          "hash": "CFJNIUWmn/V5PfQVl6DcIw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.ReportController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.ReportController.html",
+          "hash": "C+Fx8TAvgrNZ8QFbuSwTnw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.SalaryController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.SalaryController.html",
+          "hash": "gnR65+I1lEset1xfpClweQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Controllers.html",
+          "hash": "F4rW3Oz/ktbZRPhwUt2sqQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.EmailService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.EmailService.html",
+          "hash": "FZ4dcwW7kUHxx7Wm0b1amg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.FilterConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.FilterConfig.html",
+          "hash": "SKEtQtaTIH6qqNepMTADcw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Achievement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Achievement.html",
+          "hash": "ZkqgaTB/CXKDmMmzPAxrdA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.AchievementType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.AchievementType.html",
+          "hash": "BBPzzjE7FBWYgpInqvhhVg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.AddPhoneNumberViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.AddPhoneNumberViewModel.html",
+          "hash": "a++sblujiv0idRnQSL4f/Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ApplicationDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ApplicationDbContext.html",
+          "hash": "chhsUasMxKI6MW4TWTf70A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ApplicationUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ApplicationUser.html",
+          "hash": "lsxYUiC2bEx0yh84/G6AVA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Attendance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Attendance.html",
+          "hash": "V/uVn4jTYSzTb7BfocJX8w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Certification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Certification.html",
+          "hash": "BiiUWiYHgmjReddwQNwdYw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CertificationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CertificationType.html",
+          "hash": "MKsjM/ftdW9E/+KlHPdE+A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ChangePasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ChangePasswordViewModel.html",
+          "hash": "wgGU46UWOT9/NooQTE/S8Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CommunicationSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CommunicationSkill.html",
+          "hash": "QjZIaOsnHgCknlWOLzwiug=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ConfigureTwoFactorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ConfigureTwoFactorViewModel.html",
+          "hash": "4Cz8M1Vx8lsXk7bWsFPsMA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Constituent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Constituent.html",
+          "hash": "6scLVAGYngyWtNdwBys5Lg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Criterion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Criterion.html",
+          "hash": "1n6LQu0tv7qqiZa8oaw3Hg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CustomRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CustomRole.html",
+          "hash": "B1W8+37wY03TGrM7JzMHUQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CustomRoleStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CustomRoleStore.html",
+          "hash": "TmJZUIHRW29zwqy2ZkD23Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CustomUserClaim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CustomUserClaim.html",
+          "hash": "50RXpf5vM02AXKEfj0ujYg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CustomUserLogin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CustomUserLogin.html",
+          "hash": "syOhP1+zbigdassDEnB0bQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CustomUserRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CustomUserRole.html",
+          "hash": "7YxOVIywnp3FCGYYqyX22Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.CustomUserStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.CustomUserStore.html",
+          "hash": "0j8w0vQzKGPpYVjWRE8lgg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Decision.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Decision.html",
+          "hash": "S/3h5JgBZ6QUP2gOfAiGbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Employee.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Employee.html",
+          "hash": "6b0EmwO0D3YGCRHwkV6bIA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.EmployeeGender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.EmployeeGender.html",
+          "hash": "gvOKruPQ6bAfhYsLDfwu3g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.EmployeeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.EmployeeType.html",
+          "hash": "uRfs1KGpFNZLNJ2OsYzzjw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Evaluation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Evaluation.html",
+          "hash": "GTYEatxTWjPU+XlAbjjbkA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Experience.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Experience.html",
+          "hash": "7zpatVUsTF8mCd2CCwW4Dg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ExternalLoginConfirmationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ExternalLoginConfirmationViewModel.html",
+          "hash": "RcDEemV2Y8jfnpdO4va4BA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ExternalLoginListViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ExternalLoginListViewModel.html",
+          "hash": "5wdODDtJtDdgz5BPX93A/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.FactorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.FactorViewModel.html",
+          "hash": "eAD4Z9mlTUXWC5TwqvdAOQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ForgotPasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ForgotPasswordViewModel.html",
+          "hash": "3loOItT+Q5F4AFToJSALRA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ForgotViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ForgotViewModel.html",
+          "hash": "io+P7lOXqWBEcYaTRcmLjw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.IndexViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.IndexViewModel.html",
+          "hash": "swIwj6S0GdTMImnJ1hIj4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.InternationalUniversity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.InternationalUniversity.html",
+          "hash": "Pq+txBS/w2T6hvb9WJJTeA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.LoginViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.LoginViewModel.html",
+          "hash": "2rVRCM0LAWyoY+uCcljSCQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ManageLoginsViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ManageLoginsViewModel.html",
+          "hash": "6TE866BboLekcdv0TbLP2Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Network.html",
+          "hash": "wTNklZvXL1NiHrACJK4Ocg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.OrgnizationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.OrgnizationType.html",
+          "hash": "cMwcM3dVYQ3XbvWXxLY5DA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Performance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Performance.html",
+          "hash": "w37sb6MKgjj2Gw9b2DE2fQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.PlatformType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.PlatformType.html",
+          "hash": "fK5LHGhtVLaUdYD4TCzedw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.RegisterViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.RegisterViewModel.html",
+          "hash": "TQV8J/x4jcvmCh9cAHHB/Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.ResetPasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.ResetPasswordViewModel.html",
+          "hash": "jFrepl5oA0rJmrOf5PaT6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Salary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Salary.html",
+          "hash": "eJANC5itBfDWMqdjbL5Cpw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.Score.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.Score.html",
+          "hash": "PDosrglVqsxY+NarXMxyLg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.SendCodeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.SendCodeViewModel.html",
+          "hash": "1hi/U7C+7CRuHaKPhqAOhg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.SetPasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.SetPasswordViewModel.html",
+          "hash": "A9n/QV+rHgyylybYKuoE7g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.SkillLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.SkillLevel.html",
+          "hash": "4RT7+itj9mGR9WI4vufDrw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.VerifyCodeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.VerifyCodeViewModel.html",
+          "hash": "UbT47JYftqqqFK3tuBeLxw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.VerifyPhoneNumberViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.VerifyPhoneNumberViewModel.html",
+          "hash": "BrwxFA2mAbLpgB5mpzGmKA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Models.html",
+          "hash": "curGOJfk2w231RQrxBHX6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.MvcApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.MvcApplication.html",
+          "hash": "St4NXOdgC0mfOuMaiGAU9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.RouteConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.RouteConfig.html",
+          "hash": "tiegj99DHC5oQvRbWm16Lw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.SmsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.SmsService.html",
+          "hash": "RuJTeO0Emj2OCeI56Z9HMA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.Startup.html",
+          "hash": "WbYHUcEsiM6GxJWyz6sHeQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.AchievementViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.AchievementViewModel.html",
+          "hash": "A5z1DzlXJopNpm7tFSV+fw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.AnswerViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.AnswerViewModel.html",
+          "hash": "vIy2PC4DrRJaTUlumOh1Tg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.AttendanceViewModel.html",
+          "hash": "8Q12wMo1dXqX/oR3NJ/KDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.CertificationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.CertificationViewModel.html",
+          "hash": "RwUhc7GAAy8tqavM7KtMew=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.CommunicationSkillViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.CommunicationSkillViewModel.html",
+          "hash": "qSc2xV2qrP1gx4IeWuOhEg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.ConstituentViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.ConstituentViewModel.html",
+          "hash": "cfZXQ0uLj9AdzlxkB5q0sw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.CriterionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.CriterionViewModel.html",
+          "hash": "/7iLn9jM0vmgHfo7EEhgTA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.EmployeeViewModel.html",
+          "hash": "0YiBt57EeyJ+9rpe74E7qw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.EvaluationViewModel.html",
+          "hash": "9uOzqfCI2Fzz5BWlDxGGhA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.ExperienceViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.ExperienceViewModel.html",
+          "hash": "eT8uNflbtqeHQMRhnyvvZw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.NetworkViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.NetworkViewModel.html",
+          "hash": "UOLilYX67Psb2/pPk7PoKw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.PerformanceViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.PerformanceViewModel.html",
+          "hash": "VUk7nZUMnXRZ5Lt1QyGWSg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.QuestionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.QuestionViewModel.html",
+          "hash": "DP2le8XoSLyWiKD2DaUrkQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.SalaryViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.SalaryViewModel.html",
+          "hash": "tIU/HV3FkQ/b8tkd+D0QLA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.ScoreViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.ScoreViewModel.html",
+          "hash": "aveXc69abNtEuC9edn0Ajw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.ViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.ViewModel.html",
+          "hash": "n0jKfgzkyKDaIg/qv0/juw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/HumanResourcesManagmentCapstone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/HumanResourcesManagmentCapstone.html",
+          "hash": "7Vh5ePEqVxaggSN7/5hlIA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "AJKvIHCp+97bf4zWICq20Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "frPdeW5hGroGiyexwMQIhg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
